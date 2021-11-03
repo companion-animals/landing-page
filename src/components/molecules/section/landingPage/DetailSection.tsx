@@ -1,13 +1,11 @@
 import styled from "styled-components";
 
-import XEIcon from "src/components/atoms/icon/XEIcon";
 import {
   ExtraBold56,
   ExtraBold68,
   ExtraBold38,
   Light38,
 } from "src/components/atoms/text/Typographies";
-import images from "src/images";
 
 const Container = styled.div`
   width: 100%;

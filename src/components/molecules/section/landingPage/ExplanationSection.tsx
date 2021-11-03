@@ -1,12 +1,6 @@
 import styled from "styled-components";
 
-import XEIcon from "src/components/atoms/icon/XEIcon";
-import {
-  ExtraBold56,
-  ExtraBold68,
-  ExtraBold38,
-  Medium20,
-} from "src/components/atoms/text/Typographies";
+import { ExtraBold56, Medium20 } from "src/components/atoms/text/Typographies";
 import images from "src/images";
 
 const Container = styled.div`
