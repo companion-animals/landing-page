@@ -11,6 +11,8 @@ const images = {
   hamster: "/images/hamster.png",
   turtleFace: "images/turtle_face.png",
   mouse: "images/mouse.png",
+  rightSpeechBubble: "images/speech_bubble_right.png",
+  leftSpeechBubble: "images/speech_bubble_left.png",
 };
 
 export default images;
