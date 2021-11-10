@@ -11,6 +11,12 @@ const Container = styled.div`
   justify-content: center;
   padding-top: 130px;
   padding-bottom: 80px;
+
+  @media screen and (max-width: 750px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const AnimalImage = styled.img.attrs({ src: images.animals })`
@@ -21,6 +27,12 @@ const TitleWrapper = styled.div`
   white-space: pre-line;
   margin-right: 142px;
   margin-top: 90px;
+
+  @media screen and (max-width: 750px) {
+    margin-right: 0px;
+    margin-bottom: 130px;
+    margin-top: 0px;
+  }
 `;
 
 const LightTitle = styled(Light48)`
