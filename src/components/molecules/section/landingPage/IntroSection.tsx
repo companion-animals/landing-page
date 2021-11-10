@@ -15,22 +15,18 @@ const Container = styled.div`
   justify-content: center;
 `;
 
-const ContentWrapper = styled.div`
-  width: 100%;
-  z-index: 1;
-  max-width: 1180px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+const Wrapper = styled.div`
+  width: 1200px;
+  position: relative;
 `;
 
 const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 230px;
-  margin-right: 100px;
   display: inline;
   white-space: pre-line;
+  margin-left: 20px;
 `;
 
 const SectionTitle = styled(ExtraBold56)`
@@ -41,14 +37,15 @@ const ColoredTitle = styled(SectionTitle)`
   color: #7065e7;
 `;
 
-const ParrotBackground = styled.img.attrs({ src: images.parrotBG })`
-  height: 720px;
-  width: auto;
-  position: absolute;
-  top: 0;
+const ContentWrapper = styled.div`
+  display: flex;
 `;
 
-const ApplyButton = styled.div`
+const ParrotImage = styled.img.attrs({ src: images.parrot })`
+  width: 474px;
+`;
+
+const SignUpButton = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -59,6 +56,19 @@ const ApplyButton = styled.div`
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
   border-radius: 10px;
   margin-top: 50px;
+  background-color: #6448bf;
+  padding-right: 38px;
+  padding-left: 38px;
+  width: 255px;
+  margin-top: 45px;
+`;
+
+const ApplyButton = styled(SignUpButton)`
+  position: absolute;
+  right: 0px;
+  padding-right: 26px;
+  padding-left: 26px;
+  background-color: #ffffff;
 `;
 
 const RightAngleIcon = styled(XEIcon).attrs({ type: "xi-angle-right" })`
@@ -72,14 +82,6 @@ const ApplyButtonText = styled(ExtraBold28)`
   color: #8d86eb;
 `;
 
-const SignUpButton = styled(ApplyButton)`
-  background-color: #6448bf;
-  padding-right: 38px;
-  padding-left: 38px;
-  width: 255px;
-  margin-top: 45px;
-`;
-
 const SignUpButtonText = styled(ExtraBold28)`
   color: #ffffff;
 `;
@@ -90,21 +92,23 @@ const ColoredAngleIcon = styled(RightAngleIcon)`
 
 const IntroSection = () => (
   <Container>
-    <ParrotBackground />
-    <ContentWrapper>
+    <Wrapper>
       <ApplyButton>
         <ApplyButtonText> 펫시터 지원하기</ApplyButtonText>
         <ColoredAngleIcon />
       </ApplyButton>
-      <TitleWrapper>
-        <ColoredTitle>우리동네 특별반</ColoredTitle>
-        <SectionTitle>{`이\n특별한 아이들을 돌봐드려요`}</SectionTitle>
-        <SignUpButton>
-          <SignUpButtonText>지금 신청하기</SignUpButtonText>
-          <RightAngleIcon />
-        </SignUpButton>
-      </TitleWrapper>
-    </ContentWrapper>
+      <ContentWrapper>
+        <ParrotImage />
+        <TitleWrapper>
+          <ColoredTitle>우리동네 특별반</ColoredTitle>
+          <SectionTitle>{`이\n특별한 아이들을 돌봐드려요`}</SectionTitle>
+          <SignUpButton>
+            <SignUpButtonText>지금 신청하기</SignUpButtonText>
+            <RightAngleIcon />
+          </SignUpButton>
+        </TitleWrapper>
+      </ContentWrapper>
+    </Wrapper>
   </Container>
 );
 
