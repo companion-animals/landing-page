@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { ExtraBold56, Medium20 } from "src/components/atoms/text/Typographies";
+import { ExtraBold56, Medium38 } from "src/components/atoms/text/Typographies";
 import images from "src/images";
 
 const Container = styled.div`
@@ -27,12 +27,12 @@ const RabbitImage = styled.img.attrs({ src: images.rabbitBG })`
 
 const Title = styled(ExtraBold56)`
   white-space: pre-line;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 `;
 
 const BorderChip = styled.div`
-  width: 394px;
-  height: 57px;
+  width: 456px;
+  padding: 22px 0px;
   border: 2px solid #7065e7;
   background-color: #fafafa;
   border-radius: 60px;
@@ -40,6 +40,7 @@ const BorderChip = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 `;
 
 const BackgroundChip = styled(BorderChip)`
@@ -47,7 +48,7 @@ const BackgroundChip = styled(BorderChip)`
   background-color: #d4d0f5;
 `;
 
-const Text = styled(Medium20)`
+const Text = styled(Medium38)`
   color: #ffffff;
 `;
 
@@ -65,13 +66,13 @@ const ExplanationSection = () => (
     <ContentWrapper>
       <Title>{`맞춤 서비스로\n돌봄 만족도가 높아요`}</Title>
       <BorderChip>
-        <ColoredText>강아지 펫시터와 다른 전문 노하우 보유</ColoredText>
+        <ColoredText>특수동물 전문 돌봄 서비스</ColoredText>
       </BorderChip>
       <BackgroundChip>
-        <ColoredText>강아지 펫시터와 다른 전문 노하우 보유</ColoredText>
+        <ColoredText>추가 서비스 요청 가능</ColoredText>
       </BackgroundChip>
       <DarkBackgroundChip>
-        <Text>강아지 펫시터와 다른 전문 노하우 보유</Text>
+        <Text>우리동네 근처 펫시터 매칭</Text>
       </DarkBackgroundChip>
     </ContentWrapper>
   </Container>
