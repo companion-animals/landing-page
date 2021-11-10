@@ -14,6 +14,7 @@ const images = {
   rightSpeechBubble: "images/speech_bubble_right.png",
   leftSpeechBubble: "images/speech_bubble_left.png",
   animals: "images/animals.png",
+  emailIcon: "images/email_icon.png",
 };
 
 export default images;
