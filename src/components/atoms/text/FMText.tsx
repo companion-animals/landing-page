@@ -2,8 +2,6 @@ import React from "react";
 
 import styled from "styled-components";
 
-import colors from "src/styles/colors";
-
 type FontType =
   | "HEAVY"
   | "EXTRA_BOLD"
@@ -36,7 +34,6 @@ const fontTypeToFont = {
 const Text = styled.p<{ fontType: FontType }>`
   font-weight: ${({ fontType }) => fontTypeToFont[fontType]};
   letter-spacing: -0.5px;
-  color: ${colors.gray900};
 `;
 
 const FMText = ({ fontType = "REGULAR", ...props }: TextProps) => (
