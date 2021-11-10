@@ -114,7 +114,6 @@ const BoldTitle = styled(Bold56)`
     font-size: 34px;
     font-weight: 500;
     line-height: normal;
-    margin-bottom: 15px;
   }
 `;
 
