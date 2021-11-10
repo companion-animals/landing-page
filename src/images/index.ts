@@ -6,7 +6,7 @@ const images = {
   embarrassmentEmoji: "/images/embarrassment_emoji.png",
   rabbit: "/images/rabbit.png",
   turtle: "/images/turtle.png",
-  parrotBG: "/images/parrot_bg.jpg",
+  parrot: "/images/parrot.png",
   rabbitBG: "/images/rabbit_bg.png",
   hamster: "/images/hamster.png",
   turtleFace: "images/turtle_face.png",
