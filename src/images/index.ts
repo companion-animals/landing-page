@@ -13,6 +13,7 @@ const images = {
   mouse: "images/mouse.png",
   rightSpeechBubble: "images/speech_bubble_right.png",
   leftSpeechBubble: "images/speech_bubble_left.png",
+  animals: "images/animals.png",
 };
 
 export default images;
