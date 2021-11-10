@@ -4,6 +4,7 @@ import {
   Light56,
   Light26,
   Light34,
+  Light54,
 } from "src/components/atoms/text/Typographies";
 import images from "src/images";
 
@@ -16,9 +17,21 @@ const Container = styled.div`
   padding-bottom: 80px;
 `;
 
-const Text = styled(Light56)``;
+const Text = styled(Light56)`
+  @media screen and (max-width: 750px) {
+    font-size: 54px;
+    white-space: pre-line;
+  }
+`;
 
-const Footer = styled(Light26)``;
+const Footer = styled(Light26)`
+  color: #868686;
+
+  @media screen and (max-width: 750px) {
+    white-space: pre-line;
+    text-align: center;
+  }
+`;
 
 const BorderChip = styled.div`
   padding: 30px;
@@ -30,21 +43,32 @@ const BorderChip = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 750px) {
+    padding: 20px;
+    margin-top: 62px;
+    margin-bottom: 59px;
+  }
 `;
 
-const Email = styled(Light34)``;
+const Email = styled(Light34)`
+  @media screen and (max-width: 750px) {
+    font-size: 32px;
+  }
+`;
 
 const EmailIcon = styled.img.attrs({ src: images.emailIcon })`
   margin-right: 20px;
 `;
 const QNASection = () => (
   <Container>
-    <Text>더 궁금하신 사항은 메일로 문의주세요!</Text>
+    <Text>{`더 궁금하신 사항은\n메일로 문의주세요!`}</Text>
+
     <BorderChip>
       <EmailIcon />
       <Email>specialban.official@gmail.com</Email>
     </BorderChip>
-    <Footer>ⓒ 2021 우리동네특별반 All Rights Reserved</Footer>
+    <Footer>{`ⓒ 2021 우리동네특별반\nAll Rights Reserved`}</Footer>
   </Container>
 );
 
