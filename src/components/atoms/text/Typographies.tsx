@@ -5,6 +5,7 @@ import FMText from "src/components/atoms/text/FMText";
 const ExtraBold = styled(FMText).attrs({ fontType: "EXTRA_BOLD" })``;
 const Bold = styled(FMText).attrs({ fontType: "BOLD" })``;
 const SemiBold = styled(FMText).attrs({ FontType: "SEMIBOLD" })``;
+const Heavy = styled(FMText).attrs({ fontType: "HEAVY" })``;
 const Medium = styled(FMText).attrs({ fontType: "MEDIUM" })``;
 const Regular = styled(FMText).attrs({ fontType: "REGULAR" })``;
 const Light = styled(FMText).attrs({ fontType: "LIGHT" })``;
@@ -29,6 +30,11 @@ export const ExtraBold28 = styled(ExtraBold)`
   line-height: 75px;
 `;
 
+export const ExtraBold24 = styled(ExtraBold)`
+  font-size: 24px;
+  line-height: normal;
+`;
+
 export const ExtraBold48 = styled(ExtraBold)`
   font-size: 48px;
   line-height: normal;
@@ -49,6 +55,11 @@ export const SemiBold38 = styled(SemiBold)`
   line-height: 50px;
 `;
 
+export const Heavy36 = styled(Heavy)`
+  font-size: 36px;
+  line-height: normal;
+`;
+
 export const Medium38 = styled(Medium)`
   font-size: 38px;
   line-height: normal;
@@ -56,6 +67,11 @@ export const Medium38 = styled(Medium)`
 
 export const Light56 = styled(Light)`
   font-size: 56px;
+  line-height: 75px;
+`;
+
+export const Light54 = styled(Light)`
+  font-size: 54px;
   line-height: 75px;
 `;
 
@@ -72,6 +88,16 @@ export const Light48 = styled(Light)`
 export const Light34 = styled(Light)`
   font-size: 34px;
   line-height: normal;
+`;
+
+export const Light32 = styled(Light)`
+  font-size: 32px;
+  line-height: normal;
+`;
+
+export const Light30 = styled(Light)`
+  font-size: 30px;
+  line-height: 42px;
 `;
 
 export const Light24 = styled(Light)`
