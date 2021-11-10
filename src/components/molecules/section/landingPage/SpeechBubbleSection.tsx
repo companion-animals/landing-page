@@ -77,7 +77,7 @@ const RightSpeechBubble = styled.img.attrs({ src: images.rightSpeechBubble })`
 
   @media screen and (max-width: 750px) {
     width: 509px;
-    margin-left: 100px;
+    margin-left: 80px;
   }
 `;
 
@@ -93,7 +93,7 @@ const SecondLeftSpeechubble = styled.img.attrs({
   margin-right: 300px;
 
   @media screen and (max-width: 750px) {
-    margin-left: 200px;
+    margin-right: 100px;
   }
 `;
 
@@ -142,8 +142,6 @@ const BoldText = styled(Bold28)`
 
   @media screen and (max-width: 750px) {
     font-size: 26px;
-    margin-left: 200px;
-    margin-right: 190px;
     text-align: left;
   }
 `;
@@ -151,35 +149,51 @@ const BoldText = styled(Bold28)`
 const RightBoldText = styled(BoldText)`
   top: 40px;
   right: 45px;
+
+  @media screen and (max-width: 750px) {
+    right: 45px;
+  }
 `;
 
 const LeftBoldText = styled(BoldText)`
   top: 40px;
   left: 115px;
+
+  @media screen and (max-width: 750px) {
+    left: 150px;
+  }
 `;
 
 const SecondRightText = styled(BoldText)`
   top: 40px;
   right: 60px;
+
+  @media screen and (max-width: 750px) {
+    right: 50px;
+  }
 `;
 
 const SecondLeftText = styled(BoldText)`
   top: 40px;
   left: 130px;
+
+  @media screen and (max-width: 750px) {
+    left: 170px;
+  }
 `;
 
 const Icon = styled.span`
   position: absolute;
   font-size: 60px;
-
-  @media screen and (max-width: 750px) {
-    margin-left: 200px;
-  }
 `;
 
 const ConsiderICon = styled(Icon)`
   left: 40px;
   top: 30px;
+
+  @media screen and (max-width: 750px) {
+    left: 60px;
+  }
 `;
 
 const EmbarassmentIcon = styled(Icon)`
@@ -187,13 +201,17 @@ const EmbarassmentIcon = styled(Icon)`
   left: 340px;
 
   @media screen and (max-width: 750px) {
-    left: 120px;
+    left: 130px;
   }
 `;
 
 const TearsIcon = styled(Icon)`
   top: 30px;
   left: 40px;
+
+  @media screen and (max-width: 750px) {
+    left: 70px;
+  }
 `;
 
 const SadIcon = styled(Icon)`
@@ -201,7 +219,7 @@ const SadIcon = styled(Icon)`
   left: 350px;
 
   @media screen and (max-width: 750px) {
-    left: 130px;
+    left: 140px;
   }
 `;
 

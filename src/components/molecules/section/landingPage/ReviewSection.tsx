@@ -37,6 +37,7 @@ const ContentWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     margin-bottom: -35px;
+    width: auto;
   }
 `;
 
