@@ -45,7 +45,7 @@ const BorderChip = styled.div`
 
 const BackgroundChip = styled(BorderChip)`
   border: none;
-  background-color: #d4d0f5;
+  background-color: #7065e7;
 `;
 
 const Text = styled(Medium38)`
@@ -69,11 +69,11 @@ const ExplanationSection = () => (
         <ColoredText>특수동물 전문 돌봄 서비스</ColoredText>
       </BorderChip>
       <BackgroundChip>
-        <ColoredText>추가 서비스 요청 가능</ColoredText>
+        <Text>추가 서비스 요청 가능</Text>
       </BackgroundChip>
-      <DarkBackgroundChip>
-        <Text>우리동네 근처 펫시터 매칭</Text>
-      </DarkBackgroundChip>
+      <BorderChip>
+        <ColoredText>우리동네 근처 펫시터 매칭</ColoredText>
+      </BorderChip>
     </ContentWrapper>
   </Container>
 );
