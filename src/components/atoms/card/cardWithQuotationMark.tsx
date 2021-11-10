@@ -1,14 +1,10 @@
 import styled from "styled-components";
 
-import {
-  ExtraBold56,
-  Light56,
-  ExtraBold48,
-  Light24,
-} from "src/components/atoms/text/Typographies";
+import { ExtraBold48, Light24 } from "src/components/atoms/text/Typographies";
 
 interface Props {
   content: string;
+  className?: string;
 }
 
 const Card = styled.div`
@@ -29,8 +25,8 @@ const ContextText = styled(Light24)`
   white-space: pre-line;
 `;
 
-const CardWithQuotationMark = ({ content }: Props) => (
-  <Card>
+const CardWithQuotationMark = ({ className, content }: Props) => (
+  <Card className={className}>
     <QuotationMark>“</QuotationMark>
     <ContextText>{content}</ContextText>
     <QuotationMark>”</QuotationMark>
