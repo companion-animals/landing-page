@@ -16,6 +16,13 @@ const Container = styled.div`
   padding-top: 50px;
   padding-bottom: 80px;
   background-color: #e5e2f2;
+
+  @media screen and (max-width: 750px) {
+    padding-top: 80px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const RightAngleIcon = styled(XEIcon).attrs({ type: "xi-angle-right" })`
@@ -42,6 +49,10 @@ const SignUpButton = styled.div`
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
   border-radius: 10px;
   margin-bottom: 30px;
+
+  @media screen and (max-width: 750px) {
+    display: none;
+  }
 `;
 
 const SignUpButtonText = styled(ExtraBold28)`
@@ -63,6 +74,11 @@ const SpeechBubbleWrapper = styled.div`
 const RightSpeechBubble = styled.img.attrs({ src: images.rightSpeechBubble })`
   width: 530px;
   margin-left: 300px;
+
+  @media screen and (max-width: 750px) {
+    width: 509px;
+    margin-left: 100px;
+  }
 `;
 
 const LeftSpeechubble = styled.img.attrs({ src: images.leftSpeechBubble })`
@@ -75,25 +91,62 @@ const SecondLeftSpeechubble = styled.img.attrs({
   width: 468px;
   height: 180px;
   margin-right: 300px;
+
+  @media screen and (max-width: 750px) {
+    margin-left: 200px;
+  }
 `;
 
 const MediumText = styled(Medium40)`
   margin-bottom: 36px;
   margin-top: 70px;
+
+  @media screen and (max-width: 750px) {
+    font-size: 34px;
+    margin-bottom: 15px;
+  }
 `;
 
 const BoldTitle = styled(Bold56)`
   display: inline;
+
+  @media screen and (max-width: 750px) {
+    font-size: 34px;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 15px;
+  }
+`;
+
+const ExtraBoldTitle = styled(BoldTitle)`
+  @media screen and (max-width: 750px) {
+    white-space: pre-line;
+    font-weight: 800;
+    font-size: 56px;
+  }
 `;
 
 const ColoredTitle = styled(BoldTitle)`
   color: #7065e7;
   display: inline;
+
+  @media screen and (max-width: 750px) {
+    white-space: pre-line;
+    font-weight: 800;
+    font-size: 56px;
+  }
 `;
 
 const BoldText = styled(Bold28)`
   position: absolute;
   white-space: pre-line;
+
+  @media screen and (max-width: 750px) {
+    font-size: 26px;
+    margin-left: 200px;
+    margin-right: 190px;
+    text-align: left;
+  }
 `;
 
 const RightBoldText = styled(BoldText)`
@@ -119,6 +172,10 @@ const SecondLeftText = styled(BoldText)`
 const Icon = styled.span`
   position: absolute;
   font-size: 60px;
+
+  @media screen and (max-width: 750px) {
+    margin-left: 200px;
+  }
 `;
 
 const ConsiderICon = styled(Icon)`
@@ -129,6 +186,10 @@ const ConsiderICon = styled(Icon)`
 const EmbarassmentIcon = styled(Icon)`
   top: 30px;
   left: 340px;
+
+  @media screen and (max-width: 750px) {
+    left: 120px;
+  }
 `;
 
 const TearsIcon = styled(Icon)`
@@ -139,6 +200,10 @@ const TearsIcon = styled(Icon)`
 const SadIcon = styled(Icon)`
   top: 30px;
   left: 350px;
+
+  @media screen and (max-width: 750px) {
+    left: 130px;
+  }
 `;
 
 const InlineWrapper = styled.div``;
@@ -179,8 +244,10 @@ const SpeechBubbleSection = () => (
       <MediumText>특별한 아이를 맡길 곳을 고민 중이었다면...</MediumText>
       <BoldTitle>이제는 걱정하지 마세요.</BoldTitle>
       <InlineWrapper>
-        <ColoredTitle>우리동네 특별반</ColoredTitle>
-        <BoldTitle>이 안전하게 돌봐드릴게요!</BoldTitle>
+        <ExtraBoldTitle>
+          <ColoredTitle>우리동네 특별반</ColoredTitle>
+          {`이\n안전하게 돌봐드릴게요!`}
+        </ExtraBoldTitle>
       </InlineWrapper>
     </ContentContainer>
   </Container>
