@@ -8,8 +8,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 97px;
-  padding-bottom: 184px;
+  padding-top: 70px;
+  padding-bottom: 100px;
   background-color: #e5e2f2;
 
   @media screen and (max-width: 750px) {
