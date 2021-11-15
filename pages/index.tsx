@@ -14,6 +14,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 `;
 
 const Line = styled.div`
@@ -23,7 +24,7 @@ const Line = styled.div`
   max-width: 1670px;
 
   @media screen and (max-width: 750px) {
-    max-width: 522px;
+    max-width: 350px;
   }
 `;
 const Home = () => (

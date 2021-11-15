@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import CardWithQuotationMark from "src/components/atoms/card/cardWithQuotationMark";
-import { ExtraBold56, Light56 } from "src/components/atoms/text/Typographies";
+import { ExtraBold44, Light44 } from "src/components/atoms/text/Typographies";
 
 const Container = styled.div`
   width: 100%;
@@ -19,19 +19,27 @@ const TitleWrapper = styled.div`
   align-items: center;
 `;
 
-const LightText = styled(Light56)`
+const LightText = styled(Light44)`
   color: #ffffff;
+
+  @media screen and (max-width: 750px) {
+    font-size: 36px;
+  }
 `;
 
-const BoldText = styled(ExtraBold56)`
+const BoldText = styled(ExtraBold44)`
   color: #ffffff;
+
+  @media screen and (max-width: 750px) {
+    font-size: 36px;
+  }
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 60px;
-  width: 1090px;
+  width: 900px;
 
   @media screen and (max-width: 750px) {
     flex-direction: column;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Light26 } from "src/components/atoms/text/Typographies";
+import { Light20 } from "src/components/atoms/text/Typographies";
 
 interface Props {
   className?: string;
@@ -9,10 +9,10 @@ interface Props {
 }
 
 const Container = styled.div`
-  width: 1000px;
+  width: 900px;
 
   @media screen and (max-width: 750px) {
-    width: 573px;
+    width: 320px;
   }
 `;
 
@@ -30,7 +30,7 @@ const ContentBox = styled.div`
   }
 `;
 
-const Content = styled(Light26)`
+const Content = styled(Light20)`
   white-space: pre-line;
   margin-left: 33px;
   margin-top: 20px;
@@ -38,6 +38,10 @@ const Content = styled(Light26)`
 
   @media screen and (max-width: 750px) {
     white-space: normal;
+    font-size: 12px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    line-height: normal;
   }
 `;
 
@@ -46,6 +50,11 @@ const Title = styled(Content)`
   margin-left: 33px;
   margin-top: 15px;
   margin-bottom: 15px;
+
+  @media screen and (max-width: 750px) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 `;
 
 const QNABox = ({ className, title, content }: Props) => (

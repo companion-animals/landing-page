@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { ExtraBold48, Light24 } from "src/components/atoms/text/Typographies";
+import { ExtraBold36, Light20 } from "src/components/atoms/text/Typographies";
 
 interface Props {
   content: string;
@@ -8,8 +8,8 @@ interface Props {
 }
 
 const Card = styled.div`
-  width: 340px;
-  height: 474px;
+  width: 280px;
+  height: 420px;
   background-color: #ffffff;
   border-radius: 25px;
   text-align: center;
@@ -17,12 +17,26 @@ const Card = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 750px) {
+    width: 220px;
+    height: 320px;
+  }
 `;
 
-const QuotationMark = styled(ExtraBold48)``;
+const QuotationMark = styled(ExtraBold36)`
+  @media screen and (max-width: 750px) {
+    font-size: 30px;
+  }
+`;
 
-const ContextText = styled(Light24)`
+const ContextText = styled(Light20)`
   white-space: pre-line;
+
+  @media screen and (max-width: 750px) {
+    font-size: 16px;
+    line-height: 26px;
+  }
 `;
 
 const CardWithQuotationMark = ({ className, content }: Props) => (

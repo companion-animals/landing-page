@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-import { ExtraBold56, Medium38 } from "src/components/atoms/text/Typographies";
+import {
+  ExtraBold40,
+  Medium24,
+  ExtraBold36,
+} from "src/components/atoms/text/Typographies";
 import images from "src/images";
 
 const Container = styled.div`
@@ -8,7 +12,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding-top: 140px;
+  padding-top: 90px;
   padding-bottom: 50px;
   text-align: center;
 
@@ -16,6 +20,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-top: 70px;
   }
 `;
 
@@ -26,38 +31,39 @@ const ContentWrapper = styled.div`
 `;
 
 const RabbitImage = styled.img.attrs({ src: images.rabbitBG })`
-  width: 826px;
-  height: 437px;
+  width: 626px;
+  height: 340px;
   margin-right: 66px;
 
   @media screen and (max-width: 750px) {
-    width: 657px;
-    height: 387px;
-    margin-bottom: 78px;
+    width: 330px;
+    height: 187px;
+    margin-bottom: 60px;
   }
 `;
 
-const Title = styled(ExtraBold56)`
+const Title = styled(ExtraBold40)`
   white-space: pre-line;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 
   @media screen and (max-width: 750px) {
     display: none;
   }
 `;
 
-const MobileTitle = styled(Title)`
+const MobileTitle = styled(ExtraBold36)`
   display: none;
 
   @media screen and (max-width: 750px) {
     display: block;
-    margin-bottom: 110px;
+    margin-bottom: 70px;
+    white-space: pre-line;
   }
 `;
 
 const BorderChip = styled.div`
-  width: 456px;
-  padding: 22px 0px;
+  width: 300px;
+  padding: 15px 0px;
   border: 2px solid #7065e7;
   background-color: #fafafa;
   border-radius: 60px;
@@ -66,6 +72,10 @@ const BorderChip = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+
+  @media screen and (max-width: 750px) {
+    width: 280px;
+  }
 `;
 
 const BackgroundChip = styled(BorderChip)`
@@ -73,8 +83,12 @@ const BackgroundChip = styled(BorderChip)`
   background-color: #7065e7;
 `;
 
-const Text = styled(Medium38)`
+const Text = styled(Medium24)`
   color: #ffffff;
+
+  @media screen and (max-width: 750px) {
+    font-size: 20px;
+  }
 `;
 
 const ColoredText = styled(Text)`

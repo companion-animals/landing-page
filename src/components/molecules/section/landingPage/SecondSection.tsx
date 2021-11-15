@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { ExtraBold56, Light48 } from "src/components/atoms/text/Typographies";
+import { ExtraBold44, Light38 } from "src/components/atoms/text/Typographies";
 import images from "src/images";
 
 const Container = styled.div`
@@ -16,30 +16,45 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-top: 60px;
   }
 `;
 
 const AnimalImage = styled.img.attrs({ src: images.animals })`
-  height: 564px;
+  height: 500px;
+
+  @media screen and (max-width: 750px) {
+    height: 400px;
+  }
 `;
 
 const TitleWrapper = styled.div`
   white-space: pre-line;
   margin-right: 142px;
-  margin-top: 90px;
+  margin-top: 70px;
 
   @media screen and (max-width: 750px) {
     margin-right: 0px;
-    margin-bottom: 130px;
+    margin-bottom: 70px;
     margin-top: 0px;
   }
 `;
 
-const LightTitle = styled(Light48)`
+const LightTitle = styled(Light38)`
   color: #252525;
+  margin-bottom: 15px;
+
+  @media screen and (max-width: 750px) {
+    font-size: 24px;
+    margin-bottom: 0px;
+  }
 `;
 
-const BoldTitle = styled(ExtraBold56)``;
+const BoldTitle = styled(ExtraBold44)`
+  @media screen and (max-width: 750px) {
+    font-size: 30px;
+  }
+`;
 
 const ColoredBoldTitle = styled(BoldTitle)`
   color: #7065e7;

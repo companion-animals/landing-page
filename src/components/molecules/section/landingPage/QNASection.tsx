@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 import {
-  Light56,
+  Light16,
+  Light44,
+  Light30,
   Light26,
-  Light34,
-  Light54,
 } from "src/components/atoms/text/Typographies";
 import images from "src/images";
 
@@ -15,50 +15,62 @@ const Container = styled.div`
   align-items: center;
   padding-top: 115px;
   padding-bottom: 80px;
+
+  @media screen and (max-width: 750px) {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
 `;
 
-const Text = styled(Light56)`
+const Text = styled(Light44)`
   @media screen and (max-width: 750px) {
-    font-size: 54px;
+    font-size: 32px;
     white-space: pre-line;
   }
 `;
 
-const Footer = styled(Light26)`
+const Footer = styled(Light16)`
   color: #868686;
 
   @media screen and (max-width: 750px) {
     white-space: pre-line;
     text-align: center;
+    line-height: 22px;
+    font-size: 12px;
   }
 `;
 
 const BorderChip = styled.div`
-  padding: 30px;
+  padding: 15px 25px;
   border: 2px solid #7065e7;
   background-color: #fafafa;
   border-radius: 60px;
-  margin-top: 79px;
+  margin-top: 30px;
   margin-bottom: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
 
   @media screen and (max-width: 750px) {
-    padding: 20px;
-    margin-top: 62px;
-    margin-bottom: 59px;
+    padding: 5px 16px;
+    margin-top: 20px;
+    margin-bottom: 30px;
   }
 `;
 
-const Email = styled(Light34)`
+const Email = styled(Light26)`
   @media screen and (max-width: 750px) {
-    font-size: 32px;
+    font-size: 16px;
   }
 `;
 
 const EmailIcon = styled.img.attrs({ src: images.emailIcon })`
   margin-right: 20px;
+
+  @media screen and (max-width: 750px) {
+    width: 26px;
+    margin-right: 12px;
+  }
 `;
 const QNASection = () => (
   <Container>

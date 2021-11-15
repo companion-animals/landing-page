@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 import {
-  ExtraBold56,
-  ExtraBold48,
-  ExtraBold68,
-  SemiBold38,
-  Light38,
+  ExtraBold38,
+  ExtraBold44,
+  ExtraBold32,
+  SemiBold32,
+  Light32,
+  Light36,
   Light30,
 } from "src/components/atoms/text/Typographies";
 
@@ -19,9 +20,9 @@ const Container = styled.div`
   padding-bottom: 20px;
 `;
 
-const Title = styled(ExtraBold56)`
+const Title = styled(ExtraBold44)`
   white-space: pre-line;
-  margin-bottom: 78px;
+  margin-bottom: 30px;
 
   @media screen and (max-width: 750px) {
     display: none;
@@ -35,29 +36,38 @@ const Wrapper = styled.div`
   margin-bottom: 58px;
 `;
 
-const Number = styled(ExtraBold68)`
+const Number = styled(ExtraBold38)`
   color: #7065e7;
+
+  @media screen and (max-width: 750px) {
+    font-size: 28px;
+  }
 `;
 
-const DetailLight = styled(Light38)`
+const DetailLight = styled(Light32)`
   color: #252525;
   display: inline;
   white-space: pre-line;
 `;
 
-const DetailSemiBold = styled(SemiBold38)`
+const DetailSemiBold = styled(SemiBold32)`
   color: #000000;
   display: inline;
   white-space: pre-line;
-  margin-top: 37px;
 
   @media screen and (max-width: 750px) {
     display: none;
   }
 `;
 
-const BoldDetail = styled(ExtraBold48)`
+const BoldDetail = styled(ExtraBold38)`
   color: #7065e7;
+
+  @media screen and (max-width: 750px) {
+    font-size: 28px;
+    line-height: normal;
+    margin-bottom: 10px;
+  }
 `;
 
 const MobileText = styled(Light30)`
@@ -66,17 +76,19 @@ const MobileText = styled(Light30)`
   @media screen and (max-width: 750px) {
     display: block;
     white-space: pre-line;
-    margin-top: 35px;
+    margin-top: 0px;
+    font-size: 20px;
+    line-height: normal;
   }
 `;
 
-const MobileTitle = styled(ExtraBold56)`
+const MobileTitle = styled(ExtraBold32)`
   display: none;
 
   @media screen and (max-width: 750px) {
     display: block;
     white-space: pre-line;
-    margin-bottom: 140px;
+    margin-bottom: 50px;
   }
 `;
 

@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 import XEIcon from "src/components/atoms/icon/XEIcon";
 import {
-  ExtraBold56,
-  ExtraBold28,
+  ExtraBold22,
+  ExtraBold36,
+  ExtraBold48,
 } from "src/components/atoms/text/Typographies";
 import images from "src/images";
 
@@ -19,20 +20,33 @@ const Wrapper = styled.div`
   position: relative;
 `;
 
+const ContentWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+
+  @media screen and (max-width: 750px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    margin-top: 0px;
+  }
+`;
+
 const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 230px;
+  margin-top: 190px;
   display: inline;
   white-space: pre-line;
   margin-left: 20px;
 
   @media screen and (max-width: 750px) {
-    margin-top: 150px;
+    margin-top: 80px;
   }
 `;
 
-const SectionTitle = styled(ExtraBold56)`
+const SectionTitle = styled(ExtraBold48)`
   display: inline;
 
   @media screen and (max-width: 750px) {
@@ -40,7 +54,7 @@ const SectionTitle = styled(ExtraBold56)`
   }
 `;
 
-const MobileTitle = styled(SectionTitle)`
+const MobileTitle = styled(ExtraBold36)`
   display: none;
 
   @media screen and (max-width: 750px) {
@@ -48,23 +62,22 @@ const MobileTitle = styled(SectionTitle)`
   }
 `;
 
-const ColoredTitle = styled(ExtraBold56)`
+const ColoredTitle = styled(ExtraBold48)`
   color: #7065e7;
   display: inline;
-`;
-
-const ContentWrapper = styled.div`
-  display: flex;
 
   @media screen and (max-width: 750px) {
-    flex-direction: column-reverse;
-    align-items: center;
-    text-align: center;
+    font-size: 36px;
+    line-height: 46px;
   }
 `;
 
 const ParrotImage = styled.img.attrs({ src: images.parrot })`
-  width: 474px;
+  width: 370px;
+
+  @media screen and (max-width: 750px) {
+    width: 270px;
+  }
 `;
 
 const SignUpButton = styled.div`
@@ -77,10 +90,9 @@ const SignUpButton = styled.div`
   border-radius: 10px;
   margin-top: 50px;
   background-color: #6448bf;
-  padding-right: 38px;
-  padding-left: 38px;
-  width: 255px;
-  margin-top: 45px;
+  padding: 15px 30px;
+  width: 210px;
+  margin-top: 30px;
 
   @media screen and (max-width: 750px) {
     display: none;
@@ -93,50 +105,33 @@ const MobileSignUpButton = styled(SignUpButton)`
   @media screen and (max-width: 750px) {
     display: flex;
     position: absolute;
-    bottom: 120px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-`;
-
-const ApplyButton = styled(SignUpButton)`
-  position: absolute;
-  right: 0px;
-  padding-right: 26px;
-  padding-left: 26px;
-  background-color: #ffffff;
-
-  @media screen and (max-width: 750px) {
-    display: none;
+    bottom: 50px;
+    padding: 10px 20px;
+    width: 160px;
   }
 `;
 
 const RightAngleIcon = styled(XEIcon).attrs({ type: "xi-angle-right" })`
   color: #ffffff;
   font-weight: 800;
-  font-size: 20px;
-  margin-left: 5px;
+  font-size: 18px;
+
+  @media screen and (max-width: 750px) {
+    font-size: 15px;
+  }
 `;
 
-const ApplyButtonText = styled(ExtraBold28)`
-  color: #8d86eb;
-`;
-
-const SignUpButtonText = styled(ExtraBold28)`
+const SignUpButtonText = styled(ExtraBold22)`
   color: #ffffff;
-`;
 
-const ColoredAngleIcon = styled(RightAngleIcon)`
-  color: #8d86eb;
+  @media screen and (max-width: 750px) {
+    font-size: 18px;
+  }
 `;
 
 const IntroSection = () => (
   <Container>
     <Wrapper>
-      <ApplyButton>
-        <ApplyButtonText> 펫시터 지원하기</ApplyButtonText>
-        <ColoredAngleIcon />
-      </ApplyButton>
       <ContentWrapper>
         <ParrotImage />
         <TitleWrapper>

@@ -1,11 +1,9 @@
 import styled from "styled-components";
 
-import XEIcon from "src/components/atoms/icon/XEIcon";
 import {
   Bold28,
-  Bold56,
-  Medium40,
-  ExtraBold28,
+  Bold44,
+  Medium38,
 } from "src/components/atoms/text/Typographies";
 import images from "src/images";
 
@@ -25,40 +23,6 @@ const Container = styled.div`
   }
 `;
 
-const RightAngleIcon = styled(XEIcon).attrs({ type: "xi-angle-right" })`
-  color: #ffffff;
-  font-weight: 800;
-  font-size: 20px;
-  margin-left: 5px;
-`;
-
-const ButtonWrapper = styled.div`
-  max-width: 1550px;
-  display: flex;
-  justify-content: flex-end;
-`;
-
-const SignUpButton = styled.div`
-  background-color: #6448bf;
-  width: 255px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 38px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
-  border-radius: 10px;
-  margin-bottom: 30px;
-
-  @media screen and (max-width: 750px) {
-    display: none;
-  }
-`;
-
-const SignUpButtonText = styled(ExtraBold28)`
-  color: #ffffff;
-`;
-
 const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -76,44 +40,52 @@ const RightSpeechBubble = styled.img.attrs({ src: images.rightSpeechBubble })`
   margin-left: 300px;
 
   @media screen and (max-width: 750px) {
-    width: 509px;
-    margin-left: 80px;
+    width: 320px;
+    margin-left: 50px;
   }
 `;
 
 const LeftSpeechubble = styled.img.attrs({ src: images.leftSpeechBubble })`
   width: 581px;
+
+  @media screen and (max-width: 750px) {
+    width: 350px;
+    margin-left: -20px;
+  }
 `;
 
 const SecondLeftSpeechubble = styled.img.attrs({
   src: images.leftSpeechBubble,
 })`
-  width: 468px;
+  width: 470px;
   height: 180px;
   margin-right: 300px;
 
   @media screen and (max-width: 750px) {
+    width: 270px;
+    height: 100px;
     margin-right: 100px;
   }
 `;
 
-const MediumText = styled(Medium40)`
-  margin-bottom: 36px;
+const MediumText = styled(Medium38)`
+  margin-bottom: 20px;
   margin-top: 70px;
 
   @media screen and (max-width: 750px) {
-    font-size: 34px;
-    margin-bottom: 15px;
+    font-size: 20px;
+    margin-bottom: 5px;
   }
 `;
 
-const BoldTitle = styled(Bold56)`
+const BoldTitle = styled(Bold44)`
   display: inline;
 
   @media screen and (max-width: 750px) {
-    font-size: 34px;
+    font-size: 20px;
     font-weight: 500;
     line-height: normal;
+    margin-bottom: 5px;
   }
 `;
 
@@ -121,7 +93,7 @@ const ExtraBoldTitle = styled(BoldTitle)`
   @media screen and (max-width: 750px) {
     white-space: pre-line;
     font-weight: 800;
-    font-size: 56px;
+    font-size: 30px;
   }
 `;
 
@@ -132,7 +104,7 @@ const ColoredTitle = styled(BoldTitle)`
   @media screen and (max-width: 750px) {
     white-space: pre-line;
     font-weight: 800;
-    font-size: 56px;
+    font-size: 30px;
   }
 `;
 
@@ -141,7 +113,8 @@ const BoldText = styled(Bold28)`
   white-space: pre-line;
 
   @media screen and (max-width: 750px) {
-    font-size: 26px;
+    font-size: 16px;
+    line-height: normal;
     text-align: left;
   }
 `;
@@ -151,7 +124,8 @@ const RightBoldText = styled(BoldText)`
   right: 45px;
 
   @media screen and (max-width: 750px) {
-    right: 45px;
+    right: 30px;
+    top: 20px;
   }
 `;
 
@@ -160,7 +134,8 @@ const LeftBoldText = styled(BoldText)`
   left: 115px;
 
   @media screen and (max-width: 750px) {
-    left: 150px;
+    left: 80px;
+    top: 22px;
   }
 `;
 
@@ -169,7 +144,8 @@ const SecondRightText = styled(BoldText)`
   right: 60px;
 
   @media screen and (max-width: 750px) {
-    right: 50px;
+    right: 40px;
+    top: 20px;
   }
 `;
 
@@ -178,13 +154,18 @@ const SecondLeftText = styled(BoldText)`
   left: 130px;
 
   @media screen and (max-width: 750px) {
-    left: 170px;
+    left: 80px;
+    top: 17px;
   }
 `;
 
 const Icon = styled.span`
   position: absolute;
   font-size: 60px;
+
+  @media screen and (max-width: 750px) {
+    font-size: 36px;
+  }
 `;
 
 const ConsiderICon = styled(Icon)`
@@ -192,7 +173,8 @@ const ConsiderICon = styled(Icon)`
   top: 30px;
 
   @media screen and (max-width: 750px) {
-    left: 60px;
+    left: 30px;
+    top: 17px;
   }
 `;
 
@@ -201,7 +183,8 @@ const EmbarassmentIcon = styled(Icon)`
   left: 340px;
 
   @media screen and (max-width: 750px) {
-    left: 130px;
+    left: 80px;
+    top: 17px;
   }
 `;
 
@@ -210,7 +193,8 @@ const TearsIcon = styled(Icon)`
   left: 40px;
 
   @media screen and (max-width: 750px) {
-    left: 70px;
+    left: 30px;
+    top: 12px;
   }
 `;
 
@@ -219,7 +203,8 @@ const SadIcon = styled(Icon)`
   left: 350px;
 
   @media screen and (max-width: 750px) {
-    left: 140px;
+    left: 90px;
+    top: 17px;
   }
 `;
 
@@ -227,12 +212,6 @@ const InlineWrapper = styled.div``;
 
 const SpeechBubbleSection = () => (
   <Container>
-    <ButtonWrapper>
-      <SignUpButton>
-        <SignUpButtonText>지금 신청하기</SignUpButtonText>
-        <RightAngleIcon />
-      </SignUpButton>
-    </ButtonWrapper>
     <ContentContainer>
       <SpeechBubbleContainer>
         <SpeechBubbleWrapper>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import QNABox from "src/components/atoms/box/Q&ABox";
-import { ExtraBold56 } from "src/components/atoms/text/Typographies";
+import { ExtraBold44 } from "src/components/atoms/text/Typographies";
 
 const Container = styled.div`
   width: 100%;
@@ -11,12 +11,25 @@ const Container = styled.div`
   padding-top: 97px;
   padding-bottom: 184px;
   background-color: #e5e2f2;
+
+  @media screen and (max-width: 750px) {
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
 `;
 
-const BoldText = styled(ExtraBold56)``;
+const BoldText = styled(ExtraBold44)`
+  @media screen and (max-width: 750px) {
+    font-size: 36px;
+  }
+`;
 
 const ContentWrapper = styled.div`
   margin-top: 70px;
+
+  @media screen and (max-width: 750px) {
+    margin-top: 30px;
+  }
 `;
 
 const FAQSection = () => (
