@@ -6,16 +6,22 @@ import { ExtraBold18, Heavy30 } from "src/components/atoms/text/Typographies";
 const Container = styled.div`
   width: 100%;
   background-color: #ffffff;
-  border: 1px solid #d2d2d2;
+  border-bottom: 1px solid #d2d2d2;
   padding: 25px 50px;
+  display: flex;
+  justify-content: center;
+  @media screen and (max-width: 750px) {
+    padding: 15px 30px;
+  }
+`;
+
+const Wrapper = styled.div`
+  width: 100%;
+  max-width: 1080px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-
-  @media screen and (max-width: 750px) {
-    padding: 15px 30px;
-  }
 `;
 
 const Text = styled(Heavy30)`
@@ -66,11 +72,13 @@ const ApplyButtonText = styled(ExtraBold18)`
 
 const TopBar = () => (
   <Container>
-    <Text>우리동네 특별반</Text>
-    <ApplyButton>
-      <ApplyButtonText> 펫시터 지원</ApplyButtonText>
-      <RightAngleIcon />
-    </ApplyButton>
+    <Wrapper>
+      <Text>우리동네 특별반</Text>
+      <ApplyButton>
+        <ApplyButtonText> 펫시터 지원</ApplyButtonText>
+        <RightAngleIcon />
+      </ApplyButton>
+    </Wrapper>
   </Container>
 );
 
