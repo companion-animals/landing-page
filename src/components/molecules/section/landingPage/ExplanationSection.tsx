@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 import {
   ExtraBold40,
-  Medium24,
   ExtraBold36,
 } from "src/components/atoms/text/Typographies";
+import ChipAccordion from "src/components/molecules/accordion/ChipAccordion";
 import images from "src/images";
 
 const Container = styled.div`
@@ -61,55 +61,24 @@ const MobileTitle = styled(ExtraBold36)`
   }
 `;
 
-const BorderChip = styled.div`
-  width: 300px;
-  padding: 15px 0px;
-  border: 2px solid #7065e7;
-  background-color: #fafafa;
-  border-radius: 60px;
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-
-  @media screen and (max-width: 750px) {
-    width: 280px;
-  }
-`;
-
-const BackgroundChip = styled(BorderChip)`
-  border: none;
-  background-color: #7065e7;
-`;
-
-const Text = styled(Medium24)`
-  color: #ffffff;
-
-  @media screen and (max-width: 750px) {
-    font-size: 20px;
-  }
-`;
-
-const ColoredText = styled(Text)`
-  color: #7065e7;
-`;
-
 const ExplanationSection = () => (
   <Container>
     <MobileTitle>{`맞춤 서비스로\n돌봄 만족도가 높아요`}</MobileTitle>
     <RabbitImage />
     <ContentWrapper>
       <Title>{`맞춤 서비스로\n돌봄 만족도가 높아요`}</Title>
-      <BorderChip>
-        <ColoredText>특수동물 전문 돌봄 서비스</ColoredText>
-      </BorderChip>
-      <BackgroundChip>
-        <Text>추가 서비스 요청 가능</Text>
-      </BackgroundChip>
-      <BorderChip>
-        <ColoredText>우리동네 근처 펫시터 매칭</ColoredText>
-      </BorderChip>
+      <ChipAccordion
+        title="특수동물 전문 돌봄 서비스"
+        content={`특수동물 전문 돌봄 서비스이기에\n개별 종 특성에 맞는 돌봄이 가능해요.`}
+      />
+      <ChipAccordion
+        title="추가 서비스 요청 가능"
+        content={`맡기는 동물의 특성에 따라\n추가 서비스 요청이 가능해요\n(비용 별도 청구)`}
+      />
+      <ChipAccordion
+        title="우리동네 근처 펫시터 매칭"
+        content={`맡기기 편한 우리동네 근처의 \n펫시터가 매칭돼요.`}
+      />
     </ContentWrapper>
   </Container>
 );
