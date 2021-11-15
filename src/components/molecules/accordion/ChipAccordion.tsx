@@ -19,7 +19,6 @@ const BorderChip = styled.div<{ isOpen?: boolean }>`
   border: 2px solid #7065e7;
   background-color: ${({ isOpen }) => (isOpen ? "#7065e7;" : "#fafafa")};
   border-radius: 60px;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,7 +45,7 @@ const ContentContainer = styled.div<{ height: string }>`
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  margin-bottom: 15px;
+  margin: 15px 0px;
 `;
 
 const Wrapper = styled.div``;
