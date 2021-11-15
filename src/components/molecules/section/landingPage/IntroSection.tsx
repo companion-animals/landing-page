@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import XEIcon from "src/components/atoms/icon/XEIcon";
 import {
@@ -7,6 +7,21 @@ import {
   ExtraBold48,
 } from "src/components/atoms/text/Typographies";
 import images from "src/images";
+
+const FLOAT_KEYFRAME = keyframes`
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-5px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+`;
 
 const Container = styled.div`
   width: 100%;
@@ -93,6 +108,8 @@ const SignUpButton = styled.div`
   padding: 15px 30px;
   width: 210px;
   margin-top: 30px;
+  transform: translatey(0px);
+  animation: ${FLOAT_KEYFRAME} 6s ease-in-out infinite;
 
   @media screen and (max-width: 750px) {
     display: none;
@@ -108,6 +125,8 @@ const MobileSignUpButton = styled(SignUpButton)`
     bottom: 50px;
     padding: 10px 20px;
     width: 160px;
+    transform: translatey(0px);
+    animation: ${FLOAT_KEYFRAME} 6s ease-in-out infinite;
   }
 `;
 
