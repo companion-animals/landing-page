@@ -45,7 +45,8 @@ const ContentContainer = styled.div<{ height: string }>`
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  margin: 15px 0px;
+  margin-top: 15px;
+  margin-bottom: ${({ height }) => (height !== "0px" ? "15px" : "0px")};
 `;
 
 const Wrapper = styled.div``;
