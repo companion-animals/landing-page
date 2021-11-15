@@ -6,7 +6,6 @@ import {
   ExtraBold32,
   SemiBold32,
   Light32,
-  Light36,
   Light30,
 } from "src/components/atoms/text/Typographies";
 

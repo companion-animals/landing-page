@@ -3,7 +3,6 @@ import styled from "styled-components";
 import {
   Light16,
   Light44,
-  Light30,
   Light26,
 } from "src/components/atoms/text/Typographies";
 import images from "src/images";
