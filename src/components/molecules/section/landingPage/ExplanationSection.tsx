@@ -73,7 +73,7 @@ const ExplanationSection = () => (
       />
       <ChipAccordion
         title="추가 서비스 요청 가능"
-        content={`맡기는 동물의 특성에 따라\n추가 서비스 요청이 가능해요\n(비용 별도 청구)`}
+        content={`맡기는 동물의 특성에 따라\n추가 서비스 요청이 가능해요.\n(비용 별도 청구)`}
       />
       <ChipAccordion
         title="우리동네 근처 펫시터 매칭"
