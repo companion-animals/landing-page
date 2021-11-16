@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 import XEIcon from "src/components/atoms/icon/XEIcon";
 import {
@@ -7,22 +7,8 @@ import {
   ExtraBold48,
 } from "src/components/atoms/text/Typographies";
 import images from "src/images";
+import { FLOAT_KEYFRAME } from "src/styles/animation";
 import { openNewTab } from "src/utils/common";
-
-const FLOAT_KEYFRAME = keyframes`
-	0% {
-		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-		transform: translatey(0px);
-	}
-	50% {
-		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
-		transform: translatey(-5px);
-	}
-	100% {
-		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
-		transform: translatey(0px);
-	}
-`;
 
 const APPLY_LINK =
   "https://docs.google.com/forms/d/e/1FAIpQLScq8tQoJ_dptmVfMGKTP-WT1esNBc5s0BgcvS8We-VsC8kfTg/viewform?usp=sf_link";
@@ -113,7 +99,7 @@ const SignUpButton = styled.div`
   width: 210px;
   margin-top: 30px;
   transform: translatey(0px);
-  animation: ${FLOAT_KEYFRAME} 6s ease-in-out infinite;
+  animation: ${FLOAT_KEYFRAME} 5s ease-in-out infinite;
 
   @media screen and (max-width: 750px) {
     display: none;
