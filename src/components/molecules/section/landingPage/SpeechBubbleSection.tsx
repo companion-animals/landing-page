@@ -4,8 +4,6 @@ import {
   Bold28,
   Bold44,
   Medium38,
-  ExtraBold44,
-  Light38,
 } from "src/components/atoms/text/Typographies";
 import useScrollFadeIn from "src/hooks/useScrollFadeIn";
 import images from "src/images";
