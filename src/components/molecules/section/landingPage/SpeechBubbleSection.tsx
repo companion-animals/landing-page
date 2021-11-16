@@ -4,7 +4,10 @@ import {
   Bold28,
   Bold44,
   Medium38,
+  ExtraBold44,
+  Light38,
 } from "src/components/atoms/text/Typographies";
+import useScrollFadeIn from "src/hooks/useScrollFadeIn";
 import images from "src/images";
 
 const Container = styled.div`
@@ -210,43 +213,50 @@ const SadIcon = styled(Icon)`
 
 const InlineWrapper = styled.div``;
 
-const SpeechBubbleSection = () => (
-  <Container>
-    <ContentContainer>
-      <SpeechBubbleContainer>
-        <SpeechBubbleWrapper>
-          <LeftSpeechubble />
-          <ConsiderICon>🤔</ConsiderICon>
-          <LeftBoldText>
-            {`명절동안 집에 내려가는데\n고슴도치를 어디에 맡겨야할지 고민돼요`}
-          </LeftBoldText>
-        </SpeechBubbleWrapper>
-        <SpeechBubbleWrapper>
-          <RightSpeechBubble />
-          <EmbarassmentIcon>😧</EmbarassmentIcon>
-          <RightBoldText>{`앵무새는 비행기 탑승이 안돼서\n같이 여행을 못간다는데 어떡하죠?`}</RightBoldText>
-        </SpeechBubbleWrapper>
-        <SpeechBubbleWrapper>
-          <SecondLeftSpeechubble />
-          <TearsIcon>😢</TearsIcon>
-          <SecondLeftText>{`강아지 호텔에 문의했더니\n토끼는 못맡긴대요`}</SecondLeftText>
-        </SpeechBubbleWrapper>
-        <SpeechBubbleWrapper>
-          <RightSpeechBubble />
-          <SadIcon>🥺</SadIcon>
-          <SecondRightText>{`장기간 출장으로 집을 비우는데\n우리집 게코가 걱정돼요...`}</SecondRightText>
-        </SpeechBubbleWrapper>
-      </SpeechBubbleContainer>
-      <MediumText>특별한 아이를 맡길 곳을 고민 중이었다면...</MediumText>
-      <BoldTitle>이제는 걱정하지 마세요.</BoldTitle>
-      <InlineWrapper>
-        <ExtraBoldTitle>
-          <ColoredTitle>우리동네 특별반</ColoredTitle>
-          {`이\n안전하게 돌봐드릴게요!`}
-        </ExtraBoldTitle>
-      </InlineWrapper>
-    </ContentContainer>
-  </Container>
-);
+const SpeechBubbleSection = () => {
+  const firstAnimatedItem = useScrollFadeIn({ direction: "right" });
+  const secondAnimatedItem = useScrollFadeIn({ direction: "left", delay: 200 });
+  const thirdAnimatedItem = useScrollFadeIn({ direction: "right", delay: 400 });
+  const fourthAnimatedItem = useScrollFadeIn({ direction: "left", delay: 600 });
+
+  return (
+    <Container>
+      <ContentContainer>
+        <SpeechBubbleContainer>
+          <SpeechBubbleWrapper {...firstAnimatedItem}>
+            <LeftSpeechubble />
+            <ConsiderICon>🤔</ConsiderICon>
+            <LeftBoldText>
+              {`명절동안 집에 내려가는데\n고슴도치를 어디에 맡겨야할지 고민돼요`}
+            </LeftBoldText>
+          </SpeechBubbleWrapper>
+          <SpeechBubbleWrapper {...secondAnimatedItem}>
+            <RightSpeechBubble />
+            <EmbarassmentIcon>😧</EmbarassmentIcon>
+            <RightBoldText>{`앵무새는 비행기 탑승이 안돼서\n같이 여행을 못간다는데 어떡하죠?`}</RightBoldText>
+          </SpeechBubbleWrapper>
+          <SpeechBubbleWrapper {...thirdAnimatedItem}>
+            <SecondLeftSpeechubble />
+            <TearsIcon>😢</TearsIcon>
+            <SecondLeftText>{`강아지 호텔에 문의했더니\n토끼는 못맡긴대요`}</SecondLeftText>
+          </SpeechBubbleWrapper>
+          <SpeechBubbleWrapper {...fourthAnimatedItem}>
+            <RightSpeechBubble />
+            <SadIcon>🥺</SadIcon>
+            <SecondRightText>{`장기간 출장으로 집을 비우는데\n우리집 게코가 걱정돼요...`}</SecondRightText>
+          </SpeechBubbleWrapper>
+        </SpeechBubbleContainer>
+        <MediumText>특별한 아이를 맡길 곳을 고민 중이었다면...</MediumText>
+        <BoldTitle>이제는 걱정하지 마세요.</BoldTitle>
+        <InlineWrapper>
+          <ExtraBoldTitle>
+            <ColoredTitle>우리동네 특별반</ColoredTitle>
+            {`이\n안전하게 돌봐드릴게요!`}
+          </ExtraBoldTitle>
+        </InlineWrapper>
+      </ContentContainer>
+    </Container>
+  );
+};
 
 export default SpeechBubbleSection;

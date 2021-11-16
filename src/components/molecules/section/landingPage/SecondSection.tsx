@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { ExtraBold44, Light38 } from "src/components/atoms/text/Typographies";
-import useScrollFadeInUp from "src/hooks/useScrollFadeInUp";
+import useScrollFadeIn from "src/hooks/useScrollFadeIn";
 import images from "src/images";
 
 const Container = styled.div`
@@ -64,8 +64,11 @@ const ColoredBoldTitle = styled(BoldTitle)`
 const TitleWrapper = styled.div``;
 
 const SecondSection = () => {
-  const lightTitleAnimatedItem = useScrollFadeInUp();
-  const boldTitleAnimatedItem = useScrollFadeInUp(1000);
+  const lightTitleAnimatedItem = useScrollFadeIn({ direction: "up" });
+  const boldTitleAnimatedItem = useScrollFadeIn({
+    delay: 300,
+    direction: "up",
+  });
 
   return (
     <Container>
