@@ -23,6 +23,9 @@ const FLOAT_KEYFRAME = keyframes`
 	}
 `;
 
+const APPLY_LINK =
+  "https://docs.google.com/forms/d/e/1FAIpQLScq8tQoJ_dptmVfMGKTP-WT1esNBc5s0BgcvS8We-VsC8kfTg/viewform?usp=sf_link";
+
 const Container = styled.div`
   width: 100%;
   background-color: #e4e9f5;
@@ -148,6 +151,10 @@ const SignUpButtonText = styled(ExtraBold22)`
   }
 `;
 
+const Link = styled.a`
+  text-decoration: none;
+`;
+
 const IntroSection = () => (
   <Container>
     <Wrapper>
@@ -157,15 +164,19 @@ const IntroSection = () => (
           <ColoredTitle>우리동네 특별반</ColoredTitle>
           <SectionTitle>{`이\n특별한 아이들을 돌봐드려요`}</SectionTitle>
           <MobileTitle>{`이\n특별한 아이들을\n돌봐드려요`}</MobileTitle>
-          <SignUpButton>
+          <Link target="_blank" rel="noreferrer" href={APPLY_LINK}>
+            <SignUpButton>
+              <SignUpButtonText>지금 신청하기</SignUpButtonText>
+              <RightAngleIcon />
+            </SignUpButton>
+          </Link>
+        </TitleWrapper>
+        <Link target="_blank" rel="noreferrer" href={APPLY_LINK}>
+          <MobileSignUpButton>
             <SignUpButtonText>지금 신청하기</SignUpButtonText>
             <RightAngleIcon />
-          </SignUpButton>
-        </TitleWrapper>
-        <MobileSignUpButton>
-          <SignUpButtonText>지금 신청하기</SignUpButtonText>
-          <RightAngleIcon />
-        </MobileSignUpButton>
+          </MobileSignUpButton>
+        </Link>
       </ContentWrapper>
     </Wrapper>
   </Container>
