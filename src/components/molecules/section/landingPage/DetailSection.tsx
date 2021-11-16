@@ -6,7 +6,7 @@ import {
   ExtraBold32,
   SemiBold32,
   Light32,
-  Light30,
+  Light20,
 } from "src/components/atoms/text/Typographies";
 
 const Container = styled.div`
@@ -39,7 +39,7 @@ const Number = styled(ExtraBold38)`
   color: #7065e7;
 
   @media screen and (max-width: 750px) {
-    font-size: 28px;
+    font-size: 26px;
   }
 `;
 
@@ -63,20 +63,19 @@ const BoldDetail = styled(ExtraBold38)`
   color: #7065e7;
 
   @media screen and (max-width: 750px) {
-    font-size: 28px;
+    font-size: 26px;
     line-height: normal;
     margin-bottom: 10px;
   }
 `;
 
-const MobileText = styled(Light30)`
+const MobileText = styled(Light20)`
   display: none;
 
   @media screen and (max-width: 750px) {
     display: block;
     white-space: pre-line;
     margin-top: 0px;
-    font-size: 20px;
     line-height: normal;
   }
 `;
