@@ -66,7 +66,7 @@ const TitleWrapper = styled.div``;
 const SecondSection = () => {
   const lightTitleAnimatedItem = useScrollFadeIn({ direction: "up" });
   const boldTitleAnimatedItem = useScrollFadeIn({
-    delay: 300,
+    delay: 200,
     direction: "up",
   });
 
