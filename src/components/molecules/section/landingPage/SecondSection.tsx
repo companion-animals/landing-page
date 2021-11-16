@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { ExtraBold44, Light38 } from "src/components/atoms/text/Typographies";
+import useScrollFadeIn from "src/hooks/useScrollFadeIn";
 import images from "src/images";
 
 const Container = styled.div`
@@ -28,7 +29,7 @@ const AnimalImage = styled.img.attrs({ src: images.animals })`
   }
 `;
 
-const TitleWrapper = styled.div`
+const TitleContainer = styled.div`
   white-space: pre-line;
   margin-right: 142px;
   margin-top: 70px;
@@ -60,15 +61,26 @@ const ColoredBoldTitle = styled(BoldTitle)`
   color: #7065e7;
 `;
 
-const SecondSection = () => (
-  <Container>
-    <TitleWrapper>
-      <LightTitle>고양이말고.. 강아지말고..</LightTitle>
-      <ColoredBoldTitle>{`햄스터, 기니피그, 토끼\n도마뱀, 앵무새...`}</ColoredBoldTitle>
-      <BoldTitle>돌봐줄 곳 어디 없을까요?</BoldTitle>
-    </TitleWrapper>
-    <AnimalImage />
-  </Container>
-);
+const TitleWrapper = styled.div``;
+
+const SecondSection = () => {
+  const lightTitleAnimatedItem = useScrollFadeIn();
+  const boldTitleAnimatedItem = useScrollFadeIn(1000);
+
+  return (
+    <Container>
+      <TitleContainer>
+        <TitleWrapper {...lightTitleAnimatedItem}>
+          <LightTitle>고양이말고.. 강아지말고..</LightTitle>
+        </TitleWrapper>
+        <TitleWrapper {...boldTitleAnimatedItem}>
+          <ColoredBoldTitle>{`햄스터, 기니피그, 토끼\n도마뱀, 앵무새...`}</ColoredBoldTitle>
+          <BoldTitle>돌봐줄 곳 어디 없을까요?</BoldTitle>
+        </TitleWrapper>
+      </TitleContainer>
+      <AnimalImage />
+    </Container>
+  );
+};
 
 export default SecondSection;
