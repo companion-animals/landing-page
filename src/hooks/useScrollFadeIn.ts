@@ -1,11 +1,18 @@
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, RefObject } from "react";
 import "intersection-observer";
 
 type Direction = "right" | "left" | "up" | "down";
-
 interface ScrollFadeInParam {
   delay?: number;
   direction: Direction;
+}
+
+export interface ScrollFadeInAnimatedItem {
+  ref: RefObject<HTMLDivElement>;
+  style: {
+    opacity: number;
+    transform: string;
+  };
 }
 
 const useScrollFadeIn = (param: ScrollFadeInParam) => {
