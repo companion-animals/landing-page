@@ -7,6 +7,7 @@ import {
   ExtraBold48,
 } from "src/components/atoms/text/Typographies";
 import images from "src/images";
+import { openNewTab } from "src/utils/common";
 
 const FLOAT_KEYFRAME = keyframes`
 	0% {
@@ -151,35 +152,34 @@ const SignUpButtonText = styled(ExtraBold22)`
   }
 `;
 
-const Link = styled.a`
-  text-decoration: none;
-`;
+const IntroSection = () => {
+  const openApplyLink = () => {
+    openNewTab(APPLY_LINK);
+  };
 
-const IntroSection = () => (
-  <Container>
-    <Wrapper>
-      <ContentWrapper>
-        <ParrotImage />
-        <TitleWrapper>
-          <ColoredTitle>우리동네 특별반</ColoredTitle>
-          <SectionTitle>{`이\n특별한 아이들을 돌봐드려요`}</SectionTitle>
-          <MobileTitle>{`이\n특별한 아이들을\n돌봐드려요`}</MobileTitle>
-          <Link target="_blank" rel="noreferrer" href={APPLY_LINK}>
-            <SignUpButton>
+  return (
+    <Container>
+      <Wrapper>
+        <ContentWrapper>
+          <ParrotImage />
+          <TitleWrapper>
+            <ColoredTitle>우리동네 특별반</ColoredTitle>
+            <SectionTitle>{`이\n특별한 아이들을 돌봐드려요`}</SectionTitle>
+            <MobileTitle>{`이\n특별한 아이들을\n돌봐드려요`}</MobileTitle>
+            <SignUpButton onClick={openApplyLink}>
               <SignUpButtonText>지금 신청하기</SignUpButtonText>
               <RightAngleIcon />
             </SignUpButton>
-          </Link>
-        </TitleWrapper>
-        <Link target="_blank" rel="noreferrer" href={APPLY_LINK}>
-          <MobileSignUpButton>
+          </TitleWrapper>
+
+          <MobileSignUpButton onClick={openApplyLink}>
             <SignUpButtonText>지금 신청하기</SignUpButtonText>
             <RightAngleIcon />
           </MobileSignUpButton>
-        </Link>
-      </ContentWrapper>
-    </Wrapper>
-  </Container>
-);
+        </ContentWrapper>
+      </Wrapper>
+    </Container>
+  );
+};
 
 export default IntroSection;
