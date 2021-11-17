@@ -1,5 +1,7 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 
+import { CSSProperties } from "react";
+
 import Script from "next/script";
 
 import { isProduction } from "src/utils/env";
@@ -19,7 +21,7 @@ const iframeSource = isProduction
   ? "https://www.googletagmanager.com/ns.html?id=GTM-NK5PWSM&gtm_auth=ljs-MLY0ZULMGvsBcaKLPQ&gtm_preview=env-1&gtm_cookies_win=x"
   : "https://www.googletagmanager.com/ns.html?id=GTM-NK5PWSM&gtm_auth=8Fx7hLJhYp6PUoPHibcGMw&gtm_preview=env-3&gtm_cookies_win=x";
 
-const IFRAME_STYLE = { display: "none", visibility: "hidden" };
+const IFRAME_STYLE: CSSProperties = { display: "none", visibility: "hidden" };
 
 const GTM = () => (
   <>
