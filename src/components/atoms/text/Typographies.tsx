@@ -99,7 +99,10 @@ export const Bold28 = styled(Bold)`
   font-size: 28px;
   line-height: 38px;
 `;
-
+export const Bold16 = styled(Bold)`
+  font-size: 16px;
+  line-height: 24px;
+`;
 export const Bold56 = styled(Bold)`
   font-size: 56px;
   line-height: 75px;
