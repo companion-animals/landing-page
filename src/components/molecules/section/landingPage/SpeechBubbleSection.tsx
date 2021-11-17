@@ -6,15 +6,14 @@ import {
   Medium38,
 } from "src/components/atoms/text/Typographies";
 import useScrollFadeIn from "src/hooks/useScrollFadeIn";
-import images from "src/images";
 
 const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding-top: 50px;
   padding-bottom: 80px;
-  background-color: #e5e2f2;
 
   @media screen and (max-width: 750px) {
     padding-top: 80px;
@@ -30,43 +29,19 @@ const ContentContainer = styled.div`
   align-items: center;
 `;
 
-const SpeechBubbleContainer = styled.div``;
-
-const SpeechBubbleWrapper = styled.div`
-  position: relative;
+const LeftWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-right: 320px;
 `;
 
-const RightSpeechBubble = styled.img.attrs({ src: images.rightSpeechBubble })`
-  width: 530px;
-  margin-left: 300px;
-
-  @media screen and (max-width: 750px) {
-    width: 320px;
-    margin-left: 50px;
-  }
+const SecondLeftWrapper = styled(LeftWrapper)`
+  margin-right: 430px;
 `;
 
-const LeftSpeechubble = styled.img.attrs({ src: images.leftSpeechBubble })`
-  width: 581px;
-
-  @media screen and (max-width: 750px) {
-    width: 350px;
-    margin-left: -20px;
-  }
-`;
-
-const SecondLeftSpeechubble = styled.img.attrs({
-  src: images.leftSpeechBubble,
-})`
-  width: 470px;
-  height: 180px;
-  margin-right: 300px;
-
-  @media screen and (max-width: 750px) {
-    width: 270px;
-    height: 100px;
-    margin-right: 100px;
-  }
+const RightWrapper = styled(LeftWrapper)`
+  margin-left: 400px;
+  margin-right: 0px;
 `;
 
 const MediumText = styled(Medium38)`
@@ -99,7 +74,7 @@ const ExtraBoldTitle = styled(BoldTitle)`
 `;
 
 const ColoredTitle = styled(BoldTitle)`
-  color: #7065e7;
+  color: #79cea7;
   display: inline;
 
   @media screen and (max-width: 750px) {
@@ -110,7 +85,6 @@ const ColoredTitle = styled(BoldTitle)`
 `;
 
 const BoldText = styled(Bold28)`
-  position: absolute;
   white-space: pre-line;
 
   @media screen and (max-width: 750px) {
@@ -120,96 +94,57 @@ const BoldText = styled(Bold28)`
   }
 `;
 
-const RightBoldText = styled(BoldText)`
-  top: 40px;
-  right: 45px;
-
-  @media screen and (max-width: 750px) {
-    right: 35px;
-    top: 27px;
-  }
-`;
-
-const LeftBoldText = styled(BoldText)`
-  top: 40px;
-  left: 115px;
-
-  @media screen and (max-width: 750px) {
-    left: 80px;
-    top: 27px;
-  }
-`;
-
-const SecondRightText = styled(BoldText)`
-  top: 40px;
-  right: 60px;
-
-  @media screen and (max-width: 750px) {
-    right: 40px;
-    top: 27px;
-  }
-`;
-
-const SecondLeftText = styled(BoldText)`
-  top: 40px;
-  left: 130px;
-
-  @media screen and (max-width: 750px) {
-    left: 80px;
-    top: 25px;
-  }
-`;
-
 const Icon = styled.span`
-  position: absolute;
   font-size: 60px;
+  margin-right: 30px;
 
   @media screen and (max-width: 750px) {
     font-size: 36px;
   }
 `;
 
-const ConsiderICon = styled(Icon)`
-  left: 40px;
-  top: 30px;
-
-  @media screen and (max-width: 750px) {
-    left: 30px;
-    top: 17px;
-  }
-`;
-
-const EmbarassmentIcon = styled(Icon)`
-  top: 30px;
-  left: 340px;
-
-  @media screen and (max-width: 750px) {
-    left: 80px;
-    top: 17px;
-  }
-`;
-
-const TearsIcon = styled(Icon)`
-  top: 30px;
-  left: 40px;
-
-  @media screen and (max-width: 750px) {
-    left: 30px;
-    top: 12px;
-  }
-`;
-
-const SadIcon = styled(Icon)`
-  top: 30px;
-  left: 350px;
-
-  @media screen and (max-width: 750px) {
-    left: 90px;
-    top: 17px;
-  }
-`;
-
 const InlineWrapper = styled.div``;
+
+const LeftSpeechBubble = styled.div`
+  width: 580px;
+  position: relative;
+  color: white;
+  border-radius: 30px;
+  padding: 20px 12px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.32);
+  align-items: center;
+  border: 1px solid #79cea7;
+  z-index: 2;
+  margin-bottom: 50px;
+
+  &:after {
+    border-top: 20px solid #ffffff;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 0px solid transparent;
+    content: "";
+    position: absolute;
+    top: 120px;
+    left: 60px;
+    z-index: 1;
+  }
+`;
+
+const RightSpeechBubble = styled(LeftSpeechBubble)`
+  width: 500px;
+
+  &:after {
+    top: 120px;
+    left: 400px;
+    z-index: 1;
+  }
+`;
+
+const SecondLeftSpeechBubble = styled(LeftSpeechBubble)`
+  width: 460px;
+`;
 
 const SpeechBubbleSection = () => {
   const firstAnimatedItem = useScrollFadeIn({ direction: "right" });
@@ -220,30 +155,33 @@ const SpeechBubbleSection = () => {
   return (
     <Container>
       <ContentContainer>
-        <SpeechBubbleContainer>
-          <SpeechBubbleWrapper {...firstAnimatedItem}>
-            <LeftSpeechubble />
-            <ConsiderICon>🤔</ConsiderICon>
-            <LeftBoldText>
+        <LeftWrapper {...firstAnimatedItem}>
+          <LeftSpeechBubble>
+            <Icon>🤔</Icon>
+            <BoldText>
               {`명절동안 집에 내려가는데\n고슴도치를 어디에 맡겨야할지 고민돼요`}
-            </LeftBoldText>
-          </SpeechBubbleWrapper>
-          <SpeechBubbleWrapper {...secondAnimatedItem}>
-            <RightSpeechBubble />
-            <EmbarassmentIcon>😧</EmbarassmentIcon>
-            <RightBoldText>{`앵무새는 비행기 탑승이 안돼서\n같이 여행을 못간다는데 어떡하죠?`}</RightBoldText>
-          </SpeechBubbleWrapper>
-          <SpeechBubbleWrapper {...thirdAnimatedItem}>
-            <SecondLeftSpeechubble />
-            <TearsIcon>😢</TearsIcon>
-            <SecondLeftText>{`강아지 호텔에 문의했더니\n토끼는 못맡긴대요`}</SecondLeftText>
-          </SpeechBubbleWrapper>
-          <SpeechBubbleWrapper {...fourthAnimatedItem}>
-            <RightSpeechBubble />
-            <SadIcon>🥺</SadIcon>
-            <SecondRightText>{`장기간 출장으로 집을 비우는데\n우리집 게코가 걱정돼요...`}</SecondRightText>
-          </SpeechBubbleWrapper>
-        </SpeechBubbleContainer>
+            </BoldText>
+          </LeftSpeechBubble>
+        </LeftWrapper>
+        <RightWrapper {...secondAnimatedItem}>
+          <RightSpeechBubble>
+            <Icon>😧</Icon>
+            <BoldText>{`앵무새는 비행기 탑승이 안돼서\n같이 여행을 못간다는데 어떡하죠?`}</BoldText>
+          </RightSpeechBubble>
+        </RightWrapper>
+        <SecondLeftWrapper {...thirdAnimatedItem}>
+          <SecondLeftSpeechBubble>
+            <Icon>😢</Icon>
+            <BoldText>{`강아지 호텔에 문의했더니\n토끼는 못맡긴대요`}</BoldText>
+          </SecondLeftSpeechBubble>
+        </SecondLeftWrapper>
+        <RightWrapper {...fourthAnimatedItem}>
+          <RightSpeechBubble>
+            <Icon>🥺</Icon>
+            <BoldText>{`장기간 출장으로 집을 비우는데\n우리집 게코가 걱정돼요...`}</BoldText>
+          </RightSpeechBubble>
+        </RightWrapper>
+
         <MediumText>특별한 아이를 맡길 곳을 고민 중이었다면...</MediumText>
         <BoldTitle>이제는 걱정하지 마세요.</BoldTitle>
         <InlineWrapper>
