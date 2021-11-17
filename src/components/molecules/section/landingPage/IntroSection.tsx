@@ -15,9 +15,10 @@ const APPLY_LINK =
 
 const Container = styled.div`
   width: 100%;
-  background-color: #e4e9f5;
   display: flex;
   justify-content: center;
+  padding-top: 124px;
+  padding-bottom: 140px;
 `;
 
 const Wrapper = styled.div`
@@ -41,10 +42,11 @@ const ContentWrapper = styled.div`
 const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 190px;
+  margin-right: 64px;
   display: inline;
   white-space: pre-line;
   margin-left: 20px;
+  margin-top: 30px;
 
   @media screen and (max-width: 750px) {
     margin-top: 80px;
@@ -68,7 +70,7 @@ const MobileTitle = styled(ExtraBold36)`
 `;
 
 const ColoredTitle = styled(ExtraBold48)`
-  color: #7065e7;
+  color: #79cea7;
   display: inline;
 
   @media screen and (max-width: 750px) {
@@ -77,24 +79,15 @@ const ColoredTitle = styled(ExtraBold48)`
   }
 `;
 
-const ParrotImage = styled.img.attrs({ src: images.parrot })`
-  width: 370px;
-
-  @media screen and (max-width: 750px) {
-    width: 270px;
-  }
-`;
-
 const SignUpButton = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
   border-radius: 10px;
   margin-top: 50px;
-  background-color: #6448bf;
+  background-color: #79cea7;
   padding: 15px 30px;
   width: 210px;
   margin-top: 30px;
@@ -138,6 +131,12 @@ const SignUpButtonText = styled(ExtraBold22)`
   }
 `;
 
+const Logo = styled.img.attrs({ src: images.logo })`
+  width: 300px;
+  height: 300px;
+  border-radius: 80px;
+`;
+
 const IntroSection = () => {
   const openApplyLink = () => {
     openNewTab(APPLY_LINK);
@@ -147,7 +146,6 @@ const IntroSection = () => {
     <Container>
       <Wrapper>
         <ContentWrapper>
-          <ParrotImage />
           <TitleWrapper>
             <ColoredTitle>우리동네 특별반</ColoredTitle>
             <SectionTitle>{`이\n특별한 아이들을 돌봐드려요`}</SectionTitle>
@@ -162,6 +160,7 @@ const IntroSection = () => {
             <SignUpButtonText>지금 신청하기</SignUpButtonText>
             <RightAngleIcon />
           </MobileSignUpButton>
+          <Logo />
         </ContentWrapper>
       </Wrapper>
     </Container>
