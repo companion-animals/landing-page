@@ -125,8 +125,8 @@ const RightBoldText = styled(BoldText)`
   right: 45px;
 
   @media screen and (max-width: 750px) {
-    right: 30px;
-    top: 20px;
+    right: 35px;
+    top: 27px;
   }
 `;
 
@@ -136,7 +136,7 @@ const LeftBoldText = styled(BoldText)`
 
   @media screen and (max-width: 750px) {
     left: 80px;
-    top: 22px;
+    top: 27px;
   }
 `;
 
@@ -146,7 +146,7 @@ const SecondRightText = styled(BoldText)`
 
   @media screen and (max-width: 750px) {
     right: 40px;
-    top: 20px;
+    top: 27px;
   }
 `;
 
@@ -156,7 +156,7 @@ const SecondLeftText = styled(BoldText)`
 
   @media screen and (max-width: 750px) {
     left: 80px;
-    top: 17px;
+    top: 25px;
   }
 `;
 
