@@ -176,14 +176,14 @@ const IntroSection = () => {
             <ColoredTitle>우리동네 특별반</ColoredTitle>
             <SectionTitle>{`이\n특별한 아이들을 돌봐드려요`}</SectionTitle>
             <MobileTitle>{`이\n특별한 아이들을\n돌봐드려요`}</MobileTitle>
-            <Link href={APPLY_LINK} target="_blank">
+            <Link id="topFindHotelButton" href={APPLY_LINK} target="_blank">
               <SignUpButton>
                 <SignUpButtonText>지금 신청하기</SignUpButtonText>
                 <RightAngleIcon />
               </SignUpButton>
             </Link>
           </TitleWrapper>
-          <Link href={APPLY_LINK} target="_blank">
+          <Link id="floatingFindHotelButton" href={APPLY_LINK} target="_blank">
             <MobileSignUpButton width={width}>
               <SignUpButtonText>지금 신청하기</SignUpButtonText>
               <RightAngleIcon />
