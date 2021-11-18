@@ -36,3 +36,5 @@ yarn-error.log*
 # git remote set sh
 switchDeployRemote.sh
 switchOriginRemote.sh
+
+.gitconfig
