@@ -34,6 +34,7 @@ const fontTypeToFont = {
 const Text = styled.p<{ fontType: FontType }>`
   font-weight: ${({ fontType }) => fontTypeToFont[fontType]};
   letter-spacing: -0.5px;
+  color: #232626;
 `;
 
 const FMText = ({ fontType = "REGULAR", ...props }: TextProps) => (
