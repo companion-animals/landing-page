@@ -37,7 +37,6 @@ const SectionTitle = styled(ExtraBold44)`
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   margin-bottom: 50px;
 `;
 
@@ -80,7 +79,7 @@ const MobileText = styled(Light20)`
   display: none;
 
   @media screen and (max-width: 750px) {
-    display: block;
+    display: flex;
     white-space: pre-line;
     margin-top: 0px;
     line-height: normal;
@@ -91,12 +90,18 @@ const MobileTitle = styled(ExtraBold32)`
   display: none;
 
   @media screen and (max-width: 750px) {
-    display: block;
+    display: flex;
     white-space: pre-line;
     margin-bottom: 50px;
   }
 `;
 
+const MobileWrapper = styled.div`
+  @media screen and (max-width: 750px) {
+    display: flex;
+    justify-content: center;
+  }
+`;
 const DetailSection = () => {
   const firstAnimatedItems = useScrollFadeIn({ direction: "up" });
   const secondAnimatedItems = useScrollFadeIn({ direction: "up" });
@@ -112,20 +117,23 @@ const DetailSection = () => {
           최소 2년 이상 해당 특수동물 반려경험
           <DetailLight>{`이 있는\n펫시터만을 매칭해드려요.`}</DetailLight>
         </DetailSemiBold>
-        <MobileText>{`최소 2년 이상 해당 특수동물
-       반려경험 필수`}</MobileText>
+        <MobileWrapper>
+          <MobileText>{`최소 2년 이상 해당 특수동물\n반려경험 필수`}</MobileText>
+        </MobileWrapper>
       </Wrapper>
+
       <Wrapper {...secondAnimatedItems}>
         <Number>2.</Number>
         <BoldDetail>자격요건 및 신원확인 완료</BoldDetail>
-
         <DetailSemiBold>
           <DetailLight>{`최대 4단계에 걸쳐 특수동물 돌봄에 적합한\n`}</DetailLight>
           인성과 환경을 갖춘 펫시터만을 선정<DetailLight>해요.</DetailLight>
         </DetailSemiBold>
-        <MobileText>{`최대 4단계에 결친
-      환경 & 인성 검증`}</MobileText>
+        <MobileWrapper>
+          <MobileText>{`최대 4단계에 결친\n환경 & 인성 검증`}</MobileText>
+        </MobileWrapper>
       </Wrapper>
+
       <Wrapper {...thirdAnimatedItems}>
         <Number>3.</Number>
         <BoldDetail>안심 서비스 지원</BoldDetail>
@@ -134,8 +142,9 @@ const DetailSection = () => {
           {`사고 발생시 즉각 대응이 가능한\n특수동물 전문 안심 서비스`}
           <DetailLight>를 지원해드려요.</DetailLight>
         </DetailSemiBold>
-        <MobileText>{`사고 발생시 즉각 대응 가능한 
-      특수동물 전문 안심서비스 지원`}</MobileText>
+        <MobileWrapper>
+          <MobileText>{`사고 발생시 즉각 대응 가능한\n특수동물 전문 안심서비스 지원`}</MobileText>
+        </MobileWrapper>
       </Wrapper>
     </Container>
   );
