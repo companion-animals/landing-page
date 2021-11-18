@@ -17,7 +17,7 @@ const Container = styled.div`
 `;
 
 const TitleBox = styled.div`
-  background-color: #7065e7;
+  background-color: #79cea7;
   border: 2px solid #b7b7b7;
 `;
 
