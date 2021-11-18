@@ -51,6 +51,7 @@ const Card = styled(CardWithQuotationMark)`
 
   @media screen and (max-width: 750px) {
     margin-bottom: 48px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.32);
   }
 `;
 
