@@ -13,8 +13,9 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   padding-top: 90px;
-  padding-bottom: 50px;
+  padding-bottom: 90px;
   text-align: center;
+  background-color: #fafafa;
 
   @media screen and (max-width: 750px) {
     flex-direction: column;
@@ -61,25 +62,36 @@ const MobileTitle = styled(ExtraBold36)`
   }
 `;
 
+const ChipWrapper = styled.div`
+  display: flex;
+  margin-top: 30px;
+`;
+
+const Chip = styled(ChipAccordion)`
+  margin-right: 20px;
+`;
 const ExplanationSection = () => (
   <Container>
     <MobileTitle>{`맞춤 서비스로\n돌봄 만족도가 높아요`}</MobileTitle>
-    <RabbitImage />
     <ContentWrapper>
-      <Title>{`맞춤 서비스로\n돌봄 만족도가 높아요`}</Title>
-      <ChipAccordion
-        title="특수동물 전문 돌봄 서비스"
-        content={`특수동물 전문 돌봄 서비스이기에\n개별 종 특성에 맞는 돌봄이 가능해요.`}
-      />
-      <ChipAccordion
-        title="추가 서비스 요청 가능"
-        content={`맡기는 동물의 특성에 따라\n추가 서비스 요청이 가능해요.\n(비용 별도 청구)`}
-      />
-      <ChipAccordion
-        open
-        title="우리동네 근처 펫시터 매칭"
-        content={`맡기기 편한 우리동네 근처의 \n펫시터가 매칭돼요.`}
-      />
+      <Title>맞춤 서비스로 돌봄 만족도가 높아요</Title>
+      <ChipWrapper>
+        <Chip
+          open
+          title="특수동물 전문 돌봄 서비스"
+          content={`특수동물 전문 돌봄 서비스이기에\n개별 종 특성에 맞는 돌봄이 가능해요.`}
+        />
+        <Chip
+          open
+          title="추가 서비스 요청 가능"
+          content={`맡기는 동물의 특성에 따라\n추가 서비스 요청이 가능해요.\n(비용 별도 청구)`}
+        />
+        <ChipAccordion
+          open
+          title="우리동네 근처 펫시터 매칭"
+          content={`맡기기 편한 우리동네 근처의 \n펫시터가 매칭돼요.`}
+        />
+      </ChipWrapper>
     </ContentWrapper>
   </Container>
 );
