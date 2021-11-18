@@ -32,7 +32,7 @@ export const ExtraBold38 = styled(ExtraBold)`
 
 export const ExtraBold48 = styled(ExtraBold)`
   font-size: 48px;
-  line-height: normal;
+  line-height: 75px;
 `;
 
 export const ExtraBold44 = styled(ExtraBold)`
@@ -52,6 +52,11 @@ export const ExtraBold40 = styled(ExtraBold)`
 
 export const ExtraBold36 = styled(ExtraBold)`
   font-size: 36px;
+  line-height: 46px;
+`;
+
+export const ExtraBold34 = styled(ExtraBold)`
+  font-size: 34px;
   line-height: 46px;
 `;
 
@@ -105,9 +110,24 @@ export const Bold56 = styled(Bold)`
   line-height: 75px;
 `;
 
+export const Bold48 = styled(Bold)`
+  font-size: 48px;
+  line-height: 75px;
+`;
+
 export const Bold44 = styled(Bold)`
   font-size: 44px;
   line-height: 56px;
+`;
+
+export const Bold42 = styled(Bold)`
+  font-size: 42px;
+  line-height: 56px;
+`;
+
+export const SemiBold48 = styled(SemiBold)`
+  font-size: 48px;
+  line-height: 50px;
 `;
 
 export const SemiBold38 = styled(SemiBold)`
@@ -125,6 +145,11 @@ export const SemiBold32 = styled(SemiBold)`
   line-height: 50px;
 `;
 
+export const SemiBold28 = styled(SemiBold)`
+  font-size: 28px;
+  line-height: 50px;
+`;
+
 export const Heavy30 = styled(Heavy)`
   font-size: 30px;
   line-height: normal;
@@ -137,6 +162,11 @@ export const Heavy36 = styled(Heavy)`
 
 export const Medium38 = styled(Medium)`
   font-size: 38px;
+  line-height: normal;
+`;
+
+export const Medium36 = styled(Medium)`
+  font-size: 36px;
   line-height: normal;
 `;
 
@@ -181,7 +211,7 @@ export const Light48 = styled(Light)`
 `;
 
 export const Light44 = styled(Light)`
-  font-size: 40px;
+  font-size: 44px;
   line-height: 50px;
 `;
 
@@ -217,6 +247,16 @@ export const Light24 = styled(Light)`
 
 export const Light26 = styled(Light)`
   font-size: 26px;
+  line-height: 36px;
+`;
+
+export const Light28 = styled(Light)`
+  font-size: 28px;
+  line-height: 36px;
+`;
+
+export const Light22 = styled(Light)`
+  font-size: 22px;
   line-height: 36px;
 `;
 
