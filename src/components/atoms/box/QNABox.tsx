@@ -18,7 +18,13 @@ const Container = styled.div`
 
 const TitleBox = styled.div`
   background-color: #79cea7;
-  border: 2px solid #b7b7b7;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  @media screen and (max-width: 750px) {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
 `;
 
 const ContentBox = styled.div`
@@ -48,13 +54,7 @@ const Content = styled(Light20)`
 const Title = styled(Content)`
   color: #ffffff;
   margin-left: 33px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-
-  @media screen and (max-width: 750px) {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
+  line-height: 0px;
 `;
 
 const QNABox = ({ className, title, content }: Props) => (
