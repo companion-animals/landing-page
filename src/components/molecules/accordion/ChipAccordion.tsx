@@ -16,8 +16,8 @@ const Container = styled.div``;
 const BorderChip = styled.div<{ isOpen?: boolean }>`
   width: 300px;
   padding: 15px 0px;
-  border: 2px solid #7065e7;
-  background-color: ${({ isOpen }) => (isOpen ? "#7065e7;" : "#fafafa")};
+  border: 2px solid #79cea7;
+  background-color: ${({ isOpen }) => (isOpen ? "#79cea7;" : "#fafafa")};
   border-radius: 60px;
   display: flex;
   align-items: center;
@@ -30,7 +30,7 @@ const BorderChip = styled.div<{ isOpen?: boolean }>`
 `;
 
 const Text = styled(Medium24)<{ isOpen?: boolean }>`
-  color: ${({ isOpen }) => (isOpen ? "#FFFFFF" : "#7065e7")};
+  color: ${({ isOpen }) => (isOpen ? "#FFFFFF" : "#79cea7;")};
 
   @media screen and (max-width: 750px) {
     font-size: 20px;
