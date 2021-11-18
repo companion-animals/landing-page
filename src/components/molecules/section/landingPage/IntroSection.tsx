@@ -20,6 +20,11 @@ const Container = styled.div`
   justify-content: center;
   padding-top: 124px;
   padding-bottom: 140px;
+
+  @media screen and (max-width: 750px) {
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -50,7 +55,9 @@ const TitleWrapper = styled.div`
   margin-top: 20px;
 
   @media screen and (max-width: 750px) {
-    margin-top: 80px;
+    margin-top: 40px;
+    margin-left: 0px;
+    margin-right: 0px;
   }
 `;
 
@@ -106,7 +113,7 @@ const MobileSignUpButton = styled(SignUpButton)`
   @media screen and (max-width: 750px) {
     display: flex;
     position: absolute;
-    bottom: 50px;
+    bottom: 0px;
     padding: 10px 20px;
     width: 160px;
     transform: translatey(0px);
@@ -136,6 +143,11 @@ const Logo = styled.img.attrs({ src: images.logo })`
   width: 300px;
   height: 300px;
   border-radius: 80px;
+
+  @media screen and (max-width: 750px) {
+    width: 220px;
+    height: 220px;
+  }
 `;
 
 const IntroSection = () => {
