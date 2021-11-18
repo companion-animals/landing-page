@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 import styled from "styled-components";
 
 import XEIcon from "src/components/atoms/icon/XEIcon";
@@ -107,17 +109,16 @@ const SignUpButton = styled.div`
   }
 `;
 
-const MobileSignUpButton = styled(SignUpButton)`
+const MobileSignUpButton = styled(SignUpButton)<{ width: number }>`
   display: none;
 
   @media screen and (max-width: 750px) {
     display: flex;
-    position: absolute;
-    bottom: 0px;
+    position: fixed;
+    bottom: 30px;
     padding: 10px 20px;
-    width: 160px;
-    transform: translatey(0px);
-    animation: ${FLOAT_KEYFRAME} 6s ease-in-out infinite;
+    width: ${({ width }) => width - 80}px;
+    z-index: 2;
   }
 `;
 
@@ -151,9 +152,25 @@ const Logo = styled.img.attrs({ src: images.logo })`
 `;
 
 const IntroSection = () => {
+  const [width, setWidth] = useState(0);
+
   const openApplyLink = () => {
     openNewTab(APPLY_LINK);
   };
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      const fullWidth = document.body.clientWidth;
+      setWidth(fullWidth);
+    });
+  }, []);
+
+  useEffect(() => {
+    const fullWidth = document.body.clientWidth;
+    if (!width) {
+      setWidth(fullWidth);
+    }
+  }, [width]);
 
   return (
     <Container>
@@ -169,7 +186,7 @@ const IntroSection = () => {
             </SignUpButton>
           </TitleWrapper>
 
-          <MobileSignUpButton onClick={openApplyLink}>
+          <MobileSignUpButton width={width} onClick={openApplyLink}>
             <SignUpButtonText>지금 신청하기</SignUpButtonText>
             <RightAngleIcon />
           </MobileSignUpButton>
