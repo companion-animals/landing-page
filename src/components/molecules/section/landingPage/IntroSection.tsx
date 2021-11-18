@@ -10,7 +10,6 @@ import {
   SemiBold48,
 } from "src/components/atoms/text/Typographies";
 import images from "src/images";
-import { FLOAT_KEYFRAME } from "src/styles/animation";
 import { openNewTab } from "src/utils/common";
 
 const APPLY_LINK =
@@ -94,15 +93,12 @@ const SignUpButton = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
   border-radius: 10px;
   margin-top: 50px;
   background-color: #79cea7;
   padding: 15px 30px;
   width: 210px;
   margin-top: 30px;
-  transform: translatey(0px);
-  animation: ${FLOAT_KEYFRAME} 5s ease-in-out infinite;
 
   @media screen and (max-width: 750px) {
     display: none;

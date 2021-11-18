@@ -6,7 +6,6 @@ import {
   Light24,
 } from "src/components/atoms/text/Typographies";
 import images from "src/images";
-import { FLOAT_KEYFRAME } from "src/styles/animation";
 
 const Container = styled.div`
   width: 100%;
@@ -50,7 +49,6 @@ const BorderChip = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: ${FLOAT_KEYFRAME} 5s ease-in-out infinite;
 
   @media screen and (max-width: 750px) {
     padding: 5px 16px;
