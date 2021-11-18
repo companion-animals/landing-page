@@ -18,7 +18,7 @@ const Container = styled.div`
 
   @media screen and (max-width: 750px) {
     padding-top: 70px;
-    padding-bottom: 70px;
+    padding-bottom: 100px;
   }
 `;
 
@@ -68,7 +68,6 @@ const Email = styled(Light24)`
 const EmailIcon = styled.img.attrs({ src: images.emailIcon })`
   @media screen and (max-width: 750px) {
     width: 26px;
-    margin-right: 12px;
   }
 `;
 
@@ -81,6 +80,11 @@ const Circle = styled.div`
   justify-content: center;
   border-radius: 30px;
   margin-right: 15px;
+
+  @media screen and (max-width: 750px) {
+    width: 40px;
+    height: 40px;
+  }
 `;
 
 const QNASection = () => (

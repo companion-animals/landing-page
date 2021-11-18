@@ -10,6 +10,7 @@ const images = {
   pigeon: "/images/pigeon.png",
   rabbit: "images/rabbit.png",
   snake: "/images/snake.png",
+  emailIcon: "/images/email_icon.png",
 };
 
 export default images;
