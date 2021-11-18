@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 import {
-  Bold28,
-  Bold44,
-  Medium38,
+  Medium36,
+  Bold42,
+  Medium22,
 } from "src/components/atoms/text/Typographies";
 import useScrollFadeIn from "src/hooks/useScrollFadeIn";
 
@@ -44,9 +44,12 @@ const RightWrapper = styled(LeftWrapper)`
   margin-right: 0px;
 `;
 
-const MediumText = styled(Medium38)`
+const MediumText = styled(Medium36)`
+  white-space: pre-line;
   margin-bottom: 20px;
   margin-top: 70px;
+  text-align: center;
+  line-height: 57px;
 
   @media screen and (max-width: 750px) {
     font-size: 20px;
@@ -54,7 +57,7 @@ const MediumText = styled(Medium38)`
   }
 `;
 
-const BoldTitle = styled(Bold44)`
+const BoldTitle = styled(Bold42)`
   display: inline;
 
   @media screen and (max-width: 750px) {
@@ -73,18 +76,7 @@ const ExtraBoldTitle = styled(BoldTitle)`
   }
 `;
 
-const ColoredTitle = styled(BoldTitle)`
-  color: #79cea7;
-  display: inline;
-
-  @media screen and (max-width: 750px) {
-    white-space: pre-line;
-    font-weight: 800;
-    font-size: 30px;
-  }
-`;
-
-const BoldText = styled(Bold28)`
+const BoldText = styled(Medium22)`
   white-space: pre-line;
 
   @media screen and (max-width: 750px) {
@@ -103,21 +95,19 @@ const Icon = styled.span`
   }
 `;
 
-const InlineWrapper = styled.div``;
-
 const LeftSpeechBubble = styled.div`
-  width: 580px;
+  width: 470px;
+  height: 110px;
   position: relative;
-  color: white;
   border-radius: 30px;
   padding: 20px 12px;
   display: flex;
   justify-content: center;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.32);
   align-items: center;
-  border: 1px solid #79cea7;
+  border: 2px solid #79cea7;
   z-index: 2;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 
   &:after {
     border-top: 20px solid #ffffff;
@@ -126,24 +116,24 @@ const LeftSpeechBubble = styled.div`
     border-bottom: 0px solid transparent;
     content: "";
     position: absolute;
-    top: 120px;
+    top: 105px;
     left: 60px;
     z-index: 1;
   }
 `;
 
 const RightSpeechBubble = styled(LeftSpeechBubble)`
-  width: 500px;
+  width: 430px;
 
   &:after {
-    top: 120px;
-    left: 400px;
+    top: 105px;
+    left: 330px;
     z-index: 1;
   }
 `;
 
 const SecondLeftSpeechBubble = styled(LeftSpeechBubble)`
-  width: 460px;
+  width: 360px;
 `;
 
 const SpeechBubbleSection = () => {
@@ -181,15 +171,10 @@ const SpeechBubbleSection = () => {
             <BoldText>{`장기간 출장으로 집을 비우는데\n우리집 게코가 걱정돼요...`}</BoldText>
           </RightSpeechBubble>
         </RightWrapper>
-
-        <MediumText>특별한 아이를 맡길 곳을 고민 중이었다면...</MediumText>
-        <BoldTitle>이제는 걱정하지 마세요.</BoldTitle>
-        <InlineWrapper>
-          <ExtraBoldTitle>
-            <ColoredTitle>우리동네 특별반</ColoredTitle>
-            {`이\n안전하게 돌봐드릴게요!`}
-          </ExtraBoldTitle>
-        </InlineWrapper>
+        <MediumText>{`특별한 아이를 맡길 곳을 고민 중이었다면\n이제는 걱정하지 마세요.`}</MediumText>
+        <ExtraBoldTitle>
+          {`우리동네 특별반이\n안전하게 돌봐드릴게요!`}
+        </ExtraBoldTitle>
       </ContentContainer>
     </Container>
   );
