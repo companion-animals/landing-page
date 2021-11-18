@@ -43,7 +43,6 @@ const Wrapper = styled.div`
 
 const Number = styled(ExtraBold36)`
   color: #79cea7;
-  margin-right: 20px;
 
   @media screen and (max-width: 750px) {
     font-size: 26px;
