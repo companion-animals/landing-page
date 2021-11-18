@@ -13,7 +13,8 @@
     "build-storybook": "build-storybook",
     "test": "jest --detectOpenHandles",
     "test:snapshot": "jest --detectOpenHandles storybook.test.ts",
-    "test:watch": "jest --detectOpenHandles --watch"
+    "test:watch": "jest --detectOpenHandles --watch",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "next": "11.1.0",
