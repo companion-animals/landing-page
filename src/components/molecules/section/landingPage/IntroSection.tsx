@@ -5,6 +5,7 @@ import {
   ExtraBold22,
   ExtraBold36,
   ExtraBold48,
+  SemiBold48,
 } from "src/components/atoms/text/Typographies";
 import images from "src/images";
 import { FLOAT_KEYFRAME } from "src/styles/animation";
@@ -46,15 +47,16 @@ const TitleWrapper = styled.div`
   display: inline;
   white-space: pre-line;
   margin-left: 20px;
-  margin-top: 30px;
+  margin-top: 20px;
 
   @media screen and (max-width: 750px) {
     margin-top: 80px;
   }
 `;
 
-const SectionTitle = styled(ExtraBold48)`
+const SectionTitle = styled(SemiBold48)`
   display: inline;
+  line-height: 60px;
 
   @media screen and (max-width: 750px) {
     display: none;
@@ -70,7 +72,6 @@ const MobileTitle = styled(ExtraBold36)`
 `;
 
 const ColoredTitle = styled(ExtraBold48)`
-  color: #79cea7;
   display: inline;
 
   @media screen and (max-width: 750px) {
