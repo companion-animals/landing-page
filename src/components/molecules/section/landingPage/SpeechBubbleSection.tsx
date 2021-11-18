@@ -140,6 +140,7 @@ const LeftSpeechBubble = styled.div`
     width: 280px;
     height: 80px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.32);
+    border: 1px solid #79cea7;
 
     &:after {
       top: 70px;
