@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 import {
   Light16,
-  Light44,
-  Light26,
+  Medium36,
+  Light24,
 } from "src/components/atoms/text/Typographies";
 import images from "src/images";
 import { FLOAT_KEYFRAME } from "src/styles/animation";
@@ -22,7 +22,7 @@ const Container = styled.div`
   }
 `;
 
-const Text = styled(Light44)`
+const Text = styled(Medium36)`
   @media screen and (max-width: 750px) {
     font-size: 32px;
     white-space: pre-line;
@@ -41,8 +41,8 @@ const Footer = styled(Light16)`
 `;
 
 const BorderChip = styled.div`
-  padding: 15px 25px;
-  border: 2px solid #7065e7;
+  padding: 12px 20px;
+  border: 2px solid #79cea7;
   background-color: #fafafa;
   border-radius: 60px;
   margin-top: 30px;
@@ -59,26 +59,37 @@ const BorderChip = styled.div`
   }
 `;
 
-const Email = styled(Light26)`
+const Email = styled(Light24)`
   @media screen and (max-width: 750px) {
     font-size: 16px;
   }
 `;
 
 const EmailIcon = styled.img.attrs({ src: images.emailIcon })`
-  margin-right: 20px;
-
   @media screen and (max-width: 750px) {
     width: 26px;
     margin-right: 12px;
   }
 `;
+
+const Circle = styled.div`
+  width: 50px;
+  height: 50px;
+  background-color: #79cea7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  margin-right: 15px;
+`;
+
 const QNASection = () => (
   <Container>
     <Text>{`더 궁금하신 사항은\n메일로 문의주세요!`}</Text>
-
     <BorderChip>
-      <EmailIcon />
+      <Circle>
+        <EmailIcon />
+      </Circle>
       <Email>specialban.official@gmail.com</Email>
     </BorderChip>
     <Footer>{`ⓒ 2021 우리동네특별반\nAll Rights Reserved`}</Footer>
