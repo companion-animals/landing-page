@@ -53,6 +53,10 @@ const Wrapper = styled.div``;
 
 const RegularText = styled(Regular20)`
   white-space: pre-line;
+
+  @media screen and (max-width: 750px) {
+    font-size: 16px;
+  }
 `;
 
 const usePrevState = (state: string) => {
