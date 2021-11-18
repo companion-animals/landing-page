@@ -21,6 +21,7 @@ const Container = styled.div`
     align-items: center;
     text-align: center;
     padding-top: 70px;
+    padding-bottom: 50px;
   }
 `;
 

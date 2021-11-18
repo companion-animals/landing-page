@@ -19,6 +19,10 @@ const Container = styled.div`
   padding-top: 110px;
   padding-bottom: 20px;
   background-color: #fafafa;
+
+  @media screen and (max-width: 750px) {
+    padding-top: 80px;
+  }
 `;
 
 const SectionTitle = styled(ExtraBold44)`
