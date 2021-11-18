@@ -5,7 +5,6 @@ import {
   ExtraBold36,
 } from "src/components/atoms/text/Typographies";
 import ChipAccordion from "src/components/molecules/accordion/ChipAccordion";
-import images from "src/images";
 
 const Container = styled.div`
   width: 100%;
@@ -13,7 +12,7 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   padding-top: 90px;
-  padding-bottom: 90px;
+  padding-bottom: 70px;
   text-align: center;
   background-color: #fafafa;
 
@@ -31,18 +30,6 @@ const ContentWrapper = styled.div`
   align-items: center;
 `;
 
-const RabbitImage = styled.img.attrs({ src: images.rabbitBG })`
-  width: 626px;
-  height: 340px;
-  margin-right: 66px;
-
-  @media screen and (max-width: 750px) {
-    width: 330px;
-    height: 187px;
-    margin-bottom: 60px;
-  }
-`;
-
 const Title = styled(ExtraBold40)`
   white-space: pre-line;
   margin-bottom: 25px;
@@ -57,7 +44,7 @@ const MobileTitle = styled(ExtraBold36)`
 
   @media screen and (max-width: 750px) {
     display: block;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
     white-space: pre-line;
   }
 `;
@@ -65,10 +52,19 @@ const MobileTitle = styled(ExtraBold36)`
 const ChipWrapper = styled.div`
   display: flex;
   margin-top: 30px;
+
+  @media screen and (max-width: 750px) {
+    flex-direction: column;
+    margin-top: 0px;
+  }
 `;
 
 const Chip = styled(ChipAccordion)`
   margin-right: 20px;
+
+  @media screen and (max-width: 750px) {
+    margin-right: 0px;
+  }
 `;
 const ExplanationSection = () => (
   <Container>
