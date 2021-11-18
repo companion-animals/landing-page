@@ -16,7 +16,8 @@ const Container = styled.div`
   padding-bottom: 80px;
 
   @media screen and (max-width: 750px) {
-    padding-top: 80px;
+    padding-top: 70px;
+    padding-bottom: 60px;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -33,15 +34,27 @@ const LeftWrapper = styled.div`
   display: flex;
   justify-content: center;
   margin-right: 320px;
+
+  @media screen and (max-width: 750px) {
+    margin-right: 50px;
+  }
 `;
 
 const SecondLeftWrapper = styled(LeftWrapper)`
   margin-right: 430px;
+
+  @media screen and (max-width: 750px) {
+    margin-right: 50px;
+  }
 `;
 
 const RightWrapper = styled(LeftWrapper)`
   margin-left: 400px;
   margin-right: 0px;
+
+  @media screen and (max-width: 750px) {
+    margin-left: 50px;
+  }
 `;
 
 const MediumText = styled(Medium36)`
@@ -54,6 +67,8 @@ const MediumText = styled(Medium36)`
   @media screen and (max-width: 750px) {
     font-size: 20px;
     margin-bottom: 5px;
+    line-height: 35px;
+    margin-top: 40px;
   }
 `;
 
@@ -80,7 +95,7 @@ const BoldText = styled(Medium22)`
   white-space: pre-line;
 
   @media screen and (max-width: 750px) {
-    font-size: 16px;
+    font-size: 12px;
     line-height: normal;
     text-align: left;
   }
@@ -91,7 +106,7 @@ const Icon = styled.span`
   margin-right: 30px;
 
   @media screen and (max-width: 750px) {
-    font-size: 36px;
+    font-size: 28px;
   }
 `;
 
@@ -107,7 +122,7 @@ const LeftSpeechBubble = styled.div`
   align-items: center;
   border: 2px solid #79cea7;
   z-index: 2;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 
   &:after {
     border-top: 20px solid #ffffff;
@@ -120,6 +135,16 @@ const LeftSpeechBubble = styled.div`
     left: 60px;
     z-index: 1;
   }
+
+  @media screen and (max-width: 750px) {
+    width: 280px;
+    height: 80px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.32);
+
+    &:after {
+      top: 70px;
+    }
+  }
 `;
 
 const RightSpeechBubble = styled(LeftSpeechBubble)`
@@ -130,10 +155,29 @@ const RightSpeechBubble = styled(LeftSpeechBubble)`
     left: 330px;
     z-index: 1;
   }
+
+  @media screen and (max-width: 750px) {
+    width: 280px;
+    height: 80px;
+
+    &:after {
+      top: 70px;
+      left: 190px;
+    }
+  }
 `;
 
 const SecondLeftSpeechBubble = styled(LeftSpeechBubble)`
   width: 360px;
+
+  @media screen and (max-width: 750px) {
+    width: 270px;
+    height: 80px;
+
+    &:after {
+      top: 70px;
+    }
+  }
 `;
 
 const SpeechBubbleSection = () => {
