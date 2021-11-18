@@ -1,5 +1,4 @@
 const images = {
-  animals: "/images/animals.png",
   logo: "/images/specialban_logo.png",
   character: "/images/specialban_character_logo.png",
   wideLogo: "/images/specialban_wide_logo.png",
