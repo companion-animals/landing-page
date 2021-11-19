@@ -203,7 +203,7 @@ const Rabbit = styled.img.attrs({ src: images.rabbit })`
 const SecondSection = () => {
   const lightTitleAnimatedItem = useScrollFadeIn({ direction: "up" });
   const boldTitleAnimatedItem = useScrollFadeIn({
-    delay: 200,
+    delay: 400,
     direction: "up",
   });
 
