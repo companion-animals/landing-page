@@ -5,7 +5,7 @@ import styled from "styled-components";
 import XEIcon from "src/components/atoms/icon/XEIcon";
 import {
   ExtraBold22,
-  ExtraBold36,
+  SemiBold36,
   ExtraBold48,
   SemiBold48,
 } from "src/components/atoms/text/Typographies";
@@ -71,7 +71,7 @@ const SectionTitle = styled(SemiBold48)`
   }
 `;
 
-const MobileTitle = styled(ExtraBold36)`
+const MobileTitle = styled(SemiBold36)`
   display: none;
 
   @media screen and (max-width: 750px) {
