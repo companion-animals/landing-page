@@ -10,6 +10,7 @@ import {
   SemiBold48,
 } from "src/components/atoms/text/Typographies";
 import images from "src/images";
+import { openNewTab } from "src/utils/common";
 
 const APPLY_LINK =
   "https://docs.google.com/forms/d/e/1FAIpQLScq8tQoJ_dptmVfMGKTP-WT1esNBc5s0BgcvS8We-VsC8kfTg/viewform?usp=sf_link";
@@ -87,11 +88,6 @@ const ColoredTitle = styled(ExtraBold48)`
   }
 `;
 
-const Link = styled.a`
-  text-decoration: none;
-  cursor: default;
-`;
-
 const SignUpButton = styled.div`
   display: flex;
   flex-direction: row;
@@ -156,6 +152,10 @@ const Logo = styled.img.attrs({ src: images.logo })`
 const IntroSection = () => {
   const [width, setWidth] = useState(0);
 
+  const openApplyLink = () => {
+    openNewTab(APPLY_LINK);
+  };
+
   useEffect(() => {
     window.addEventListener("resize", () => {
       const fullWidth = document.body.clientWidth;
@@ -178,19 +178,20 @@ const IntroSection = () => {
             <ColoredTitle>우리동네 특별반</ColoredTitle>
             <SectionTitle>{`이\n특별한 아이들을 돌봐드려요`}</SectionTitle>
             <MobileTitle>{`이\n특별한 아이들을\n돌봐드려요`}</MobileTitle>
-            <Link id="topFindHotelButton" href={APPLY_LINK} target="_blank">
-              <SignUpButton>
-                <SignUpButtonText>지금 신청하기</SignUpButtonText>
-                <RightAngleIcon />
-              </SignUpButton>
-            </Link>
-          </TitleWrapper>
-          <Link id="floatingFindHotelButton" href={APPLY_LINK} target="_blank">
-            <MobileSignUpButton width={width}>
+            <SignUpButton id="topFindHotelButton" onClick={openApplyLink}>
               <SignUpButtonText>지금 신청하기</SignUpButtonText>
               <RightAngleIcon />
-            </MobileSignUpButton>
-          </Link>
+            </SignUpButton>
+          </TitleWrapper>
+
+          <MobileSignUpButton
+            id="floatingFindHotelButton"
+            width={width}
+            onClick={openApplyLink}
+          >
+            <SignUpButtonText>지금 신청하기</SignUpButtonText>
+            <RightAngleIcon />
+          </MobileSignUpButton>
           <Logo />
         </ContentWrapper>
       </Wrapper>
