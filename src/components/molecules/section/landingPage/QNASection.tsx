@@ -23,7 +23,7 @@ const Container = styled.div`
 
 const Text = styled(Medium36)`
   @media screen and (max-width: 900px) {
-    font-size: 32px;
+    font-size: 28px;
     white-space: pre-line;
   }
 `;
@@ -40,7 +40,7 @@ const Footer = styled(Light16)`
 `;
 
 const BorderChip = styled.div`
-  padding: 12px 20px;
+  padding: 12px 16px;
   border: 2px solid #79cea7;
   background-color: #fafafa;
   border-radius: 60px;
@@ -51,8 +51,8 @@ const BorderChip = styled.div`
   justify-content: center;
 
   @media screen and (max-width: 900px) {
-    padding: 5px 16px;
-    margin-top: 20px;
+    padding: 8px 10px;
+    margin-top: 25px;
     margin-bottom: 30px;
   }
 `;
