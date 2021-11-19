@@ -103,6 +103,7 @@ const SignUpButton = styled.div`
   padding: 15px 30px;
   width: 210px;
   margin-top: 30px;
+  cursor: pointer;
 
   @media screen and (max-width: 900px) {
     display: none;
@@ -119,6 +120,7 @@ const MobileSignUpButton = styled(SignUpButton)<{ width: number }>`
     padding: 10px 20px;
     width: ${({ width }) => width - 80}px;
     z-index: 2;
+    cursor: pointer;
   }
 `;
 
