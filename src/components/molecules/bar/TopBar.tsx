@@ -81,7 +81,12 @@ const TopBar = () => (
   <Container>
     <Wrapper>
       <Text>SPECIALBAN</Text>
-      <Link target="_blank" rel="noreferrer" href={APPLY_LINK}>
+      <Link
+        id="sitterApplyButton"
+        target="_blank"
+        rel="noreferrer"
+        href={APPLY_LINK}
+      >
         <ApplyButton>
           <ApplyButtonText> 펫시터 지원</ApplyButtonText>
           <RightAngleIcon />
