@@ -88,7 +88,7 @@ const TopBar = () => (
         href={APPLY_LINK}
       >
         <ApplyButton>
-          <ApplyButtonText> 펫시터 지원</ApplyButtonText>
+          <ApplyButtonText>펫시터 지원</ApplyButtonText>
           <RightAngleIcon />
         </ApplyButton>
       </Link>
