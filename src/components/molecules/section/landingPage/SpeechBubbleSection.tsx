@@ -121,7 +121,7 @@ const LeftSpeechBubble = styled.div`
   justify-content: center;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.32);
   align-items: center;
-  border: 2px solid #79cea7;
+  border: 1px solid #79cea7;
   z-index: 2;
   margin-bottom: 30px;
 
