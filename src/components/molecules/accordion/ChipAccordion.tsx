@@ -24,7 +24,7 @@ const BorderChip = styled.div<{ isOpen?: boolean }>`
   justify-content: center;
   cursor: pointer;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     width: 280px;
   }
 `;
@@ -32,7 +32,7 @@ const BorderChip = styled.div<{ isOpen?: boolean }>`
 const Text = styled(Medium24)<{ isOpen?: boolean }>`
   color: ${({ isOpen }) => (isOpen ? "#FFFFFF" : "#79cea7;")};
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     font-size: 20px;
   }
 `;
@@ -54,7 +54,7 @@ const Wrapper = styled.div``;
 const RegularText = styled(Regular20)`
   white-space: pre-line;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     font-size: 16px;
   }
 `;

@@ -20,7 +20,7 @@ const Container = styled.div`
   padding-bottom: 20px;
   background-color: #fafafa;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     padding-top: 80px;
   }
 `;
@@ -29,7 +29,7 @@ const SectionTitle = styled(ExtraBold44)`
   white-space: pre-line;
   margin-bottom: 50px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     display: none;
   }
 `;
@@ -43,7 +43,7 @@ const Wrapper = styled.div`
 const Number = styled(ExtraBold36)`
   color: #79cea7;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     font-size: 26px;
   }
 `;
@@ -59,7 +59,7 @@ const DetailSemiBold = styled(SemiBold28)`
   display: inline;
   white-space: pre-line;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     display: none;
   }
 `;
@@ -68,7 +68,7 @@ const BoldDetail = styled(ExtraBold36)`
   color: #79cea7;
   margin-bottom: 15px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     font-size: 26px;
     line-height: normal;
     margin-bottom: 10px;
@@ -78,7 +78,7 @@ const BoldDetail = styled(ExtraBold36)`
 const MobileText = styled(Light20)`
   display: none;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     display: flex;
     white-space: pre-line;
     margin-top: 0px;
@@ -89,7 +89,7 @@ const MobileText = styled(Light20)`
 const MobileTitle = styled(ExtraBold32)`
   display: none;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     display: flex;
     white-space: pre-line;
     margin-bottom: 50px;
@@ -97,7 +97,7 @@ const MobileTitle = styled(ExtraBold32)`
 `;
 
 const MobileWrapper = styled.div`
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     display: flex;
     justify-content: center;
   }

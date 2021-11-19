@@ -12,14 +12,14 @@ const Container = styled.div`
   padding-bottom: 100px;
   background-color: #fafafa;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     padding-top: 50px;
     padding-bottom: 70px;
   }
 `;
 
 const BoldText = styled(ExtraBold44)`
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     font-size: 36px;
   }
 `;
@@ -27,7 +27,7 @@ const BoldText = styled(ExtraBold44)`
 const ContentWrapper = styled.div`
   margin-top: 70px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     margin-top: 30px;
   }
 `;

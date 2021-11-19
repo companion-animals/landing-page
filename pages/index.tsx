@@ -24,7 +24,7 @@ const Line = styled.div`
   max-width: 1670px;
   z-index: 1;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     max-width: 350px;
   }
 `;

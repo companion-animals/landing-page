@@ -11,7 +11,7 @@ interface Props {
 const Container = styled.div`
   width: 900px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     width: 320px;
   }
 `;
@@ -21,7 +21,7 @@ const TitleBox = styled.div`
   padding-top: 10px;
   padding-bottom: 10px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     padding-top: 5px;
     padding-bottom: 5px;
   }
@@ -31,7 +31,7 @@ const ContentBox = styled.div`
   background-color: #ffffff;
   border: 2px solid #b7b7b7;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     padding-right: 30px;
   }
 `;
@@ -42,7 +42,7 @@ const Content = styled(Light20)`
   margin-top: 20px;
   margin-bottom: 20px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     white-space: normal;
     font-size: 12px;
     margin-top: 15px;

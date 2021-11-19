@@ -15,7 +15,7 @@ const Container = styled.div`
   padding-top: 50px;
   padding-bottom: 80px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     padding-top: 70px;
     padding-bottom: 60px;
     flex-direction: column;
@@ -35,7 +35,7 @@ const LeftWrapper = styled.div`
   justify-content: center;
   margin-right: 320px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     margin-right: 50px;
   }
 `;
@@ -43,7 +43,7 @@ const LeftWrapper = styled.div`
 const SecondLeftWrapper = styled(LeftWrapper)`
   margin-right: 430px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     margin-right: 100px;
   }
 `;
@@ -52,7 +52,7 @@ const RightWrapper = styled(LeftWrapper)`
   margin-left: 400px;
   margin-right: 0px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     margin-left: 80px;
   }
 `;
@@ -64,7 +64,7 @@ const MediumText = styled(Medium36)`
   text-align: center;
   line-height: 57px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     font-size: 20px;
     margin-bottom: 5px;
     line-height: 35px;
@@ -75,7 +75,7 @@ const MediumText = styled(Medium36)`
 const BoldTitle = styled(Bold42)`
   display: inline;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     font-size: 20px;
     font-weight: 500;
     line-height: normal;
@@ -84,7 +84,7 @@ const BoldTitle = styled(Bold42)`
 `;
 
 const ExtraBoldTitle = styled(BoldTitle)`
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     white-space: pre-line;
     font-weight: 800;
     font-size: 30px;
@@ -94,7 +94,7 @@ const ExtraBoldTitle = styled(BoldTitle)`
 const BoldText = styled(Medium22)`
   white-space: pre-line;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     font-size: 12px;
     line-height: normal;
     text-align: left;
@@ -105,7 +105,7 @@ const Icon = styled.span`
   font-size: 60px;
   margin-right: 30px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     font-size: 28px;
     margin-right: 18px;
   }
@@ -137,7 +137,7 @@ const LeftSpeechBubble = styled.div`
     z-index: 1;
   }
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     width: 260px;
     height: 60px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.32);
@@ -159,7 +159,7 @@ const RightSpeechBubble = styled(LeftSpeechBubble)`
     z-index: 1;
   }
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     width: 240px;
     height: 60px;
 
@@ -173,7 +173,7 @@ const RightSpeechBubble = styled(LeftSpeechBubble)`
 const SecondLeftSpeechBubble = styled(LeftSpeechBubble)`
   width: 360px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     width: 210px;
     height: 60px;
 

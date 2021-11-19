@@ -15,14 +15,14 @@ const Container = styled.div`
   padding-top: 115px;
   padding-bottom: 80px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     padding-top: 70px;
     padding-bottom: 100px;
   }
 `;
 
 const Text = styled(Medium36)`
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     font-size: 32px;
     white-space: pre-line;
   }
@@ -31,7 +31,7 @@ const Text = styled(Medium36)`
 const Footer = styled(Light16)`
   color: #868686;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     white-space: pre-line;
     text-align: center;
     line-height: 22px;
@@ -50,7 +50,7 @@ const BorderChip = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     padding: 5px 16px;
     margin-top: 20px;
     margin-bottom: 30px;
@@ -58,13 +58,13 @@ const BorderChip = styled.div`
 `;
 
 const Email = styled(Light24)`
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     font-size: 16px;
   }
 `;
 
 const EmailIcon = styled.img.attrs({ src: images.emailIcon })`
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     width: 26px;
   }
 `;
@@ -79,7 +79,7 @@ const Circle = styled.div`
   border-radius: 30px;
   margin-right: 15px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     width: 40px;
     height: 40px;
   }

@@ -16,7 +16,7 @@ const Container = styled.div`
   text-align: center;
   background-color: #fafafa;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -35,7 +35,7 @@ const Title = styled(ExtraBold40)`
   white-space: pre-line;
   margin-bottom: 25px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     display: none;
   }
 `;
@@ -43,7 +43,7 @@ const Title = styled(ExtraBold40)`
 const MobileTitle = styled(ExtraBold36)`
   display: none;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     display: block;
     margin-bottom: 50px;
     white-space: pre-line;
@@ -54,7 +54,7 @@ const ChipWrapper = styled.div`
   display: flex;
   margin-top: 30px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     flex-direction: column;
     margin-top: 0px;
   }
@@ -63,7 +63,7 @@ const ChipWrapper = styled.div`
 const Chip = styled(ChipAccordion)`
   margin-right: 20px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     margin-right: 0px;
   }
 `;

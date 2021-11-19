@@ -22,7 +22,7 @@ const Container = styled.div`
   padding-top: 124px;
   padding-bottom: 140px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     padding-top: 80px;
     padding-bottom: 60px;
   }
@@ -38,7 +38,7 @@ const ContentWrapper = styled.div`
   justify-content: center;
   margin-top: 30px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     flex-direction: column-reverse;
     align-items: center;
     text-align: center;
@@ -55,7 +55,7 @@ const TitleWrapper = styled.div`
   margin-left: 20px;
   margin-top: 20px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     margin-top: 40px;
     margin-left: 0px;
     margin-right: 0px;
@@ -66,7 +66,7 @@ const SectionTitle = styled(SemiBold48)`
   display: inline;
   line-height: 60px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     display: none;
   }
 `;
@@ -74,7 +74,7 @@ const SectionTitle = styled(SemiBold48)`
 const MobileTitle = styled(SemiBold36)`
   display: none;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     display: inline;
   }
 `;
@@ -82,7 +82,7 @@ const MobileTitle = styled(SemiBold36)`
 const ColoredTitle = styled(ExtraBold48)`
   display: inline;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     font-size: 36px;
     line-height: 46px;
   }
@@ -100,7 +100,7 @@ const SignUpButton = styled.div`
   width: 210px;
   margin-top: 30px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     display: none;
   }
 `;
@@ -108,7 +108,7 @@ const SignUpButton = styled.div`
 const MobileSignUpButton = styled(SignUpButton)<{ width: number }>`
   display: none;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     display: flex;
     position: fixed;
     bottom: 30px;
@@ -123,7 +123,7 @@ const RightAngleIcon = styled(XEIcon).attrs({ type: "xi-angle-right" })`
   font-weight: 800;
   font-size: 18px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     font-size: 15px;
   }
 `;
@@ -131,7 +131,7 @@ const RightAngleIcon = styled(XEIcon).attrs({ type: "xi-angle-right" })`
 const SignUpButtonText = styled(ExtraBold22)`
   color: #ffffff;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     font-size: 18px;
   }
 `;
@@ -141,7 +141,7 @@ const Logo = styled.img.attrs({ src: images.logo })`
   height: 300px;
   border-radius: 80px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     width: 220px;
     height: 220px;
   }

@@ -20,13 +20,13 @@ const TitleWrapper = styled.div`
 `;
 
 const LightText = styled(Light44)`
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     font-size: 36px;
   }
 `;
 
 const BoldText = styled(ExtraBold44)`
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     font-size: 36px;
   }
 `;
@@ -37,7 +37,7 @@ const ContentWrapper = styled.div`
   margin-top: 60px;
   width: 900px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     flex-direction: column;
     align-items: center;
     margin-bottom: -35px;
@@ -49,7 +49,7 @@ const Card = styled(CardWithQuotationMark)`
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
   border: 1px solid #79cea7;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     margin-bottom: 48px;
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.32);
   }
