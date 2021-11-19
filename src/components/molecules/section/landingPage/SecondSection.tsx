@@ -84,6 +84,7 @@ const ImageWrapper = styled.div`
   justify-content: center;
   align-items: center;
   position: absolute;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 `;
 
 const BirdWrapper = styled(ImageWrapper)`
