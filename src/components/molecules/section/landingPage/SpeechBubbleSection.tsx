@@ -44,7 +44,7 @@ const SecondLeftWrapper = styled(LeftWrapper)`
   margin-right: 430px;
 
   @media screen and (max-width: 750px) {
-    margin-right: 50px;
+    margin-right: 100px;
   }
 `;
 
@@ -53,7 +53,7 @@ const RightWrapper = styled(LeftWrapper)`
   margin-right: 0px;
 
   @media screen and (max-width: 750px) {
-    margin-left: 50px;
+    margin-left: 80px;
   }
 `;
 
@@ -107,6 +107,7 @@ const Icon = styled.span`
 
   @media screen and (max-width: 750px) {
     font-size: 28px;
+    margin-right: 18px;
   }
 `;
 
@@ -137,13 +138,14 @@ const LeftSpeechBubble = styled.div`
   }
 
   @media screen and (max-width: 750px) {
-    width: 280px;
-    height: 80px;
+    width: 260px;
+    height: 60px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.32);
     border: 1px solid #79cea7;
-
+    border-radius: 16px;
     &:after {
-      top: 70px;
+      top: 50px;
+      left: 30px;
     }
   }
 `;
@@ -158,12 +160,12 @@ const RightSpeechBubble = styled(LeftSpeechBubble)`
   }
 
   @media screen and (max-width: 750px) {
-    width: 280px;
-    height: 80px;
+    width: 240px;
+    height: 60px;
 
     &:after {
-      top: 70px;
-      left: 190px;
+      top: 50px;
+      left: 170px;
     }
   }
 `;
@@ -172,11 +174,11 @@ const SecondLeftSpeechBubble = styled(LeftSpeechBubble)`
   width: 360px;
 
   @media screen and (max-width: 750px) {
-    width: 270px;
-    height: 80px;
+    width: 210px;
+    height: 60px;
 
     &:after {
-      top: 70px;
+      top: 50px;
     }
   }
 `;
