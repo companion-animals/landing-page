@@ -20,10 +20,11 @@ const Container = styled.div`
 const Line = styled.div`
   width: 100%;
   height: 1px;
-  background-color: #dbd7fa;
+  background-color: #dce4ec;
   max-width: 1670px;
+  z-index: 1;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     max-width: 350px;
   }
 `;

@@ -20,14 +20,14 @@ const Card = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     width: 220px;
     height: 320px;
   }
 `;
 
 const QuotationMark = styled(ExtraBold36)`
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     font-size: 30px;
   }
 `;
@@ -35,7 +35,7 @@ const QuotationMark = styled(ExtraBold36)`
 const ContextText = styled(Light20)`
   white-space: pre-line;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     font-size: 16px;
     line-height: 26px;
   }

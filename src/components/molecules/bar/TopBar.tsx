@@ -13,7 +13,7 @@ const Container = styled.div`
   padding: 25px 50px;
   display: flex;
   justify-content: center;
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     padding: 15px 30px;
   }
 `;
@@ -28,9 +28,9 @@ const Wrapper = styled.div`
 `;
 
 const Text = styled(Heavy30)`
-  color: #7065e7;
+  color: #79cea7;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     font-size: 20px;
   }
 `;
@@ -43,31 +43,31 @@ const ApplyButton = styled.div`
   background-color: #ffffff;
   border-radius: 10px;
   padding: 5px 10px;
-  border: 3px solid #8d86eb;
+  border: 3px solid #79cea7;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     padding: 4px 5px;
     border-width: 1px;
   }
 `;
 
 const RightAngleIcon = styled(XEIcon).attrs({ type: "xi-angle-right" })`
-  color: #7065e7;
+  color: #79cea7;
   font-weight: 800;
   font-size: 14px;
   margin-left: 5px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     font-size: 10px;
   }
 `;
 
 const ApplyButtonText = styled(ExtraBold18)`
-  color: #8d86eb;
+  color: #79cea7;
   margin-top: 0px;
   margin-left: 3px;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 900px) {
     font-size: 12px;
     margin-left: 3px;
   }
@@ -80,10 +80,15 @@ const Link = styled.a`
 const TopBar = () => (
   <Container>
     <Wrapper>
-      <Text>우리동네 특별반</Text>
-      <Link target="_blank" rel="noreferrer" href={APPLY_LINK}>
+      <Text>SPECIALBAN</Text>
+      <Link
+        id="sitterApplyButton"
+        target="_blank"
+        rel="noreferrer"
+        href={APPLY_LINK}
+      >
         <ApplyButton>
-          <ApplyButtonText> 펫시터 지원</ApplyButtonText>
+          <ApplyButtonText>펫시터 지원</ApplyButtonText>
           <RightAngleIcon />
         </ApplyButton>
       </Link>
