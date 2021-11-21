@@ -17,6 +17,11 @@ const SEO = ({ allowSearchIndex }: Props) => (
     <meta key="og:description" name="og:description" content={DESCRIPTION} />
     <meta key="og:type" name="og:type" content="website" />
     <meta key="og:site_name" name="og:site_name" content={SITE_NAME} />
+    <meta
+      property="og:image"
+      content="/images/specialban_og_image"
+      key="og:image"
+    />
     {allowSearchIndex && (
       <meta name="robots" content="noindex" key="blockCrawl" />
     )}
