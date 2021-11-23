@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
-import {
-  Light16,
-  Medium36,
-  Light24,
-} from "src/components/atoms/text/Typographies";
+import { Medium36, Light24 } from "src/components/atoms/text/Typographies";
 import images from "src/images";
 
 const Container = styled.div`
@@ -13,11 +9,9 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 115px;
-  padding-bottom: 80px;
 
   @media screen and (max-width: 900px) {
     padding-top: 70px;
-    padding-bottom: 100px;
   }
 `;
 
@@ -25,21 +19,6 @@ const Text = styled(Medium36)`
   @media screen and (max-width: 900px) {
     font-size: 28px;
     white-space: pre-line;
-  }
-`;
-
-const Footer = styled.footer`
-  padding: 0 16px;
-`;
-
-const Info = styled(Light16)`
-  color: #868686;
-
-  @media screen and (max-width: 900px) {
-    white-space: pre-line;
-    text-align: center;
-    line-height: 22px;
-    font-size: 12px;
   }
 `;
 
@@ -98,14 +77,6 @@ const QNASection = () => (
       </Circle>
       <Email>specialban.official@gmail.com</Email>
     </BorderChip>
-    <Footer>
-      <Info>
-        드로우코퍼레이션| 대표: 박진주 | 사업자등록번호: 594-45-00660 |
-        통신판매업신고번호: 제 2021-서울중랑-1384호
-      </Info>
-      <Info>서울시 중랑구 봉화산로 193 | 1103-1207</Info>
-      <Info>{`ⓒ 2021 우리동네특별반\nAll Rights Reserved`}</Info>
-    </Footer>
   </Container>
 );
 
