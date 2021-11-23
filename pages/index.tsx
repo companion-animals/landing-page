@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import TopBar from "src/components/molecules/bar/TopBar";
+import Footer from "src/components/molecules/footer/Footer";
 import DetailSection from "src/components/molecules/section/landingPage/DetailSection";
 import ExplanationSection from "src/components/molecules/section/landingPage/ExplanationSection";
 import FAQSection from "src/components/molecules/section/landingPage/FAQSection";
@@ -15,6 +16,10 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  padding-bottom: 80px;
+  @media screen and (max-width: 900px) {
+    padding-bottom: 100px;
+  }
 `;
 
 const Line = styled.div`
@@ -40,6 +45,7 @@ const Home = () => (
     <ReviewSection />
     <FAQSection />
     <QNASection />
+    <Footer />
   </Container>
 );
 

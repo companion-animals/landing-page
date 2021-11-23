@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
-import {
-  Light16,
-  Medium36,
-  Light24,
-} from "src/components/atoms/text/Typographies";
+import { Medium36, Light24 } from "src/components/atoms/text/Typographies";
 import images from "src/images";
 
 const Container = styled.div`
@@ -13,11 +9,9 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding-top: 115px;
-  padding-bottom: 80px;
 
   @media screen and (max-width: 900px) {
     padding-top: 70px;
-    padding-bottom: 100px;
   }
 `;
 
@@ -25,17 +19,6 @@ const Text = styled(Medium36)`
   @media screen and (max-width: 900px) {
     font-size: 28px;
     white-space: pre-line;
-  }
-`;
-
-const Footer = styled(Light16)`
-  color: #868686;
-
-  @media screen and (max-width: 900px) {
-    white-space: pre-line;
-    text-align: center;
-    line-height: 22px;
-    font-size: 12px;
   }
 `;
 
@@ -94,7 +77,6 @@ const QNASection = () => (
       </Circle>
       <Email>specialban.official@gmail.com</Email>
     </BorderChip>
-    <Footer>{`ⓒ 2021 우리동네특별반\nAll Rights Reserved`}</Footer>
   </Container>
 );
 
