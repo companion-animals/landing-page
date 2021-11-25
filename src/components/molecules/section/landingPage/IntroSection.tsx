@@ -148,8 +148,8 @@ const Illustration = styled.img.attrs({ src: images.illustration })`
   height: 300px;
 
   @media screen and (max-width: 900px) {
-    width: 220px;
-    height: 220px;
+    width: 280px;
+    height: 200px;
   }
 `;
 
