@@ -143,14 +143,13 @@ const SignUpButtonText = styled(ExtraBold22)`
   }
 `;
 
-const Logo = styled.img.attrs({ src: images.logo })`
-  width: 300px;
+const Illustration = styled.img.attrs({ src: images.illustration })`
+  width: 450px;
   height: 300px;
-  border-radius: 80px;
 
   @media screen and (max-width: 900px) {
-    width: 220px;
-    height: 220px;
+    width: 280px;
+    height: 200px;
   }
 `;
 
@@ -192,7 +191,7 @@ const IntroSection = () => {
               <RightAngleIcon />
             </MobileSignUpButton>
           </Link>
-          <Logo />
+          <Illustration />
         </ContentWrapper>
       </Wrapper>
     </Container>

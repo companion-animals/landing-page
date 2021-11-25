@@ -61,7 +61,7 @@ const BoldTitle = styled(ExtraBold44)`
 `;
 
 const ColoredBoldTitle = styled(BoldTitle)`
-  color: #7065e7;
+  color: #79cea7;
 `;
 
 const TitleWrapper = styled.div``;
@@ -236,8 +236,10 @@ const SecondSection = () => {
             <LightTitle>고양이말고, 강아지말고</LightTitle>
           </TitleWrapper>
           <TitleWrapper {...boldTitleAnimatedItem}>
-            <ColoredBoldTitle>{}</ColoredBoldTitle>
-            <BoldTitle>{`햄스터, 기니피그, 토끼\n도마뱀, 앵무새\n돌봐줄 곳 어디 없을까요?`}</BoldTitle>
+            <ColoredBoldTitle>
+              {`햄스터, 기니피그, 토끼\n도마뱀, 앵무새 등`}
+            </ColoredBoldTitle>
+            <BoldTitle>돌봐줄 곳 어디 없을까요?</BoldTitle>
           </TitleWrapper>
         </TitleContainer>
       </Wrapper>
