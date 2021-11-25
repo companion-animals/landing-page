@@ -66,7 +66,7 @@ const Contact = () => {
   return (
     <Container>
       <Title>{name}</Title>
-      <StyledAnchor href={`tel:${contact}`}>
+      <StyledAnchor id="callToHotel" href={`tel:${contact}`}>
         <Bold16>{contact}</Bold16>
       </StyledAnchor>
       <Character src="/images/bunny.png" />
