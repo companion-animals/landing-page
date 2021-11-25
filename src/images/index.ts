@@ -12,6 +12,7 @@ const images = {
   snake: "/images/snake.png",
   emailIcon: "/images/email_icon.png",
   textLogo: "/images/specialban_text_logo.png",
+  illustration: "/images/specialban_illustration.png",
 };
 
 export default images;
