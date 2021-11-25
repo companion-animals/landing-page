@@ -22,7 +22,7 @@ const SEO = ({ allowSearchIndex }: Props) => (
       content="/images/specialban_og_image"
       key="og:image"
     />
-    {allowSearchIndex && (
+    {!allowSearchIndex && (
       <meta name="robots" content="noindex" key="blockCrawl" />
     )}
   </Head>
