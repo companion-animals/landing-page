@@ -15,18 +15,7 @@ const Container = styled.div`
   background: #7bd0a7;
 `;
 
-const Park = styled.div`
-  width: 80%;
-  max-width: 300px;
-  background: url("/images/park.png") no-repeat;
-  background-size: contain;
-`;
-
 const StyledAnchor = styled.a`
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   width: 60%;
   text-align: center;
   margin-bottom: 48px;
@@ -81,8 +70,6 @@ const Contact = () => {
         <Bold16>{contact}</Bold16>
       </StyledAnchor>
       <Character src="/images/bunny.png" />
-
-      {/* <Lottie options={defaultOptions} width={300} height={300} /> */}
     </Container>
   );
 };
