@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 import XEIcon from "src/components/atoms/icon/XEIcon";
-import { ExtraBold18, Heavy30 } from "src/components/atoms/text/Typographies";
+import { ExtraBold16 } from "src/components/atoms/text/Typographies";
+import images from "src/images";
 
 const APPLY_LINK =
   "https://docs.google.com/forms/d/e/1FAIpQLSdA279z1g6td4dr9nV-nf55BfQe3FBnwJrDBzKcbCyFnd8cgQ/viewform?usp=sf_link";
@@ -9,12 +10,12 @@ const APPLY_LINK =
 const Container = styled.div`
   width: 100%;
   background-color: #ffffff;
-  border-bottom: 1px solid #d2d2d2;
-  padding: 25px 50px;
+  padding: 26px 50px;
   display: flex;
   justify-content: center;
+
   @media screen and (max-width: 900px) {
-    padding: 15px 30px;
+    padding: 16px 30px;
   }
 `;
 
@@ -27,14 +28,6 @@ const Wrapper = styled.div`
   justify-content: space-between;
 `;
 
-const Text = styled(Heavy30)`
-  color: #79cea7;
-
-  @media screen and (max-width: 900px) {
-    font-size: 20px;
-  }
-`;
-
 const ApplyButton = styled.div`
   display: flex;
   flex-direction: row;
@@ -42,12 +35,13 @@ const ApplyButton = styled.div`
   align-items: center;
   background-color: #ffffff;
   border-radius: 10px;
-  padding: 5px 10px;
+  padding: 3px 6px;
   border: 3px solid #79cea7;
 
   @media screen and (max-width: 900px) {
-    padding: 4px 5px;
+    padding: 2px 4px;
     border-width: 1px;
+    border-radius: 7px;
   }
 `;
 
@@ -59,10 +53,11 @@ const RightAngleIcon = styled(XEIcon).attrs({ type: "xi-angle-right" })`
 
   @media screen and (max-width: 900px) {
     font-size: 10px;
+    margin-left: 2px;
   }
 `;
 
-const ApplyButtonText = styled(ExtraBold18)`
+const ApplyButtonText = styled(ExtraBold16)`
   color: #79cea7;
   margin-top: 0px;
   margin-left: 3px;
@@ -77,10 +72,18 @@ const Link = styled.a`
   text-decoration: none;
 `;
 
+const TextLogo = styled.img.attrs({ src: images.textLogo })`
+  width: 180px;
+
+  @media screen and (max-width: 900px) {
+    width: 120px;
+  }
+`;
+
 const TopBar = () => (
   <Container>
     <Wrapper>
-      <Text>SPECIALBAN</Text>
+      <TextLogo />
       <Link
         id="sitterApplyButton"
         target="_blank"
