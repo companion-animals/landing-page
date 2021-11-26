@@ -19,7 +19,7 @@ const SEO = ({ allowSearchIndex }: Props) => (
     <meta key="og:site_name" name="og:site_name" content={SITE_NAME} />
     <meta
       property="og:image"
-      content="/images/specialban_og_image"
+      content="/images/specialban_og_image.png"
       key="og:image"
     />
     {!allowSearchIndex && (
