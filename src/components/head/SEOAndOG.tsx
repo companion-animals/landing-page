@@ -28,7 +28,7 @@ const SEO = ({ allowSearchIndex }: Props) => (
       content="/images/specialban_og_image.png"
       key="og:image"
     />
-		<link rel="canonical" href="https://www.specialban.com">
+    <link rel="canonical" href="https://www.specialban.com" />
     {!allowSearchIndex && (
       <meta name="robots" content="noindex" key="blockCrawl" />
     )}
