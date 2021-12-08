@@ -2,9 +2,8 @@ import { useState, useEffect } from "react";
 
 import styled from "styled-components";
 
-import XEIcon from "src/components/icon/XEIcon";
+import RightAngleButton from "src/components/button/roundBox/RightAngleButton";
 import {
-  ExtraBold22,
   SemiBold36,
   ExtraBold48,
   SemiBold48,
@@ -26,17 +25,11 @@ const IntroSection = () => {
             <SectionTitle>{`이\n특별한 아이들을 돌봐드려요`}</SectionTitle>
             <MobileTitle>{`이\n특별한 아이들을\n돌봐드려요`}</MobileTitle>
             <Link id="topFindHotelButton" href={APPLY_LINK} target="_blank">
-              <SignUpButton>
-                <SignUpButtonText>지금 신청하기</SignUpButtonText>
-                <RightAngleIcon />
-              </SignUpButton>
+              <RightAngleButton title="지금 신청하기" />
             </Link>
           </TitleWrapper>
           <Link id="floatingFindHotelButton" href={APPLY_LINK} target="_blank">
-            <MobileSignUpButton width={width}>
-              <SignUpButtonText>지금 신청하기</SignUpButtonText>
-              <RightAngleIcon />
-            </MobileSignUpButton>
+            <MobileSignUpButton width={width} title="지금 신청하기" />
           </Link>
           <Illustration />
         </ContentWrapper>
@@ -63,6 +56,7 @@ const useIntroSection = () => {
       setWidth(fullWidth);
     }
   }, [width]);
+
   return { width };
 };
 
@@ -145,25 +139,9 @@ const Link = styled.a`
   display: contents;
 `;
 
-const SignUpButton = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 10px;
-  margin-top: 50px;
-  background-color: #79cea7;
-  padding: 15px 30px;
-  width: 210px;
-  margin-top: 30px;
-  cursor: pointer;
-
-  @media screen and (max-width: 900px) {
-    display: none;
-  }
-`;
-
-const MobileSignUpButton = styled(SignUpButton)<{ width: number }>`
+const MobileSignUpButton = styled(RightAngleButton)<{
+  width: number;
+}>`
   display: none;
 
   @media screen and (max-width: 900px) {
@@ -174,24 +152,6 @@ const MobileSignUpButton = styled(SignUpButton)<{ width: number }>`
     width: ${({ width }) => width - 80}px;
     z-index: 2;
     cursor: pointer;
-  }
-`;
-
-const RightAngleIcon = styled(XEIcon).attrs({ type: "xi-angle-right" })`
-  color: #ffffff;
-  font-weight: 800;
-  font-size: 18px;
-
-  @media screen and (max-width: 900px) {
-    font-size: 15px;
-  }
-`;
-
-const SignUpButtonText = styled(ExtraBold22)`
-  color: #ffffff;
-
-  @media screen and (max-width: 900px) {
-    font-size: 18px;
   }
 `;
 
