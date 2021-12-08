@@ -11,6 +11,24 @@ import ReviewSection from "src/components/section/landingPage/ReviewSection";
 import SecondSection from "src/components/section/landingPage/SecondSection";
 import SpeechBubbleSection from "src/components/section/landingPage/SpeechBubbleSection";
 
+const Home = () => (
+  <Container>
+    <TopBar />
+    <IntroSection />
+    <SecondSection />
+    <SpeechBubbleSection />
+    <DetailSection />
+    <Line />
+    <ExplanationSection />
+    <ReviewSection />
+    <FAQSection />
+    <QNASection />
+    <Footer />
+  </Container>
+);
+
+export default Home;
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -33,20 +51,3 @@ const Line = styled.div`
     max-width: 350px;
   }
 `;
-const Home = () => (
-  <Container>
-    <TopBar />
-    <IntroSection />
-    <SecondSection />
-    <SpeechBubbleSection />
-    <DetailSection />
-    <Line />
-    <ExplanationSection />
-    <ReviewSection />
-    <FAQSection />
-    <QNASection />
-    <Footer />
-  </Container>
-);
-
-export default Home;

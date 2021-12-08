@@ -4,6 +4,60 @@ import { ExtraBold44, Light38 } from "src/components/text/Typographies";
 import useScrollFadeIn from "src/hooks/useScrollFadeIn";
 import images from "src/images";
 
+const SecondSection = () => {
+  const { lightTitleAnimatedItem, boldTitleAnimatedItem } = useSecondSection();
+
+  return (
+    <Container>
+      <Wrapper>
+        <ImageContainer>
+          <BirdWrapper>
+            <Bird />
+          </BirdWrapper>
+          <ChameleonWrapper>
+            <Chameleon />
+          </ChameleonWrapper>
+          <HamsterWrapper>
+            <Hamster />
+          </HamsterWrapper>
+          <ParrotWrapper>
+            <Parrot />
+          </ParrotWrapper>
+          <PigeonWrapper>
+            <Pigeon />
+          </PigeonWrapper>
+          <RabbitWrapper>
+            <Rabbit />
+          </RabbitWrapper>
+        </ImageContainer>
+        <TitleContainer>
+          <TitleWrapper {...lightTitleAnimatedItem}>
+            <LightTitle>고양이말고, 강아지말고</LightTitle>
+          </TitleWrapper>
+          <TitleWrapper {...boldTitleAnimatedItem}>
+            <ColoredBoldTitle>
+              {`햄스터, 기니피그, 토끼\n도마뱀, 앵무새 등`}
+            </ColoredBoldTitle>
+            <BoldTitle>돌봐줄 곳 어디 없을까요?</BoldTitle>
+          </TitleWrapper>
+        </TitleContainer>
+      </Wrapper>
+    </Container>
+  );
+};
+
+export default SecondSection;
+
+const useSecondSection = () => {
+  const lightTitleAnimatedItem = useScrollFadeIn({ direction: "up" });
+  const boldTitleAnimatedItem = useScrollFadeIn({
+    delay: 400,
+    direction: "up",
+  });
+
+  return { lightTitleAnimatedItem, boldTitleAnimatedItem };
+};
+
 const Container = styled.div`
   width: 100%;
   padding-top: 100px;
@@ -200,51 +254,3 @@ const Rabbit = styled.img.attrs({ src: images.rabbit })`
     width: 60px;
   }
 `;
-
-const SecondSection = () => {
-  const lightTitleAnimatedItem = useScrollFadeIn({ direction: "up" });
-  const boldTitleAnimatedItem = useScrollFadeIn({
-    delay: 400,
-    direction: "up",
-  });
-
-  return (
-    <Container>
-      <Wrapper>
-        <ImageContainer>
-          <BirdWrapper>
-            <Bird />
-          </BirdWrapper>
-          <ChameleonWrapper>
-            <Chameleon />
-          </ChameleonWrapper>
-          <HamsterWrapper>
-            <Hamster />
-          </HamsterWrapper>
-          <ParrotWrapper>
-            <Parrot />
-          </ParrotWrapper>
-          <PigeonWrapper>
-            <Pigeon />
-          </PigeonWrapper>
-          <RabbitWrapper>
-            <Rabbit />
-          </RabbitWrapper>
-        </ImageContainer>
-        <TitleContainer>
-          <TitleWrapper {...lightTitleAnimatedItem}>
-            <LightTitle>고양이말고, 강아지말고</LightTitle>
-          </TitleWrapper>
-          <TitleWrapper {...boldTitleAnimatedItem}>
-            <ColoredBoldTitle>
-              {`햄스터, 기니피그, 토끼\n도마뱀, 앵무새 등`}
-            </ColoredBoldTitle>
-            <BoldTitle>돌봐줄 곳 어디 없을까요?</BoldTitle>
-          </TitleWrapper>
-        </TitleContainer>
-      </Wrapper>
-    </Container>
-  );
-};
-
-export default SecondSection;

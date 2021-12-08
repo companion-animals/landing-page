@@ -3,6 +3,68 @@ import styled from "styled-components";
 import { Medium36, Bold42, Medium22 } from "src/components/text/Typographies";
 import useScrollFadeIn from "src/hooks/useScrollFadeIn";
 
+const SpeechBubbleSection = () => {
+  const {
+    firstAnimatedItem,
+    secondAnimatedItem,
+    thirdAnimatedItem,
+    fourthAnimatedItem,
+  } = useSpeechBubbleSection();
+
+  return (
+    <Container>
+      <ContentContainer>
+        <LeftWrapper {...firstAnimatedItem}>
+          <LeftSpeechBubble>
+            <Icon>🤔</Icon>
+            <BoldText>
+              {`명절동안 집에 내려가는데\n고슴도치를 어디에 맡겨야할지 고민돼요`}
+            </BoldText>
+          </LeftSpeechBubble>
+        </LeftWrapper>
+        <RightWrapper {...secondAnimatedItem}>
+          <RightSpeechBubble>
+            <Icon>😧</Icon>
+            <BoldText>{`앵무새는 비행기 탑승이 안돼서\n같이 여행을 못간다는데 어떡하죠?`}</BoldText>
+          </RightSpeechBubble>
+        </RightWrapper>
+        <SecondLeftWrapper {...thirdAnimatedItem}>
+          <SecondLeftSpeechBubble>
+            <Icon>😢</Icon>
+            <BoldText>{`강아지 호텔에 문의했더니\n토끼는 못맡긴대요`}</BoldText>
+          </SecondLeftSpeechBubble>
+        </SecondLeftWrapper>
+        <RightWrapper {...fourthAnimatedItem}>
+          <RightSpeechBubble>
+            <Icon>🥺</Icon>
+            <BoldText>{`장기간 출장으로 집을 비우는데\n우리집 게코가 걱정돼요...`}</BoldText>
+          </RightSpeechBubble>
+        </RightWrapper>
+        <MediumText>{`특별한 아이를 맡길 곳을 고민 중이었다면\n이제는 걱정하지 마세요.`}</MediumText>
+        <ExtraBoldTitle>
+          {`우리동네 특별반이\n안전하게 돌봐드릴게요!`}
+        </ExtraBoldTitle>
+      </ContentContainer>
+    </Container>
+  );
+};
+
+export default SpeechBubbleSection;
+
+const useSpeechBubbleSection = () => {
+  const firstAnimatedItem = useScrollFadeIn({ direction: "right" });
+  const secondAnimatedItem = useScrollFadeIn({ direction: "left", delay: 200 });
+  const thirdAnimatedItem = useScrollFadeIn({ direction: "right", delay: 400 });
+  const fourthAnimatedItem = useScrollFadeIn({ direction: "left", delay: 600 });
+
+  return {
+    firstAnimatedItem,
+    secondAnimatedItem,
+    thirdAnimatedItem,
+    fourthAnimatedItem,
+  };
+};
+
 const Container = styled.div`
   width: 100%;
   display: flex;
@@ -178,49 +240,3 @@ const SecondLeftSpeechBubble = styled(LeftSpeechBubble)`
     }
   }
 `;
-
-const SpeechBubbleSection = () => {
-  const firstAnimatedItem = useScrollFadeIn({ direction: "right" });
-  const secondAnimatedItem = useScrollFadeIn({ direction: "left", delay: 200 });
-  const thirdAnimatedItem = useScrollFadeIn({ direction: "right", delay: 400 });
-  const fourthAnimatedItem = useScrollFadeIn({ direction: "left", delay: 600 });
-
-  return (
-    <Container>
-      <ContentContainer>
-        <LeftWrapper {...firstAnimatedItem}>
-          <LeftSpeechBubble>
-            <Icon>🤔</Icon>
-            <BoldText>
-              {`명절동안 집에 내려가는데\n고슴도치를 어디에 맡겨야할지 고민돼요`}
-            </BoldText>
-          </LeftSpeechBubble>
-        </LeftWrapper>
-        <RightWrapper {...secondAnimatedItem}>
-          <RightSpeechBubble>
-            <Icon>😧</Icon>
-            <BoldText>{`앵무새는 비행기 탑승이 안돼서\n같이 여행을 못간다는데 어떡하죠?`}</BoldText>
-          </RightSpeechBubble>
-        </RightWrapper>
-        <SecondLeftWrapper {...thirdAnimatedItem}>
-          <SecondLeftSpeechBubble>
-            <Icon>😢</Icon>
-            <BoldText>{`강아지 호텔에 문의했더니\n토끼는 못맡긴대요`}</BoldText>
-          </SecondLeftSpeechBubble>
-        </SecondLeftWrapper>
-        <RightWrapper {...fourthAnimatedItem}>
-          <RightSpeechBubble>
-            <Icon>🥺</Icon>
-            <BoldText>{`장기간 출장으로 집을 비우는데\n우리집 게코가 걱정돼요...`}</BoldText>
-          </RightSpeechBubble>
-        </RightWrapper>
-        <MediumText>{`특별한 아이를 맡길 곳을 고민 중이었다면\n이제는 걱정하지 마세요.`}</MediumText>
-        <ExtraBoldTitle>
-          {`우리동네 특별반이\n안전하게 돌봐드릴게요!`}
-        </ExtraBoldTitle>
-      </ContentContainer>
-    </Container>
-  );
-};
-
-export default SpeechBubbleSection;

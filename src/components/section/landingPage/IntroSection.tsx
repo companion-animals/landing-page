@@ -14,6 +14,58 @@ import images from "src/images";
 const APPLY_LINK =
   "https://docs.google.com/forms/d/e/1FAIpQLScq8tQoJ_dptmVfMGKTP-WT1esNBc5s0BgcvS8We-VsC8kfTg/viewform?usp=sf_link";
 
+const IntroSection = () => {
+  const { width } = useIntroSection();
+
+  return (
+    <Container>
+      <Wrapper>
+        <ContentWrapper>
+          <TitleWrapper>
+            <ColoredTitle>우리동네 특별반</ColoredTitle>
+            <SectionTitle>{`이\n특별한 아이들을 돌봐드려요`}</SectionTitle>
+            <MobileTitle>{`이\n특별한 아이들을\n돌봐드려요`}</MobileTitle>
+            <Link id="topFindHotelButton" href={APPLY_LINK} target="_blank">
+              <SignUpButton>
+                <SignUpButtonText>지금 신청하기</SignUpButtonText>
+                <RightAngleIcon />
+              </SignUpButton>
+            </Link>
+          </TitleWrapper>
+          <Link id="floatingFindHotelButton" href={APPLY_LINK} target="_blank">
+            <MobileSignUpButton width={width}>
+              <SignUpButtonText>지금 신청하기</SignUpButtonText>
+              <RightAngleIcon />
+            </MobileSignUpButton>
+          </Link>
+          <Illustration />
+        </ContentWrapper>
+      </Wrapper>
+    </Container>
+  );
+};
+
+export default IntroSection;
+
+const useIntroSection = () => {
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      const fullWidth = document.body.clientWidth;
+      setWidth(fullWidth);
+    });
+  }, []);
+
+  useEffect(() => {
+    const fullWidth = document.body.clientWidth;
+    if (!width) {
+      setWidth(fullWidth);
+    }
+  }, [width]);
+  return { width };
+};
+
 const Container = styled.div`
   width: 100%;
   display: flex;
@@ -152,50 +204,3 @@ const Illustration = styled.img.attrs({ src: images.illustration })`
     height: 200px;
   }
 `;
-
-const IntroSection = () => {
-  const [width, setWidth] = useState(0);
-
-  useEffect(() => {
-    window.addEventListener("resize", () => {
-      const fullWidth = document.body.clientWidth;
-      setWidth(fullWidth);
-    });
-  }, []);
-
-  useEffect(() => {
-    const fullWidth = document.body.clientWidth;
-    if (!width) {
-      setWidth(fullWidth);
-    }
-  }, [width]);
-
-  return (
-    <Container>
-      <Wrapper>
-        <ContentWrapper>
-          <TitleWrapper>
-            <ColoredTitle>우리동네 특별반</ColoredTitle>
-            <SectionTitle>{`이\n특별한 아이들을 돌봐드려요`}</SectionTitle>
-            <MobileTitle>{`이\n특별한 아이들을\n돌봐드려요`}</MobileTitle>
-            <Link id="topFindHotelButton" href={APPLY_LINK} target="_blank">
-              <SignUpButton>
-                <SignUpButtonText>지금 신청하기</SignUpButtonText>
-                <RightAngleIcon />
-              </SignUpButton>
-            </Link>
-          </TitleWrapper>
-          <Link id="floatingFindHotelButton" href={APPLY_LINK} target="_blank">
-            <MobileSignUpButton width={width}>
-              <SignUpButtonText>지금 신청하기</SignUpButtonText>
-              <RightAngleIcon />
-            </MobileSignUpButton>
-          </Link>
-          <Illustration />
-        </ContentWrapper>
-      </Wrapper>
-    </Container>
-  );
-};
-
-export default IntroSection;

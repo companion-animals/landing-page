@@ -3,6 +3,20 @@ import styled from "styled-components";
 import { Medium36, Light24 } from "src/components/text/Typographies";
 import images from "src/images";
 
+const QNASection = () => (
+  <Container>
+    <Text>{`더 궁금하신 사항은\n메일로 문의주세요!`}</Text>
+    <BorderChip>
+      <Circle>
+        <EmailIcon />
+      </Circle>
+      <Email>specialban.official@gmail.com</Email>
+    </BorderChip>
+  </Container>
+);
+
+export default QNASection;
+
 const Container = styled.div`
   width: 100%;
   display: flex;
@@ -67,17 +81,3 @@ const Circle = styled.div`
     height: 40px;
   }
 `;
-
-const QNASection = () => (
-  <Container>
-    <Text>{`더 궁금하신 사항은\n메일로 문의주세요!`}</Text>
-    <BorderChip>
-      <Circle>
-        <EmailIcon />
-      </Circle>
-      <Email>specialban.official@gmail.com</Email>
-    </BorderChip>
-  </Container>
-);
-
-export default QNASection;
