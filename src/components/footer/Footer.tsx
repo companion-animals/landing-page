@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Light16 } from "src/components/atoms/text/Typographies";
+import { Light16 } from "src/components/text/Typographies";
 
 const FooterContainer = styled.footer`
   padding: 0 16px;

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 import styled from "styled-components";
 
-import { Medium24, Regular20 } from "src/components/atoms/text/Typographies";
+import { Medium24, Regular20 } from "src/components/text/Typographies";
 
 interface IProps {
   className?: string;

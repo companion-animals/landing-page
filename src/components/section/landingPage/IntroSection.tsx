@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 
 import styled from "styled-components";
 
-import XEIcon from "src/components/atoms/icon/XEIcon";
+import XEIcon from "src/components/icon/XEIcon";
 import {
   ExtraBold22,
   SemiBold36,
   ExtraBold48,
   SemiBold48,
-} from "src/components/atoms/text/Typographies";
+} from "src/components/text/Typographies";
 import images from "src/images";
 
 const APPLY_LINK =

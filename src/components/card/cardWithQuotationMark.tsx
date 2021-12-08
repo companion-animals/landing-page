@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { ExtraBold36, Light20 } from "src/components/atoms/text/Typographies";
+import { ExtraBold36, Light20 } from "src/components/text/Typographies";
 import { ScrollFadeInAnimatedItem } from "src/hooks/useScrollFadeIn";
 
 interface Props {

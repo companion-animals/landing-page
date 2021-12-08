@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import XEIcon from "src/components/atoms/icon/XEIcon";
-import { ExtraBold16 } from "src/components/atoms/text/Typographies";
+import XEIcon from "src/components/icon/XEIcon";
+import { ExtraBold16 } from "src/components/text/Typographies";
 import images from "src/images";
 
 const APPLY_LINK =

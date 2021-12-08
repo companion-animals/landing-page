@@ -7,7 +7,7 @@ import {
   SemiBold28,
   Light28,
   Light20,
-} from "src/components/atoms/text/Typographies";
+} from "src/components/text/Typographies";
 import useScrollFadeIn from "src/hooks/useScrollFadeIn";
 
 const Container = styled.div`

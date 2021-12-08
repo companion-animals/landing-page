@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Medium36, Light24 } from "src/components/atoms/text/Typographies";
+import { Medium36, Light24 } from "src/components/text/Typographies";
 import images from "src/images";
 
 const Container = styled.div`

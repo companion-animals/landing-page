@@ -1,12 +1,7 @@
-import { useState, useEffect } from "react";
-
 import styled from "styled-components";
 
-import {
-  ExtraBold40,
-  ExtraBold36,
-} from "src/components/atoms/text/Typographies";
-import ChipAccordion from "src/components/molecules/accordion/ChipAccordion";
+import ChipAccordion from "src/components/accordion/ChipAccordion";
+import { ExtraBold40, ExtraBold36 } from "src/components/text/Typographies";
 
 const Container = styled.div`
   width: 100%;

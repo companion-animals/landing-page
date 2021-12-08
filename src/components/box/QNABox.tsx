@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Light20 } from "src/components/atoms/text/Typographies";
+import { Light20 } from "src/components/text/Typographies";
 
 interface Props {
   className?: string;

@@ -9,7 +9,7 @@ const DefaultTemplate: Story<Props> = (args) => (
 export const Default = DefaultTemplate.bind({});
 
 export default {
-  title: "atoms/button/Button",
+  title: "button/Button",
   component: Button,
   args: {
     children: "Button",

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import CardWithQuotationMark from "src/components/atoms/card/cardWithQuotationMark";
-import { ExtraBold44, Light44 } from "src/components/atoms/text/Typographies";
+import CardWithQuotationMark from "src/components/card/cardWithQuotationMark";
+import { ExtraBold44, Light44 } from "src/components/text/Typographies";
 import useScrollFadeIn from "src/hooks/useScrollFadeIn";
 
 const Container = styled.div`

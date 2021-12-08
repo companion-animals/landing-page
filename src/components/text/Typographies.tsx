@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import FMText from "src/components/atoms/text/FMText";
+import FMText from "src/components/text/FMText";
 
 const ExtraBold = styled(FMText).attrs({ fontType: "EXTRA_BOLD" })``;
 const Bold = styled(FMText).attrs({ fontType: "BOLD" })``;

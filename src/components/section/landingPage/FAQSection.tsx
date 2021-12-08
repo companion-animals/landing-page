@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import QNABox from "src/components/atoms/box/QNABox";
-import { ExtraBold44 } from "src/components/atoms/text/Typographies";
+import { ExtraBold44 } from "src/components/text/Typographies";
+import QNABox from "src/components/box/QNABox";
 
 const Container = styled.div`
   width: 100%;

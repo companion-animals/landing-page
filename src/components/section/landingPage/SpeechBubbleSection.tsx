@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
-import {
-  Medium36,
-  Bold42,
-  Medium22,
-} from "src/components/atoms/text/Typographies";
+import { Medium36, Bold42, Medium22 } from "src/components/text/Typographies";
 import useScrollFadeIn from "src/hooks/useScrollFadeIn";
 
 const Container = styled.div`

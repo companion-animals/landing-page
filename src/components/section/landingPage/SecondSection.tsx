@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { ExtraBold44, Light38 } from "src/components/atoms/text/Typographies";
+import { ExtraBold44, Light38 } from "src/components/text/Typographies";
 import useScrollFadeIn from "src/hooks/useScrollFadeIn";
 import images from "src/images";
 
