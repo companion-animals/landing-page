@@ -9,6 +9,16 @@ interface Props {
   animatedItem?: ScrollFadeInAnimatedItem;
 }
 
+const CardWithQuotationMark = ({ className, content, animatedItem }: Props) => (
+  <Card className={className} {...animatedItem}>
+    <QuotationMark>“</QuotationMark>
+    <ContextText>{content}</ContextText>
+    <QuotationMark>”</QuotationMark>
+  </Card>
+);
+
+export default CardWithQuotationMark;
+
 const Card = styled.div`
   width: 280px;
   height: 420px;
@@ -40,13 +50,3 @@ const ContextText = styled(Light20)`
     line-height: 26px;
   }
 `;
-
-const CardWithQuotationMark = ({ className, content, animatedItem }: Props) => (
-  <Card className={className} {...animatedItem}>
-    <QuotationMark>“</QuotationMark>
-    <ContextText>{content}</ContextText>
-    <QuotationMark>”</QuotationMark>
-  </Card>
-);
-
-export default CardWithQuotationMark;

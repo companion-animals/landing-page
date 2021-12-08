@@ -8,6 +8,19 @@ interface Props {
   content: string;
 }
 
+const QNABox = ({ className, title, content }: Props) => (
+  <Container className={className}>
+    <TitleBox>
+      <Title>{title}</Title>
+    </TitleBox>
+    <ContentBox>
+      <Content>{content}</Content>
+    </ContentBox>
+  </Container>
+);
+
+export default QNABox;
+
 const Container = styled.div`
   width: 900px;
 
@@ -56,16 +69,3 @@ const Title = styled(Content)`
   margin-left: 33px;
   line-height: 0px;
 `;
-
-const QNABox = ({ className, title, content }: Props) => (
-  <Container className={className}>
-    <TitleBox>
-      <Title>{title}</Title>
-    </TitleBox>
-    <ContentBox>
-      <Content>{content}</Content>
-    </ContentBox>
-  </Container>
-);
-
-export default QNABox;

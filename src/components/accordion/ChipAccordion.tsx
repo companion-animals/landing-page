@@ -11,6 +11,65 @@ interface IProps {
   open?: boolean;
 }
 
+const ChipAccordion = ({ className, title, open, content }: IProps) => {
+  const { innerRef, height, updateAfterTransition, onCollapse, isOpen } =
+    useChipAccordion(open);
+
+  return (
+    <Container className={className}>
+      <BorderChip onClick={onCollapse} isOpen={isOpen}>
+        <Text isOpen={isOpen}>{title}</Text>
+      </BorderChip>
+      <ContentContainer
+        ref={innerRef}
+        onTransitionEnd={updateAfterTransition}
+        height={height}
+      >
+        <Wrapper>
+          <RegularText>{content}</RegularText>
+        </Wrapper>
+      </ContentContainer>
+    </Container>
+  );
+};
+
+export default ChipAccordion;
+
+const useChipAccordion = (open?: boolean) => {
+  const [height, setHeight] = useState(open ? "auto" : "0px");
+  const innerRef = useRef<HTMLDivElement>(null);
+  const prevHeight = usePrevState(height);
+  const isOpen = height !== "0px";
+
+  const onCollapse = () => {
+    setHeight(`${innerRef?.current?.scrollHeight}px`);
+  };
+
+  const updateAfterTransition = () => {
+    if (isOpen) {
+      setHeight("auto");
+    }
+  };
+
+  useEffect(() => {
+    if (prevHeight === "auto" && height !== "auto") {
+      setHeight("0px");
+    }
+  }, [prevHeight, height]);
+
+  return { innerRef, height, updateAfterTransition, onCollapse, isOpen };
+};
+
+const usePrevState = (state: string) => {
+  const ref = useRef(state);
+
+  useEffect(() => {
+    ref.current = state;
+  }, [state]);
+
+  return ref.current;
+};
+
 const Container = styled.div``;
 
 const BorderChip = styled.div<{ isOpen?: boolean }>`
@@ -58,55 +117,3 @@ const RegularText = styled(Regular20)`
     font-size: 16px;
   }
 `;
-
-const usePrevState = (state: string) => {
-  const ref = useRef(state);
-
-  useEffect(() => {
-    ref.current = state;
-  }, [state]);
-
-  return ref.current;
-};
-
-const ChipAccordion = ({ className, title, open, content }: IProps) => {
-  const [height, setHeight] = useState(open ? "auto" : "0px");
-  const innerRef = useRef<HTMLDivElement>(null);
-  const prevHeight = usePrevState(height);
-  const isOpen = height !== "0px";
-
-  const onCollapse = () => {
-    setHeight(`${innerRef?.current?.scrollHeight}px`);
-  };
-
-  const updateAfterTransition = () => {
-    if (isOpen) {
-      setHeight("auto");
-    }
-  };
-
-  useEffect(() => {
-    if (prevHeight === "auto" && height !== "auto") {
-      setHeight("0px");
-    }
-  }, [prevHeight, height]);
-
-  return (
-    <Container className={className}>
-      <BorderChip onClick={onCollapse} isOpen={isOpen}>
-        <Text isOpen={isOpen}>{title}</Text>
-      </BorderChip>
-      <ContentContainer
-        ref={innerRef}
-        onTransitionEnd={updateAfterTransition}
-        height={height}
-      >
-        <Wrapper>
-          <RegularText>{content}</RegularText>
-        </Wrapper>
-      </ContentContainer>
-    </Container>
-  );
-};
-
-export default ChipAccordion;
