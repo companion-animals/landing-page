@@ -103,6 +103,7 @@ const DetailMedium = styled(Medium28)`
 
   @media screen and (max-width: 900px) {
     font-size: 20px;
+    line-height: normal;
   }
 `;
 
