@@ -1,11 +1,32 @@
 import styled from "styled-components";
 
-import XEIcon from "src/components/atoms/icon/XEIcon";
-import { ExtraBold16 } from "src/components/atoms/text/Typographies";
+import XEIcon from "src/components/icon/XEIcon";
+import { ExtraBold16 } from "src/components/text/Typographies";
 import images from "src/images";
 
 const APPLY_LINK =
   "https://docs.google.com/forms/d/e/1FAIpQLSdA279z1g6td4dr9nV-nf55BfQe3FBnwJrDBzKcbCyFnd8cgQ/viewform?usp=sf_link";
+
+const TopBar = () => (
+  <Container>
+    <Wrapper>
+      <TextLogo />
+      <Link
+        id="sitterApplyButton"
+        target="_blank"
+        rel="noreferrer"
+        href={APPLY_LINK}
+      >
+        <ApplyButton>
+          <ApplyButtonText>펫시터 지원</ApplyButtonText>
+          <RightAngleIcon />
+        </ApplyButton>
+      </Link>
+    </Wrapper>
+  </Container>
+);
+
+export default TopBar;
 
 const Container = styled.div`
   width: 100%;
@@ -79,24 +100,3 @@ const TextLogo = styled.img.attrs({ src: images.textLogo })`
     width: 120px;
   }
 `;
-
-const TopBar = () => (
-  <Container>
-    <Wrapper>
-      <TextLogo />
-      <Link
-        id="sitterApplyButton"
-        target="_blank"
-        rel="noreferrer"
-        href={APPLY_LINK}
-      >
-        <ApplyButton>
-          <ApplyButtonText>펫시터 지원</ApplyButtonText>
-          <RightAngleIcon />
-        </ApplyButton>
-      </Link>
-    </Wrapper>
-  </Container>
-);
-
-export default TopBar;

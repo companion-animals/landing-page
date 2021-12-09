@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 
 import styled from "styled-components";
 
-import { Bold28, Bold16 } from "src/components/atoms/text/Typographies";
+import { Bold28, Bold16 } from "src/components/text/Typographies";
 
 const Container = styled.div`
   display: flex;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import FMText from "src/components/atoms/text/FMText";
+import FMText from "src/components/text/FMText";
 
 const ExtraBold = styled(FMText).attrs({ fontType: "EXTRA_BOLD" })``;
 const Bold = styled(FMText).attrs({ fontType: "BOLD" })``;
@@ -114,6 +114,11 @@ export const Bold48 = styled(Bold)`
   line-height: 75px;
 `;
 
+export const Bold46 = styled(Bold)`
+  font-size: 44px;
+  line-height: 56px;
+`;
+
 export const Bold44 = styled(Bold)`
   font-size: 44px;
   line-height: 56px;
@@ -159,6 +164,16 @@ export const Heavy36 = styled(Heavy)`
   line-height: normal;
 `;
 
+export const Medium44 = styled(Medium)`
+  font-size: 44px;
+  line-height: normal;
+`;
+
+export const Medium42 = styled(Medium)`
+  font-size: 42px;
+  line-height: normal;
+`;
+
 export const Medium38 = styled(Medium)`
   font-size: 38px;
   line-height: normal;
@@ -180,8 +195,8 @@ export const Medium30 = styled(Medium)`
 `;
 
 export const Medium28 = styled(Medium)`
-  font-size: 30px;
-  line-height: normal;
+  font-size: 28px;
+  line-height: 44px;
 `;
 
 export const Medium40 = styled(Medium)`
@@ -246,12 +261,12 @@ export const Light24 = styled(Light)`
 
 export const Light26 = styled(Light)`
   font-size: 26px;
-  line-height: 36px;
+  line-height: px;
 `;
 
 export const Light28 = styled(Light)`
   font-size: 28px;
-  line-height: 36px;
+  line-height: 44px;
 `;
 
 export const Light22 = styled(Light)`

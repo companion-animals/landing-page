@@ -1,15 +1,35 @@
 import styled from "styled-components";
 
-import TopBar from "src/components/molecules/bar/TopBar";
-import Footer from "src/components/molecules/footer/Footer";
-import DetailSection from "src/components/molecules/section/landingPage/DetailSection";
-import ExplanationSection from "src/components/molecules/section/landingPage/ExplanationSection";
-import FAQSection from "src/components/molecules/section/landingPage/FAQSection";
-import IntroSection from "src/components/molecules/section/landingPage/IntroSection";
-import QNASection from "src/components/molecules/section/landingPage/QNASection";
-import ReviewSection from "src/components/molecules/section/landingPage/ReviewSection";
-import SecondSection from "src/components/molecules/section/landingPage/SecondSection";
-import SpeechBubbleSection from "src/components/molecules/section/landingPage/SpeechBubbleSection";
+import TopBar from "src/components/bar/TopBar";
+import Footer from "src/components/footer/Footer";
+import DetailSection from "src/components/section/landingPage/DetailSection";
+import ExplanationSection from "src/components/section/landingPage/ExplanationSection";
+import FAQSection from "src/components/section/landingPage/FAQSection";
+import IntroSection from "src/components/section/landingPage/IntroSection";
+import MapSection from "src/components/section/landingPage/MapSection";
+import QNASection from "src/components/section/landingPage/QNASection";
+import ReviewSection from "src/components/section/landingPage/ReviewSection";
+import SecondSection from "src/components/section/landingPage/SecondSection";
+import SpeechBubbleSection from "src/components/section/landingPage/SpeechBubbleSection";
+
+const Home = () => (
+  <Container>
+    <TopBar />
+    <IntroSection />
+    <SecondSection />
+    <SpeechBubbleSection />
+    <MapSection />
+    <DetailSection />
+    <Line />
+    <ExplanationSection />
+    <ReviewSection />
+    <FAQSection />
+    <QNASection />
+    <Footer />
+  </Container>
+);
+
+export default Home;
 
 const Container = styled.div`
   display: flex;
@@ -17,6 +37,7 @@ const Container = styled.div`
   align-items: center;
   overflow: hidden;
   padding-bottom: 80px;
+
   @media screen and (max-width: 900px) {
     padding-bottom: 100px;
   }
@@ -33,20 +54,3 @@ const Line = styled.div`
     max-width: 350px;
   }
 `;
-const Home = () => (
-  <Container>
-    <TopBar />
-    <IntroSection />
-    <SecondSection />
-    <SpeechBubbleSection />
-    <DetailSection />
-    <Line />
-    <ExplanationSection />
-    <ReviewSection />
-    <FAQSection />
-    <QNASection />
-    <Footer />
-  </Container>
-);
-
-export default Home;

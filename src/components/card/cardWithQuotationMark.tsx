@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { ExtraBold36, Light20 } from "src/components/atoms/text/Typographies";
+import { ExtraBold36, Light20 } from "src/components/text/Typographies";
 import { ScrollFadeInAnimatedItem } from "src/hooks/useScrollFadeIn";
 
 interface Props {
@@ -8,6 +8,16 @@ interface Props {
   className?: string;
   animatedItem?: ScrollFadeInAnimatedItem;
 }
+
+const CardWithQuotationMark = ({ className, content, animatedItem }: Props) => (
+  <Card className={className} {...animatedItem}>
+    <QuotationMark>“</QuotationMark>
+    <ContextText>{content}</ContextText>
+    <QuotationMark>”</QuotationMark>
+  </Card>
+);
+
+export default CardWithQuotationMark;
 
 const Card = styled.div`
   width: 280px;
@@ -40,13 +50,3 @@ const ContextText = styled(Light20)`
     line-height: 26px;
   }
 `;
-
-const CardWithQuotationMark = ({ className, content, animatedItem }: Props) => (
-  <Card className={className} {...animatedItem}>
-    <QuotationMark>“</QuotationMark>
-    <ContextText>{content}</ContextText>
-    <QuotationMark>”</QuotationMark>
-  </Card>
-);
-
-export default CardWithQuotationMark;
