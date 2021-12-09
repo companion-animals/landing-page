@@ -6,6 +6,7 @@ import DetailSection from "src/components/section/landingPage/DetailSection";
 import ExplanationSection from "src/components/section/landingPage/ExplanationSection";
 import FAQSection from "src/components/section/landingPage/FAQSection";
 import IntroSection from "src/components/section/landingPage/IntroSection";
+import MapSection from "src/components/section/landingPage/MapSection";
 import QNASection from "src/components/section/landingPage/QNASection";
 import ReviewSection from "src/components/section/landingPage/ReviewSection";
 import SecondSection from "src/components/section/landingPage/SecondSection";
@@ -17,6 +18,7 @@ const Home = () => (
     <IntroSection />
     <SecondSection />
     <SpeechBubbleSection />
+    <MapSection />
     <DetailSection />
     <Line />
     <ExplanationSection />
@@ -35,6 +37,7 @@ const Container = styled.div`
   align-items: center;
   overflow: hidden;
   padding-bottom: 80px;
+
   @media screen and (max-width: 900px) {
     padding-bottom: 100px;
   }
