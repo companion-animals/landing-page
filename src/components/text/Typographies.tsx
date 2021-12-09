@@ -114,6 +114,11 @@ export const Bold48 = styled(Bold)`
   line-height: 75px;
 `;
 
+export const Bold46 = styled(Bold)`
+  font-size: 44px;
+  line-height: 56px;
+`;
+
 export const Bold44 = styled(Bold)`
   font-size: 44px;
   line-height: 56px;
@@ -121,7 +126,7 @@ export const Bold44 = styled(Bold)`
 
 export const Bold42 = styled(Bold)`
   font-size: 42px;
-  line-height: 46px;
+  line-height: 56px;
 `;
 
 export const SemiBold48 = styled(SemiBold)`

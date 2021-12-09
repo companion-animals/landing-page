@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Bold22, Bold42, Medium22 } from "src/components/text/Typographies";
+import { Bold22, Bold46, Medium22 } from "src/components/text/Typographies";
 import useScrollFadeIn from "src/hooks/useScrollFadeIn";
 
 const SpeechBubbleSection = () => {
@@ -123,7 +123,7 @@ const RightWrapper = styled(LeftWrapper)`
   }
 `;
 
-const BoldTitle = styled(Bold42)`
+const BoldTitle = styled(Bold46)`
   white-space: pre-line;
   text-align: center;
   margin-top: 80px;
