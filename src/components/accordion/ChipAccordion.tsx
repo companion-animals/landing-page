@@ -2,16 +2,22 @@ import { useEffect, useRef, useState } from "react";
 
 import styled from "styled-components";
 
-import { Medium24, Regular20 } from "src/components/text/Typographies";
+import { Medium24 } from "src/components/text/Typographies";
 
 interface IProps {
   className?: string;
   title: string;
-  content: string;
   open?: boolean;
+  children: React.ReactNode;
 }
 
-const ChipAccordion = ({ className, title, open, content }: IProps) => {
+const ChipAccordion = ({
+  className,
+  title,
+  open,
+
+  children,
+}: IProps) => {
   const { innerRef, height, updateAfterTransition, onCollapse, isOpen } =
     useChipAccordion(open);
 
@@ -25,9 +31,7 @@ const ChipAccordion = ({ className, title, open, content }: IProps) => {
         onTransitionEnd={updateAfterTransition}
         height={height}
       >
-        <Wrapper>
-          <RegularText>{content}</RegularText>
-        </Wrapper>
+        <Wrapper>{children}</Wrapper>
       </ContentContainer>
     </Container>
   );
@@ -109,11 +113,3 @@ const ContentContainer = styled.div<{ height: string }>`
 `;
 
 const Wrapper = styled.div``;
-
-const RegularText = styled(Regular20)`
-  white-space: pre-line;
-
-  @media screen and (max-width: 900px) {
-    font-size: 16px;
-  }
-`;
