@@ -35,7 +35,7 @@ const DetailSection = () => {
         <Number>3.</Number>
         <BoldDetail>후기 확인 가능</BoldDetail>
         <DetailExtraBold>펫시터/펫호텔별로 후기를 읽어보고</DetailExtraBold>
-        <DetailMedium>결정할 수 있어요</DetailMedium>
+        <DetailMedium>결정할 수 있어요.</DetailMedium>
       </Wrapper>
     </Container>
   );
