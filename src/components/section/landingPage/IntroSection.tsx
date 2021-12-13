@@ -10,8 +10,7 @@ import {
 } from "src/components/text/Typographies";
 import images from "src/images";
 
-const APPLY_LINK =
-  "https://docs.google.com/forms/d/e/1FAIpQLScq8tQoJ_dptmVfMGKTP-WT1esNBc5s0BgcvS8We-VsC8kfTg/viewform?usp=sf_link";
+const APPLY_LINK = "https://forms.gle/7kR9VK5CQhEcKznS9";
 
 const IntroSection = () => {
   const { width } = useIntroSection();
