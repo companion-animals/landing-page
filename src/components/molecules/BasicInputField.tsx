@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
 import styled from "styled-components";
 import tw from "twin.macro";
@@ -34,17 +34,14 @@ const Input = styled(BasicInput)`
 	`}
 `;
 
-const BasicInputField = ({
-  className,
-  label,
-  description,
-  ...inputProps
-}: Props) => (
-  <Container className={className}>
-    <Label>{label}</Label>
-    <Input {...inputProps} />
-    {description}
-  </Container>
+const BasicInputField = forwardRef<HTMLInputElement, Props>(
+  ({ className, label, description, ...inputProps }, ref) => (
+    <Container className={className}>
+      <Label>{label}</Label>
+      <Input {...inputProps} ref={ref} />
+      {description}
+    </Container>
+  ),
 );
 
 export default BasicInputField;

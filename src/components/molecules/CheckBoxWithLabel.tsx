@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes } from "react";
+import React, { InputHTMLAttributes, forwardRef } from "react";
 
 import styled from "styled-components";
 import tw from "twin.macro";
@@ -24,11 +24,13 @@ const CheckBox = styled(BasicCheckBox)`
 	`}
 `;
 
-const CheckBoxWithLabel = ({ className, id, label, ...rest }: Props) => (
-  <Container className={className}>
-    <CheckBox id={id} {...rest} />
-    <Label1 htmlFor={id}>{label}</Label1>
-  </Container>
+const CheckBoxWithLabel = forwardRef<HTMLInputElement, Props>(
+  ({ className, id, label, ...rest }, ref) => (
+    <Container className={className}>
+      <CheckBox id={id} {...rest} ref={ref} />
+      <Label1 htmlFor={id}>{label}</Label1>
+    </Container>
+  ),
 );
 
 export default CheckBoxWithLabel;

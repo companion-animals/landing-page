@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes } from "react";
+import React, { InputHTMLAttributes, forwardRef } from "react";
 
 import styled from "styled-components";
 import tw from "twin.macro";
@@ -24,11 +24,13 @@ const Radio = styled(BasicRadio)`
 	`}
 `;
 
-const RadioWithLabel = ({ className, id, label, ...rest }: Props) => (
-  <Container className={className}>
-    <Radio id={id} {...rest} />
-    <Label1 htmlFor={id}>{label}</Label1>
-  </Container>
+const RadioWithLabel = forwardRef<HTMLInputElement, Props>(
+  ({ className, id, label, ...rest }, ref) => (
+    <Container className={className}>
+      <Radio id={id} {...rest} ref={ref} />
+      <Label1 htmlFor={id}>{label}</Label1>
+    </Container>
+  ),
 );
 
 export default RadioWithLabel;
