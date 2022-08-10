@@ -27,7 +27,7 @@ const Radio = styled(BasicRadio)`
 const RadioWithLabel = ({ className, id, label, ...rest }: Props) => (
   <Container className={className}>
     <Radio id={id} {...rest} />
-    <Label1 for={id}>{label}</Label1>
+    <Label1 htmlFor={id}>{label}</Label1>
   </Container>
 );
 
