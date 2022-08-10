@@ -6,7 +6,7 @@ import tw from "twin.macro";
 interface Props {
   className?: string;
   children?: React.ReactNode;
-  for?: string;
+  htmlFor?: string;
 }
 
 const Label = styled.label`
