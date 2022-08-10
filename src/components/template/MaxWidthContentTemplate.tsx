@@ -16,7 +16,7 @@ const Container = styled.div`
 
 const Content = styled.div`
   ${tw`
-	pt-16
+		pt-16
 		w-full
 		max-w-screen-lg
 		min-h-screen
