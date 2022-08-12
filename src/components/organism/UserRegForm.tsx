@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
 import tw from "twin.macro";
@@ -6,6 +8,8 @@ import BasicButton from "src/components/atom/button/BasicButton";
 import BasicInputField from "src/components/molecules/BasicInputField";
 import CheckBoxWithLabel from "src/components/molecules/CheckBoxWithLabel";
 import RadioWithLabel from "src/components/molecules/RadioWithLabel";
+import { OK } from "src/constatnts/networkStatus";
+import { regUser } from "src/controller/authController";
 
 const Form = styled.form`
   ${tw`
@@ -41,8 +45,28 @@ const Check = styled(CheckBoxWithLabel)`
 `;
 
 const UserRegForm = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const { register, handleSubmit } = useForm<UserRegFormData>();
-  const onSubmit = (data: UserRegFormData) => console.log(data);
+  const onSubmit = async (data: UserRegFormData) => {
+    if (isLoading) {
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const { status, message } = await regUser(data);
+
+      if (status === OK) {
+        // OK case
+      } else {
+        // error case
+      }
+    } catch (error) {
+      // error case
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
