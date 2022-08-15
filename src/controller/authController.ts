@@ -6,7 +6,7 @@ export async function regUser(data: UserRegFormData) {
   };
   const response = await fetch("/api/reg-user", requestOptions);
   const { status } = response;
-  const message: string | undefined = await response.json().message;
+  const { message } = (await response.json()) as { message?: string };
 
   return { status, message };
 }
