@@ -12,6 +12,7 @@ interface Props extends InputProps {
   className?: string;
   label: string;
   description?: React.ReactNode;
+  errorMessage?: string;
 }
 
 const Container = styled.div`
@@ -34,12 +35,19 @@ const Input = styled(BasicInput)`
 	`}
 `;
 
+const ErrorCase = styled.span`
+  ${tw`
+		text-red-500
+	`}
+`;
+
 const BasicInputField = forwardRef<HTMLInputElement, Props>(
-  ({ className, label, description, ...inputProps }, ref) => (
+  ({ className, label, description, errorMessage, ...inputProps }, ref) => (
     <Container className={className}>
       <Label>{label}</Label>
       <Input {...inputProps} ref={ref} />
       {description}
+      {errorMessage && <ErrorCase>{errorMessage}</ErrorCase>}
     </Container>
   ),
 );

@@ -8,9 +8,17 @@ import Label1 from "src/components/atom/label/Label1";
 
 interface Props extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
   label: React.ReactNode;
+  errorMessage?: string;
 }
 
 const Container = styled.div`
+  ${tw`
+		flex
+		flex-col
+	`}
+`;
+
+const Row = styled.div`
   ${tw`
 		flex
 		flex-row
@@ -24,11 +32,21 @@ const Radio = styled(BasicRadio)`
 	`}
 `;
 
+const ErrorCase = styled.span`
+  ${tw`
+		text-red-500
+		mt-2
+	`}
+`;
+
 const RadioWithLabel = forwardRef<HTMLInputElement, Props>(
-  ({ className, id, label, ...rest }, ref) => (
+  ({ className, id, label, errorMessage, ...rest }, ref) => (
     <Container className={className}>
-      <Radio id={id} {...rest} ref={ref} />
-      <Label1 htmlFor={id}>{label}</Label1>
+      <Row>
+        <Radio id={id} {...rest} ref={ref} />
+        <Label1 htmlFor={id}>{label}</Label1>
+      </Row>
+      {errorMessage && <ErrorCase>{errorMessage}</ErrorCase>}
     </Container>
   ),
 );
