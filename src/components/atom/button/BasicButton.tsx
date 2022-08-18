@@ -1,21 +1,39 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import tw from "twin.macro";
 
-const Button = styled.button`
+type ButtonType = "primary" | "outline";
+
+const primaryButtonCSS = css`
+  ${tw`
+		bg-primary
+		text-white
+	`}
+`;
+
+const outlineButtonCSS = css`
+  ${tw`
+		bg-white
+		text-primary
+		border
+		border-primary
+	`}
+`;
+
+const Button = styled.button<{ buttonType?: ButtonType }>`
   ${tw`
 		w-full
 		p-4
 		rounded-lg
 		disabled:bg-gray-300
-		bg-primary
-		text-white
 		font-bold
 		bg-none
-		[&:type="submit"]:bg-primary
-  	
 	`}
+  ${({ buttonType }) =>
+    buttonType === "outline" ? outlineButtonCSS : primaryButtonCSS}
+		
   &[type="submit"] {
-    background-color: #79cea7;
+    ${({ buttonType }) =>
+      buttonType === "outline" ? outlineButtonCSS : primaryButtonCSS}
   }
 `;
 
