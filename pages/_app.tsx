@@ -2,10 +2,13 @@ import "src/styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 
+import { ToastContainer } from "react-toastify";
+
 import GTM from "src/components/head/GTM";
 import LazyloadCSS from "src/components/head/LazyLoadCSS";
 import SEOAndOG from "src/components/head/SEOAndOG";
 import { isProduction } from "src/utils/env";
+import "react-toastify/dist/ReactToastify.css";
 
 const CustomApp = ({ Component, pageProps }: AppProps) => (
   <>
@@ -20,6 +23,7 @@ const CustomApp = ({ Component, pageProps }: AppProps) => (
     <LazyloadCSS href="/xeicon/xeicon.min.css" />
     <LazyloadCSS href="/styles/AppleSDGothicNeo.css" />
     <Component {...pageProps} />
+    <ToastContainer />
   </>
 );
 export default CustomApp;
