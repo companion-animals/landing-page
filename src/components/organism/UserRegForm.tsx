@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import styled from "styled-components";
 import tw from "twin.macro";
 import * as yup from "yup";
@@ -78,13 +79,21 @@ const userRegSchema = yup
 
 const UserRegForm = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [termsAgrees, setTermsAgrees] = useState([false, false, false]);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<UserRegFormData>({ resolver: yupResolver(userRegSchema) });
+  const isAllTermsChecked =
+    termsAgrees.findIndex((flag) => flag === false) === -1;
   const onSubmit = async (data: UserRegFormData) => {
     if (isLoading) {
+      return;
+    }
+
+    if (!isAllTermsChecked) {
+      toast.error("약관에 모두 동의해주세요");
       return;
     }
 
@@ -95,7 +104,7 @@ const UserRegForm = () => {
       if (status === OK) {
         // OK case
       } else {
-        // error case
+        toast.error(message);
       }
     } catch (error) {
       // error case
@@ -147,6 +156,16 @@ const UserRegForm = () => {
             우리동네 특별반 이용약관 동의 (필수)
           </Link>
         }
+        checked={termsAgrees[0]}
+        onChange={() => {
+          const newTermsAgree = termsAgrees.map((flag, index) => {
+            if (index === 0) {
+              flag = !flag;
+            }
+            return flag;
+          });
+          setTermsAgrees(newTermsAgree);
+        }}
       />
       <Check
         label={
@@ -154,6 +173,16 @@ const UserRegForm = () => {
             개인정보 처리방침 동의 (필수)
           </Link>
         }
+        checked={termsAgrees[1]}
+        onChange={() => {
+          const newTermsAgree = termsAgrees.map((flag, index) => {
+            if (index === 1) {
+              flag = !flag;
+            }
+            return flag;
+          });
+          setTermsAgrees(newTermsAgree);
+        }}
       />
       <Check
         label={
@@ -161,6 +190,16 @@ const UserRegForm = () => {
             펫시터 약관 동의 (필수)
           </Link>
         }
+        checked={termsAgrees[2]}
+        onChange={() => {
+          const newTermsAgree = termsAgrees.map((flag, index) => {
+            if (index === 2) {
+              flag = !flag;
+            }
+            return flag;
+          });
+          setTermsAgrees(newTermsAgree);
+        }}
       />
       <Submit type="submit">회원가입</Submit>
     </Form>
