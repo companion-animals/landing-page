@@ -7,7 +7,7 @@ interface UserModel extends UserRegFormData {
 const userSchema = new mongoose.Schema({
   name: String,
   email: String,
-  birth: String,
+  birth: Date,
   password: String,
   "password-check": String,
   sex: String,

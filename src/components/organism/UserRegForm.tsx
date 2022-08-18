@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import styled from "styled-components";
 import tw from "twin.macro";
-import * as yup from "yup";
 
 import BasicButton from "src/components/atom/button/BasicButton";
 import BasicInputField from "src/components/molecules/BasicInputField";
@@ -13,6 +12,7 @@ import CheckBoxWithLabel from "src/components/molecules/CheckBoxWithLabel";
 import RadioWithLabel from "src/components/molecules/RadioWithLabel";
 import { OK } from "src/constatnts/networkStatus";
 import { regUser } from "src/controller/authController";
+import { userRegSchema } from "src/utils/validate";
 
 const Form = styled.form`
   ${tw`
@@ -46,36 +46,6 @@ const Link = styled.a.attrs({ target: "_blank", rel: "noopener noreferrer" })``;
 const Check = styled(CheckBoxWithLabel)`
   ${tw`mt-2`}
 `;
-
-const userRegSchema = yup
-  .object({
-    name: yup.string().required("이름을 입력해주세요"),
-    email: yup
-      .string()
-      .email("이메일 형식이 아닙니다")
-      .required("이메일을 입력해주세요"),
-    birth: yup
-      .date()
-      .min("1900.12.31", "생년월일을 다시 확인해주세요")
-      .required("생년월일을 입력해주세요"),
-    password: yup
-      .string()
-      .matches(
-        /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
-        "최소 8글자, 영문과 숫자의 조합으로 이루어져야 합니다",
-      )
-      .required("비밀번호를 입력해주세요"),
-    "password-check": yup
-      .string()
-      .test(
-        "password check",
-        "비밀번호가 일치하지 않습니다",
-        (value, context) => context.parent.password === value,
-      )
-      .required("비밀번호 확인을 입력해주세요"),
-    sex: yup.string().oneOf(["man", "woman"]).required("성별을 선택해주세요"),
-  })
-  .required();
 
 const UserRegForm = () => {
   const [isLoading, setIsLoading] = useState(false);

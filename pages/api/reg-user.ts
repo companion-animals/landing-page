@@ -1,6 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 
+import { ValidationError } from "yup";
+
 import {
   OK,
   BAD_REQUEST,
@@ -9,6 +11,7 @@ import {
 } from "src/constatnts/networkStatus";
 import { insertNewUser } from "src/db/auth";
 import { AlreadyExistEmailError } from "src/errors/authErrors";
+import { userRegSchema } from "src/utils/validate";
 
 interface ApiRequest extends NextApiRequest {
   body: UserRegFormData;
@@ -30,6 +33,7 @@ export default async function handler(
   const data = req.body;
 
   try {
+    await userRegSchema.validate(data);
     await insertNewUser(data);
     res.status(OK).end();
   } catch (error) {
@@ -37,6 +41,8 @@ export default async function handler(
       res
         .status(BAD_REQUEST)
         .json({ message: "이미 존재하는 ID(email) 입니다." });
+    } else if (error instanceof ValidationError) {
+      res.status(BAD_REQUEST).json({ message: error.errors[0] });
     } else {
       console.error(error);
       res.status(SERVER_ERROR).json({ message: "server error occured" });
