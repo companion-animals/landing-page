@@ -1,6 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 
+import { setCookie } from "nookies";
 import { ValidationError } from "yup";
 
 import {
@@ -11,6 +12,7 @@ import {
 } from "src/constatnts/networkStatus";
 import { insertNewUser } from "src/db/auth";
 import { AlreadyExistEmailError } from "src/errors/authErrors";
+import { generateLoginToken } from "src/utils/jwt";
 import { userRegSchema } from "src/utils/validate";
 
 interface ApiRequest extends NextApiRequest {
@@ -34,7 +36,15 @@ export default async function handler(
 
   try {
     await userRegSchema.validate(data);
-    await insertNewUser(data);
+    const id = await insertNewUser(data);
+    const payload = { _id: id };
+    const token = generateLoginToken(payload);
+
+    setCookie({ res }, "token", token, {
+      maxAge: 30 * 24 * 60 * 60,
+      path: "/",
+      httpOnly: true,
+    });
     res.status(OK).json({});
   } catch (error) {
     if (error instanceof AlreadyExistEmailError) {

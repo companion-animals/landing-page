@@ -28,13 +28,13 @@ const IntroSection = () => {
             <SectionTitle>{`이\n특별한 아이들을 돌봐드려요`}</SectionTitle>
             <MobileTitle>{`이\n특별한 아이들을\n돌봐드려요`}</MobileTitle>
             {isLogin ? (
-              <NextLink href="/login">
-                <RightAngleButton id="middleLoginButton" title="로그인" />
-              </NextLink>
-            ) : (
               <Link id="topFindHotelButton" href={APPLY_LINK} target="_blank">
                 <RightAngleButton title="지금 신청하기" />
               </Link>
+            ) : (
+              <NextLink href="/login">
+                <RightAngleButton title="로그인" />
+              </NextLink>
             )}
           </TitleWrapper>
           <Link id="floatingFindHotelButton" href={APPLY_LINK} target="_blank">

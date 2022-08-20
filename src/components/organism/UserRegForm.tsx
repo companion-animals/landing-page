@@ -72,7 +72,7 @@ const UserRegForm = () => {
       const { status, message } = await regUser(data);
 
       if (status === OK) {
-        // OK case
+        window.location.href = "/";
       } else {
         toast.error(message);
       }

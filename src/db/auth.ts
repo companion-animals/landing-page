@@ -17,7 +17,11 @@ export async function insertNewUser(user: UserRegFormData) {
   }
 
   const userDoc = new User({ ...user, createTime: new Date() });
-  await userDoc.save();
+  userDoc.setPassword(user.password);
+
+  const result = await userDoc.save();
+
+  return result._id.toString();
 }
 
 async function checkIsAlreadyExistEmail(email: string) {
@@ -33,14 +37,17 @@ export async function checkLoginData({
   email: string;
   password: string;
 }) {
-  const user = await User.findOne({ email }, { _id: 1, password: 1 });
+  const user = await User.findOne(
+    { email },
+    { _id: 1, passwordHash: 1, salt: 1 },
+  );
 
   if (!user) {
     throw new InvalidLoginDataError();
   }
 
   // TODO: hash password check 으로 바뀌어야함
-  const isValidPassword = user.password === password;
+  const isValidPassword = user.validPassword(password);
 
   if (!isValidPassword) {
     throw new InvalidLoginDataError();
