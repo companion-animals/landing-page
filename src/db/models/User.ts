@@ -9,12 +9,12 @@ const userSchema = new mongoose.Schema({
   email: String,
   birth: Date,
   password: String,
-  "password-check": String,
   sex: String,
   createTime: Date,
 });
 
 const User =
-  mongoose.models.User || mongoose.model<UserModel>("User", userSchema);
+  (mongoose.models.User as mongoose.Model<UserModel>) ||
+  mongoose.model<UserModel>("User", userSchema);
 
 export default User;

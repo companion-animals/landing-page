@@ -1,3 +1,7 @@
+import Link from "next/link";
+
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import styled from "styled-components";
 import tw from "twin.macro";
 
@@ -5,6 +9,8 @@ import BasicButton from "src/components/atom/button/BasicButton";
 import Heading from "src/components/atom/heading/Heading";
 import BasicInputField from "src/components/molecules/BasicInputField";
 import MaxWidthContentTemplate from "src/components/template/MaxWidthContentTemplate";
+import { OK } from "src/constatnts/networkStatus";
+import { login } from "src/controller/authController";
 
 const Container = styled(MaxWidthContentTemplate)`
   ${tw`
@@ -35,18 +41,39 @@ const Submit = styled(BasicButton)`
 		mt-4`}
 `;
 
-const LoginPage = () => (
-  <Container>
-    <Title>로그인</Title>
-    <Form>
-      <Input label="이메일 (ID)" type="text" />
-      <Input label="비밀번호 (ID)" type="password" />
-      <Submit type="submit">회원가입</Submit>
-      <Submit type="submit" buttonType="outline">
-        로그인
-      </Submit>
-    </Form>
-  </Container>
-);
+const LoginPage = () => {
+  const { register, handleSubmit } = useForm<LoginData>();
+  const onSubmit = async (data: LoginData) => {
+    // submit
+    if (!data.email) {
+      toast.warn("email을 입력해주세요");
+      return;
+    }
+    if (!data.password) {
+      toast.warn("password를 입력해주세요");
+      return;
+    }
+
+    const { status, message } = await login(data);
+    if (status === OK) {
+      window.location.href = "/";
+    } else if (message) {
+      toast.error(message);
+    }
+  };
+  return (
+    <Container>
+      <Title>로그인</Title>
+      <Form onSubmit={handleSubmit(onSubmit)}>
+        <Input label="이메일 (ID)" {...register("email")} type="text" />
+        <Input label="비밀번호" {...register("password")} type="password" />
+        <Submit type="submit">로그인</Submit>
+        <Link href="/user-reg" passHref>
+          <Submit buttonType="outline">회원가입</Submit>
+        </Link>
+      </Form>
+    </Container>
+  );
+};
 
 export default LoginPage;

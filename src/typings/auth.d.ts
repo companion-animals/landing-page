@@ -6,3 +6,8 @@ interface UserRegFormData {
   "password-check": string;
   sex: string;
 }
+
+interface LoginData {
+  email: string;
+  password: string;
+}
