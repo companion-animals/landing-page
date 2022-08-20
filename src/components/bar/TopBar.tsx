@@ -1,34 +1,54 @@
+import NextLink from "next/link";
+
 import styled from "styled-components";
 
 import XEIcon from "src/components/icon/XEIcon";
 import { ExtraBold16 } from "src/components/text/Typographies";
+import useLogin from "src/hooks/useLogin";
 import images from "src/images";
 
 const APPLY_LINK =
   "https://docs.google.com/forms/d/e/1FAIpQLSdA279z1g6td4dr9nV-nf55BfQe3FBnwJrDBzKcbCyFnd8cgQ/viewform?usp=sf_link";
 
-const TopBar = () => (
-  <Container>
-    <Wrapper>
-      <TextLogo />
-      <Link
-        id="sitterApplyButton"
-        target="_blank"
-        rel="noreferrer"
-        href={APPLY_LINK}
-      >
-        <ApplyButton>
-          <ApplyButtonText>펫시터 지원</ApplyButtonText>
-          <RightAngleIcon />
-        </ApplyButton>
-      </Link>
-    </Wrapper>
-  </Container>
-);
+const TopBar = () => {
+  const isLogin = useLogin();
+
+  return (
+    <Container>
+      <Wrapper>
+        <TextLogo />
+        <ButtonContainer>
+          {isLogin ? (
+            <ApplyButton>
+              <ApplyButtonText>로그아웃</ApplyButtonText>
+            </ApplyButton>
+          ) : (
+            <NextLink href="/login">
+              <ApplyButton>
+                <ApplyButtonText>로그인</ApplyButtonText>
+              </ApplyButton>
+            </NextLink>
+          )}
+          <Link
+            id="sitterApplyButton"
+            target="_blank"
+            rel="noreferrer"
+            href={APPLY_LINK}
+          >
+            <ApplyButton>
+              <ApplyButtonText>펫시터 지원</ApplyButtonText>
+              <RightAngleIcon />
+            </ApplyButton>
+          </Link>
+        </ButtonContainer>
+      </Wrapper>
+    </Container>
+  );
+};
 
 export default TopBar;
 
-const Container = styled.div`
+const Container = styled.header`
   width: 100%;
   background-color: #ffffff;
   padding: 26px 50px;
@@ -49,6 +69,12 @@ const Wrapper = styled.div`
   justify-content: space-between;
 `;
 
+const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
 const ApplyButton = styled.div`
   display: flex;
   flex-direction: row;
@@ -58,6 +84,7 @@ const ApplyButton = styled.div`
   border-radius: 10px;
   padding: 3px 6px;
   border: 3px solid #79cea7;
+  margin-left: 8px;
 
   @media screen and (max-width: 900px) {
     padding: 2px 4px;

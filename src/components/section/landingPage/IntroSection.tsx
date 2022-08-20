@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import NextLink from "next/link";
+
 import styled from "styled-components";
 
 import RightAngleButton from "src/components/button/roundBox/RightAngleButton";
@@ -8,12 +10,14 @@ import {
   ExtraBold48,
   SemiBold48,
 } from "src/components/text/Typographies";
+import useLogin from "src/hooks/useLogin";
 import images from "src/images";
 
 const APPLY_LINK = "https://forms.gle/7kR9VK5CQhEcKznS9";
 
 const IntroSection = () => {
   const { width } = useIntroSection();
+  const isLogin = useLogin();
 
   return (
     <Container>
@@ -23,9 +27,15 @@ const IntroSection = () => {
             <ColoredTitle>우리동네 특별반</ColoredTitle>
             <SectionTitle>{`이\n특별한 아이들을 돌봐드려요`}</SectionTitle>
             <MobileTitle>{`이\n특별한 아이들을\n돌봐드려요`}</MobileTitle>
-            <Link id="topFindHotelButton" href={APPLY_LINK} target="_blank">
-              <RightAngleButton title="지금 신청하기" />
-            </Link>
+            {isLogin ? (
+              <NextLink href="/login">
+                <RightAngleButton id="middleLoginButton" title="로그인" />
+              </NextLink>
+            ) : (
+              <Link id="topFindHotelButton" href={APPLY_LINK} target="_blank">
+                <RightAngleButton title="지금 신청하기" />
+              </Link>
+            )}
           </TitleWrapper>
           <Link id="floatingFindHotelButton" href={APPLY_LINK} target="_blank">
             <MobileSignUpButton width={width} title="지금 신청하기" />

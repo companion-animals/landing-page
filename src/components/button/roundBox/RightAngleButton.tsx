@@ -20,7 +20,7 @@ const RightAngleIcon = styled(XEIcon).attrs({ type: "xi-angle-right" })`
   color: #ffffff;
   font-weight: 800;
   font-size: 18px;
-
+  margin-left: 8px;
   @media screen and (max-width: 900px) {
     font-size: 15px;
   }
