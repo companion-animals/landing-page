@@ -39,3 +39,14 @@ export async function initialLoginCheck() {
 
   return { status, message, isLogin };
 }
+
+export async function logout() {
+  const requestOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+  };
+  const response = await fetch("/api/logout", requestOptions);
+  const { status } = response;
+
+  return { status };
+}

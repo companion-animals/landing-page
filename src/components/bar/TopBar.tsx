@@ -1,9 +1,13 @@
+import { useCallback } from "react";
+
 import NextLink from "next/link";
 
 import styled from "styled-components";
 
 import XEIcon from "src/components/icon/XEIcon";
 import { ExtraBold16 } from "src/components/text/Typographies";
+import { OK } from "src/constatnts/networkStatus";
+import { logout } from "src/controller/authController";
 import useLogin from "src/hooks/useLogin";
 import images from "src/images";
 
@@ -12,6 +16,13 @@ const APPLY_LINK =
 
 const TopBar = () => {
   const isLogin = useLogin();
+  const onLogout = useCallback(async () => {
+    const { status } = await logout();
+
+    if (status === OK) {
+      window.location.href = "/";
+    }
+  }, []);
 
   return (
     <Container>
@@ -19,7 +30,7 @@ const TopBar = () => {
         <TextLogo />
         <ButtonContainer>
           {isLogin ? (
-            <ApplyButton>
+            <ApplyButton onClick={onLogout}>
               <ApplyButtonText>로그아웃</ApplyButtonText>
             </ApplyButton>
           ) : (
@@ -85,6 +96,7 @@ const ApplyButton = styled.div`
   padding: 3px 6px;
   border: 3px solid #79cea7;
   margin-left: 8px;
+  cursor: pointer;
 
   @media screen and (max-width: 900px) {
     padding: 2px 4px;
