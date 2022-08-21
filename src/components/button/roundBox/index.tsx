@@ -26,7 +26,7 @@ const RoundBox = styled.div`
   margin-top: 50px;
   background-color: #79cea7;
   padding: 15px 30px;
-  width: 210px;
+  width: fit-content;
   margin-top: 30px;
   cursor: pointer;
 
