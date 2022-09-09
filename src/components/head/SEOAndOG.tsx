@@ -5,9 +5,9 @@ interface Props {
 }
 
 const SITE_NAME = "우리동네 특별반";
-const TITLE = `${SITE_NAME} - 특수동물을 위한 호텔링/ 펫시터 서비스`;
+const TITLE = `${SITE_NAME} - 특수동물을 위한 펫시터 서비스`;
 const DESCRIPTION =
-  "햄스터, 게코, 앵무새, 기니피그, 거북이 등등.. 특수동물 맡길 곳 찾기 어려우셨죠? 이제는 우리동네 특별반에 안심하고 맡기세요!";
+  "햄스터, 게코, 앵무새, 기니피그, 거북이 등등.. 특수동물 맡길 펫 호텔이나 시터 찾기 어려우셨죠? 이제는 우리동네 특별반에 안심하고 맡기세요!";
 const URL = "www.specialban.com";
 
 const SEO = ({ allowSearchIndex }: Props) => (

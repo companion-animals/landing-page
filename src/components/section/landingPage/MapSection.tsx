@@ -7,8 +7,8 @@ const MapSection = () => (
   <Container>
     <MediumText>우리동네 특별반이</MediumText>
     <BoldTitle>
-      내 주변의 <ColoredTitle>특수동물 펫시터/펫호텔</ColoredTitle>
-      {`을\n매칭해드려요.`}
+      내 주변의 <ColoredTitle>특수동물 펫시터</ColoredTitle>
+      {`를\n매칭해드려요.`}
     </BoldTitle>
     <Map />
   </Container>

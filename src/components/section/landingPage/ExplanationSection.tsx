@@ -11,11 +11,11 @@ import {
 const ExplanationSection = () => (
   <Container>
     <ContentWrapper>
-      <MediumText>특별반 펫시터/펫호텔은</MediumText>
+      <MediumText>특별반 펫시터는</MediumText>
       <ExtraBoldText>왜 만족도가 높은가요?</ExtraBoldText>
       <ChipWrapper>
         <Chip open title="특수동물 전문 돌봄 서비스">
-          <BoldText>특수동물 전문 펫시터/펫호텔이니까</BoldText>
+          <BoldText>특수동물 전문 펫시터니까</BoldText>
           <RegularText>개별 종 특성에 맞는 돌봄이 가능해요.</RegularText>
         </Chip>
         <Chip open title="추가 서비스 요청 가능">
@@ -25,7 +25,7 @@ const ExplanationSection = () => (
           </RegularText>
         </Chip>
         <ChipAccordion open title="우리동네 근처 펫시터 매칭">
-          <BoldText>우리동네 펫시터/펫호텔 매칭으로</BoldText>
+          <BoldText>우리동네 펫시터 매칭으로</BoldText>
           <RegularText>맡기기 편리해요</RegularText>
         </ChipAccordion>
       </ChipWrapper>

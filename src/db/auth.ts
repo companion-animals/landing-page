@@ -25,6 +25,8 @@ export async function insertNewUser(user: UserRegFormData) {
 }
 
 async function checkIsAlreadyExistEmail(email: string) {
+  await connect();
+
   const result = await User.exists({ email });
 
   return !!result;
@@ -37,6 +39,8 @@ export async function checkLoginData({
   email: string;
   password: string;
 }) {
+  await connect();
+
   const user = await User.findOne(
     { email },
     { _id: 1, passwordHash: 1, salt: 1 },
@@ -57,6 +61,8 @@ export async function checkLoginData({
 }
 
 export async function checkExistUser(id: string) {
+  await connect();
+
   const result = await User.findById({ _id: new mongoose.Types.ObjectId(id) });
 
   return !!result;
