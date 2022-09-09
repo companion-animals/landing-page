@@ -21,7 +21,6 @@ const outlineButtonCSS = css`
 
 const Button = styled.button<{ buttonType?: ButtonType }>`
   ${tw`
-		w-full
 		p-4
 		rounded-lg
 		disabled:bg-gray-300
