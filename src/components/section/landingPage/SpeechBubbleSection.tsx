@@ -36,7 +36,7 @@ const SpeechBubbleSection = () => {
           <SecondLeftSpeechBubble>
             <Icon>😢</Icon>
             <MediumText>
-              {`강아지 호텔에 문의했더니\n`}
+              {`펫 호텔에 문의했더니\n`}
               <BoldText>토끼는 못맡긴대요</BoldText>
             </MediumText>
           </SecondLeftSpeechBubble>

@@ -15,26 +15,26 @@ const DetailSection = () => {
 
   return (
     <Container>
-      <MediumTitle>특별반 펫시터/펫호텔은</MediumTitle>
+      <MediumTitle>특별반 펫시터들은</MediumTitle>
       <SectionTitle>어떤점이 다른가요?</SectionTitle>
       <Wrapper {...firstAnimatedItems}>
         <Number>1.</Number>
         <BoldDetail>특수동물 반려경험 보유</BoldDetail>
         <DetailExtraBold>맡기려는 특수동물을 반려해본</DetailExtraBold>
-        <DetailMedium>경험이 있는 펫시터/펫호텔만을 매칭해드려요.</DetailMedium>
+        <DetailMedium>경험이 있는 펫시터만을 매칭해드려요.</DetailMedium>
       </Wrapper>
 
       <Wrapper {...secondAnimatedItems}>
         <Number>2.</Number>
         <BoldDetail>신원 확인 완료</BoldDetail>
         <DetailExtraBold>증빙서류로 신원 확인된</DetailExtraBold>
-        <DetailMedium>펫시터/펫호텔만을 소개해드려요.</DetailMedium>
+        <DetailMedium>펫시터만을 소개해드려요.</DetailMedium>
       </Wrapper>
 
       <Wrapper {...thirdAnimatedItems}>
         <Number>3.</Number>
         <BoldDetail>후기 확인 가능</BoldDetail>
-        <DetailExtraBold>펫시터/펫호텔별로 후기를 읽어보고</DetailExtraBold>
+        <DetailExtraBold>펫시터별로 후기를 읽어보고</DetailExtraBold>
         <DetailMedium>결정할 수 있어요.</DetailMedium>
       </Wrapper>
     </Container>
