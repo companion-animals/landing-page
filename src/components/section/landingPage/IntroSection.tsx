@@ -33,7 +33,7 @@ const IntroSection = () => {
               </Link>
             ) : (
               <NextLink href="/login">
-                <RightAngleButton title="로그인" />
+                <RightAngleButton title="지금 신청하기" />
               </NextLink>
             )}
           </TitleWrapper>
