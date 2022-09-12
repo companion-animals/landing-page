@@ -10,6 +10,7 @@ export interface OrderModel {
   userID: mongoose.Types.ObjectId;
   sitterPhoneNum: string;
   isPaid: boolean;
+  tossPaymentResult: any;
 }
 
 const orderSchema = new mongoose.Schema({
@@ -22,6 +23,7 @@ const orderSchema = new mongoose.Schema({
   userID: mongoose.Schema.Types.ObjectId,
   sitterPhoneNum: String,
   isPaid: Boolean,
+  tossPaymentResult: mongoose.Schema.Types.Mixed,
 });
 
 const Order =

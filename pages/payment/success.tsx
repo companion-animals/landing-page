@@ -5,6 +5,7 @@ import useURLQuery from "src/hooks/useURLQuery";
 
 const PaymentSuccessPage = () => {
   const querys = useURLQuery();
+
   useEffect(() => {
     const confirmPayment = async () => {
       const sendData = {
@@ -14,8 +15,12 @@ const PaymentSuccessPage = () => {
       };
       const { status, message } = await confirmTossPayment(sendData);
     };
+
+    confirmPayment();
   }, [querys]);
 
+  // todo: loaing UI 가 필요
+  // todo: success or fail 관련 UI 가 필요함
   return <div />;
 };
 
