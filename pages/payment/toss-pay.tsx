@@ -5,6 +5,7 @@ import { GetServerSideProps } from "next";
 import { loadTossPayments } from "@tosspayments/payment-sdk";
 import { isObjectIdOrHexString } from "mongoose";
 import { parseCookies } from "nookies";
+import { toast } from "react-toastify";
 
 import Button from "src/components/atom/button/BasicButton";
 import { FORBIDDEN, BAD_REQUEST } from "src/constatnts/networkStatus";
@@ -44,15 +45,19 @@ const TossPaymentPage = ({
   const payWithCard = useCallback(async () => {
     const tossPayments = await loadTossPayments(clientKey);
 
-    tossPayments.requestPayment("카드", {
-      amount: price,
-      orderId: orderID,
-      orderName: "우리동네 특별반 시터 이용 요금",
-      successUrl: `${window.location.origin}/payment/success`,
-      failUrl: `${window.location.origin}/fail`,
-      customerName: userName,
-      customerEmail: userEmail,
-    });
+    try {
+      await tossPayments.requestPayment("카드", {
+        amount: price,
+        orderId: orderID,
+        orderName: "우리동네 특별반 시터 이용 요금",
+        successUrl: `${window.location.origin}/payment/success`,
+        failUrl: `${window.location.origin}/fail`,
+        customerName: userName,
+        customerEmail: userEmail,
+      });
+    } catch (error) {
+      toast.error((error as Error).message);
+    }
   }, [orderID, price, userEmail, userName]);
 
   // todo: title and seo crawl block
