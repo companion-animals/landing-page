@@ -56,6 +56,7 @@ const TossPaymentPage = ({
   }, [orderID, price, userEmail, userName]);
 
   // todo: title and seo crawl block
+  // todo: 을(를) 구분하는 로직 추가
   return (
     <>
       결제 관련 정보
@@ -80,6 +81,7 @@ export const getServerSideProps: GetServerSideProps = async ({
   if (!token) {
     return {
       redirect: {
+        // todo: 로그인 완료하면 다시 결제페이지로 이동할 수 있도록 로직 구성
         destination: "/login",
         permanent: false,
       },
@@ -93,7 +95,7 @@ export const getServerSideProps: GetServerSideProps = async ({
     return { notFound: true };
   }
 
-  const order = await getOrderByID(orderID as string);
+  const order = await getOrderByID(orderID as string, { sitterPhoneNum: 0 });
 
   if (!order) {
     return { notFound: true };
