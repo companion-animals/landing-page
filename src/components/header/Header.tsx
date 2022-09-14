@@ -14,7 +14,7 @@ import images from "src/images";
 const APPLY_LINK =
   "https://docs.google.com/forms/d/e/1FAIpQLSdA279z1g6td4dr9nV-nf55BfQe3FBnwJrDBzKcbCyFnd8cgQ/viewform?usp=sf_link";
 
-const TopBar = () => {
+const Header = () => {
   const isLogin = useLogin();
   const onLogout = useCallback(async () => {
     const { status } = await logout();
@@ -57,7 +57,7 @@ const TopBar = () => {
   );
 };
 
-export default TopBar;
+export default Header;
 
 const Container = styled.header`
   width: 100%;
