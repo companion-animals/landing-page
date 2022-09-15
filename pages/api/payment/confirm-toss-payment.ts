@@ -32,7 +32,7 @@ export default async function handler(
   }
 
   const data = req.body;
-  console.log(data);
+
   const { amount, orderId, paymentKey } = data;
   if (!amount || !orderId || !paymentKey) {
     res.status(BAD_REQUEST).json({ message: "잘못된 요청입니다." });
