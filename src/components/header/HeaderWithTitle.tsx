@@ -45,7 +45,9 @@ const Title = styled.h3`
 	`}
 `;
 
-const HeaderWithTitle = ({ title }: Props) => (
+const HeaderWithTitle = (
+  { title }: Props, // TODO: go to back or home when press back icon
+) => (
   <Container>
     <Wrapper>
       <NextLink href="/">
