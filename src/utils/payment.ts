@@ -32,7 +32,7 @@ export async function pay({
     orderId: orderID,
     orderName,
     successUrl: `${window.location.origin}/payment/success`,
-    failUrl: `${window.location.origin}/fail`,
+    failUrl: `${window.location.origin}/payment/fail`,
     customerName: userName,
     customerEmail: userEmail,
   });
