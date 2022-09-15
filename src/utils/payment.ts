@@ -1,6 +1,6 @@
 import { loadTossPayments } from "@tosspayments/payment-sdk";
 
-export enum PayMethod {
+export enum PayMethod { // todo: 간편결제 추가
   CARD = "카드",
   TRANSFER = "계좌이체",
   PHONE = "휴대폰",
