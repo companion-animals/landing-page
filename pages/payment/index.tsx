@@ -58,6 +58,12 @@ const Title = styled.h3`
 	`}
 `;
 
+const RadioButton = styled(RadioWithLabel)`
+  ${tw`
+		my-0.5
+	`}
+`;
+
 const Table = styled(KeyValueTable)``;
 
 const TossPaymentPage = ({
@@ -107,7 +113,6 @@ const TossPaymentPage = ({
   ];
 
   // todo: title and seo crawl block
-  // todo: 을(를) 구분하는 로직 추가
   return (
     <>
       <HeaderWithTitle title="결제하기" />
@@ -118,7 +123,7 @@ const TossPaymentPage = ({
         </InfoBox>
         <Title>결제 방법</Title>
         <InfoBox>
-          <RadioWithLabel
+          <RadioButton
             label="신용카드"
             id="card"
             value={PayMethod.CARD}
@@ -126,7 +131,7 @@ const TossPaymentPage = ({
             checked={payMethod === PayMethod.CARD}
             onChange={onPaymentMethodChange}
           />
-          <RadioWithLabel
+          <RadioButton
             label="계좌이체"
             id="transfer"
             value={PayMethod.TRANSFER}
@@ -134,7 +139,7 @@ const TossPaymentPage = ({
             checked={payMethod === PayMethod.TRANSFER}
             onChange={onPaymentMethodChange}
           />
-          <RadioWithLabel
+          <RadioButton
             label="휴대폰"
             id="phone"
             value={PayMethod.PHONE}
