@@ -4,7 +4,6 @@ import styled from "styled-components";
 import tw from "twin.macro";
 
 import XEIcon from "src/components/icon/XEIcon";
-import images from "src/images";
 
 interface Props {
   title: string;
