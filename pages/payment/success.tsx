@@ -4,6 +4,7 @@ import lottie from "lottie-web";
 import styled from "styled-components";
 import tw from "twin.macro";
 
+import SEO from "src/components/head/SEOAndOG";
 import CenterContentTemplate from "src/components/template/CenterContentTemplate";
 import { OK } from "src/constatnts/networkStatus";
 import { confirmTossPayment } from "src/controller/paymentController";
@@ -112,6 +113,7 @@ const PaymentSuccessPage = () => {
 
   return (
     <CenterContentTemplate>
+      <SEO title="결제하기 - 우리동네 특별반" allowSearchIndex={false} />
       {isLoading ? (
         <FadeInContainer key={0}>
           <AnimationContainer ref={loadingContainer} />

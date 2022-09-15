@@ -4,6 +4,7 @@ import lottie from "lottie-web";
 import styled from "styled-components";
 import tw from "twin.macro";
 
+import SEO from "src/components/head/SEOAndOG";
 import CenterContentTemplate from "src/components/template/CenterContentTemplate";
 import useURLQuery from "src/hooks/useURLQuery";
 
@@ -62,6 +63,7 @@ const PaymentFailPage = () => {
 
   return (
     <CenterContentTemplate>
+      <SEO title="결제하기 - 우리동네 특별반" allowSearchIndex={false} />
       <FadeInContainer>
         <Title>결제 실패했어요!</Title>
         <Description>{querys.message}</Description>

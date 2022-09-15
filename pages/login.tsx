@@ -7,6 +7,7 @@ import tw from "twin.macro";
 
 import BasicButton from "src/components/atom/button/BasicButton";
 import Heading from "src/components/atom/heading/Heading";
+import SEO from "src/components/head/SEOAndOG";
 import BasicInputField from "src/components/molecules/BasicInputField";
 import MaxWidthContentTemplate from "src/components/template/MaxWidthContentTemplate";
 import { OK } from "src/constatnts/networkStatus";
@@ -63,6 +64,7 @@ const LoginPage = () => {
   };
   return (
     <Container>
+      <SEO title="로그인 - 우리동네 특별반" allowSearchIndex={false} />
       <Title>로그인</Title>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Input label="이메일 (ID)" {...register("email")} type="text" />

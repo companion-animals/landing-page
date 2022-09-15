@@ -10,6 +10,7 @@ import tw from "twin.macro";
 
 import BottomFixedButton from "src/components/atom/button/BottomFixedButton";
 import InfoBox from "src/components/box/InfoBox";
+import SEO from "src/components/head/SEOAndOG";
 import HeaderWithTitle from "src/components/header/HeaderWithTitle";
 import RadioWithLabel from "src/components/molecules/RadioWithLabel";
 import KeyValueTable, {
@@ -112,9 +113,9 @@ const TossPaymentPage = ({
     { key: "반려동물", value: `${animalName}(${animalCategory})` },
   ];
 
-  // todo: title and seo crawl block
   return (
     <>
+      <SEO title="결제하기 - 우리동네 특별반" allowSearchIndex={false} />
       <HeaderWithTitle title="결제하기" />
       <Container>
         <Title>결제 정보</Title>
