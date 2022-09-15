@@ -34,6 +34,7 @@ export default async function handler(
   const data = req.body;
 
   const { amount, orderId, paymentKey } = data;
+
   if (!amount || !orderId || !paymentKey) {
     res.status(BAD_REQUEST).json({ message: "잘못된 요청입니다." });
     return;
@@ -49,10 +50,14 @@ export default async function handler(
 
   const decoded = decodeLoginToken(token);
   const order = await getOrderByID(orderId, { price: 1, isPaid: 1, userID: 1 });
+
   const isWrongRequest = !order || order.isPaid || order.price !== amount;
+  const isAlreadyPaid = order && order.isPaid;
 
   if (isWrongRequest) {
-    res.status(BAD_REQUEST).json({ message: "잘못된 요청입니다." });
+    res.status(BAD_REQUEST).json({
+      message: isAlreadyPaid ? "이미 결제된 주문입니다." : "잘못된 요청입니다.",
+    });
     return;
   }
 

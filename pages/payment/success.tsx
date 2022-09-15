@@ -4,7 +4,6 @@ import lottie from "lottie-web";
 import styled from "styled-components";
 import tw from "twin.macro";
 
-import FadeIn from "src/components/animation/FadeIn";
 import CenterContentTemplate from "src/components/template/CenterContentTemplate";
 import { OK } from "src/constatnts/networkStatus";
 import { confirmTossPayment } from "src/controller/paymentController";
@@ -31,14 +30,17 @@ const AnimationContainer = styled.div`
   ${tw`
 		w-40
 		md:w-60
+		h-40
+		md:h-60
 	`}
 `;
 
-const FadeInContainer = styled(FadeIn)`
+const FadeInContainer = styled.div`
   ${tw`
 		flex
 		flex-col
 		items-center
+		animate-fade-in-up
 	`}
 `;
 
@@ -49,7 +51,7 @@ const PaymentSuccessPage = () => {
   const failPayContainer = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isSuccessConfirmPayment, setIsSuccessConfirmPayment] = useState(false);
-  const [failMessage, setFailMessage] = useState(false);
+  const [failMessage, setFailMessage] = useState("");
 
   useEffect(() => {
     if (loadingContainer.current) {
@@ -61,30 +63,9 @@ const PaymentSuccessPage = () => {
         path: "/animations/hamster-running-loading.json",
       });
     }
-    if (successPayContainer.current) {
-      lottie.loadAnimation({
-        container: successPayContainer.current,
-        renderer: "svg",
-        loop: false,
-        autoplay: true,
-        path: "/animations/pay-success.json",
-      });
-    }
-    if (failPayContainer.current) {
-      lottie.loadAnimation({
-        container: failPayContainer.current,
-        renderer: "svg",
-        loop: false,
-        autoplay: true,
-        path: "/animations/pay-fail.json",
-      });
-    }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [
-    loadingContainer.current,
-    successPayContainer.current,
-    failPayContainer.current,
-  ]);
+  }, [loadingContainer]);
 
   useEffect(() => {
     const confirmPayment = async () => {
@@ -98,11 +79,31 @@ const PaymentSuccessPage = () => {
         setIsSuccessConfirmPayment(status === OK);
         setFailMessage(message ?? "");
       } catch (error) {
-        // error handling
+        // eslint-disable-next-line no-console
         console.error(error);
         setFailMessage("결제 요청에 실패했어요. 잠시 후에 다시 시도해주세요!");
       } finally {
         setIsLoading(false);
+
+        if (successPayContainer.current) {
+          lottie.loadAnimation({
+            container: successPayContainer.current,
+            renderer: "svg",
+            loop: false,
+            autoplay: true,
+            path: "/animations/pay-success.json",
+          });
+        }
+
+        if (failPayContainer.current) {
+          lottie.loadAnimation({
+            container: failPayContainer.current,
+            renderer: "svg",
+            loop: false,
+            autoplay: true,
+            path: "/animations/pay-fail.json",
+          });
+        }
       }
     };
 
@@ -112,11 +113,11 @@ const PaymentSuccessPage = () => {
   return (
     <CenterContentTemplate>
       {isLoading ? (
-        <FadeIn>
+        <FadeInContainer key={0}>
           <AnimationContainer ref={loadingContainer} />
-        </FadeIn>
+        </FadeInContainer>
       ) : (
-        <FadeInContainer>
+        <FadeInContainer key={1}>
           <Title>
             {isSuccessConfirmPayment ? "결제 완료했어요!" : "결제 실패했어요!"}
           </Title>
@@ -134,7 +135,6 @@ const PaymentSuccessPage = () => {
       )}
     </CenterContentTemplate>
   );
-  return;
 };
 
 export default PaymentSuccessPage;
