@@ -25,10 +25,10 @@ const Content = styled.div`
 	`}
 `;
 
-const Page = ({ className, children }: Props) => (
+const MaxWidthContentTemplate = ({ className, children }: Props) => (
   <Container>
     <Content className={className}>{children}</Content>
   </Container>
 );
 
-export default Page;
+export default MaxWidthContentTemplate;
