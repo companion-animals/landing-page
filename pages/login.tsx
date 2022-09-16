@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
@@ -12,6 +13,7 @@ import BasicInputField from "src/components/molecules/BasicInputField";
 import MaxWidthContentTemplate from "src/components/template/MaxWidthContentTemplate";
 import { OK } from "src/constatnts/networkStatus";
 import { login } from "src/controller/authController";
+import useURLQuery from "src/hooks/useURLQuery";
 
 const Container = styled(MaxWidthContentTemplate)`
   ${tw`
@@ -43,6 +45,8 @@ const Submit = styled(BasicButton)`
 `;
 
 const LoginPage = () => {
+  const router = useRouter();
+  const { redirectURL } = useURLQuery();
   const { register, handleSubmit } = useForm<LoginData>();
   const onSubmit = async (data: LoginData) => {
     // submit
@@ -57,7 +61,11 @@ const LoginPage = () => {
 
     const { status, message } = await login(data);
     if (status === OK) {
-      window.location.href = "/";
+      router.push(
+        redirectURL ? decodeURIComponent(redirectURL) : "/",
+        undefined,
+        { shallow: false },
+      );
     } else if (message) {
       toast.error(message);
     }

@@ -161,26 +161,31 @@ export const getServerSideProps: GetServerSideProps = async ({
   query,
 }) => {
   const cookies = parseCookies({ req });
+  const { orderID } = query;
   const { token } = cookies;
 
   if (!token) {
     return {
       redirect: {
-        // todo: 로그인 완료하면 다시 결제페이지로 이동할 수 있도록 로직 구성
-        destination: "/login",
+        destination: `/login?redirectURL=${encodeURIComponent(
+          `/payment?orderID=${orderID}`,
+        )}`,
         permanent: false,
       },
     };
   }
 
   const decoded = decodeLoginToken(token);
-  const { orderID } = query;
 
   if (!orderID || !isObjectIdOrHexString(orderID)) {
     return { notFound: true };
   }
 
-  const order = await getOrderByID(orderID as string, { sitterPhoneNum: 0 });
+  const order = await getOrderByID(orderID as string, {
+    sitterPhoneNum: 0,
+    tossPaymentResult: 0,
+  });
+  console.log(order);
 
   if (!order) {
     return { notFound: true };
@@ -200,22 +205,44 @@ export const getServerSideProps: GetServerSideProps = async ({
 
   if (!user) {
     res.statusCode = FORBIDDEN;
-    res.statusMessage = "권한이 없는 요청입니다.";
-    return { props: {} };
+    res.statusMessage = "Unauthorized";
+    return {
+      redirect: {
+        destination: `/payment/fail?message=${encodeURIComponent(
+          "권한이 없는 요청입니다.",
+        )}`,
+        permanent: false,
+      },
+    };
   }
 
   const { name, email } = user;
 
   if (decoded._id !== userID.toString()) {
     res.statusCode = FORBIDDEN;
-    res.statusMessage = "권한이 없는 요청입니다.";
-    return { props: {} };
+    res.statusMessage = "Unauthorized";
+    return {
+      redirect: {
+        destination: `/payment/fail?message=${encodeURIComponent(
+          "권한이 없는 요청입니다.",
+        )}`,
+        permanent: false,
+      },
+    };
   }
 
   if (isPaid) {
     res.statusCode = BAD_REQUEST;
-    res.statusMessage = "이미 결제된 주문입니다.";
-    return { props: {} };
+    res.statusMessage = "Already";
+
+    return {
+      redirect: {
+        destination: `/payment/fail?message=${encodeURIComponent(
+          "이미 결제된 요청입니다.",
+        )}`,
+        permanent: false,
+      },
+    };
   }
 
   return {
