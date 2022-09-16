@@ -42,6 +42,7 @@ const IntroSection = () => {
               id="floatingFindHotelButton"
               href={APPLY_LINK}
               target="_blank"
+              rel="noreferrer"
             >
               <MobileSignUpButton width={width} title="지금 신청하기" />
             </Link>
