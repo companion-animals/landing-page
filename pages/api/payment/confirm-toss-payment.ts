@@ -76,6 +76,8 @@ export default async function handler(
     res
       .status(SERVER_ERROR)
       .json({ message: "결제에 실패했습니다. 다시 한번 시도해주세요." });
+    // eslint-disable-next-line no-console
+    console.error(paymentResultData);
     return;
   }
 
@@ -95,7 +97,9 @@ async function confirmTossPayment(data: ConfirmTossPaymentData) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `Basic ${process.env.TOSS_PAYMENT_SECRET_KEY}`,
+      Authorization: `Basic ${Buffer.from(
+        `${process.env.TOSS_PAYMENT_SECRET_KEY as string}:`,
+      ).toString("base64")}`,
     },
     body: JSON.stringify(data),
   };
@@ -104,6 +108,7 @@ async function confirmTossPayment(data: ConfirmTossPaymentData) {
     requestOptions,
   );
   const { status } = response;
+
   const paymentResultData = await response.json();
 
   return { status, paymentResultData };

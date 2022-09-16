@@ -15,7 +15,7 @@ interface PayProps {
   userEmail: string;
 }
 
-const clientKey = "test_ck_D5GePWvyJnrK0W0k6q8gLzN97Eoq";
+const clientKey = process.env.NEXT_PUBLIC_TOSS_PAYMENT_CLIENT_KEY as string;
 
 export async function pay({
   method,
