@@ -14,5 +14,5 @@ export async function connect() {
     return;
   }
 
-  await mongoose.connect(DB_URI);
+  await mongoose.connect(DB_URI, { dbName: "specialban" });
 }

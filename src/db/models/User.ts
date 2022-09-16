@@ -3,7 +3,7 @@ import crypto from "crypto";
 
 import mongoose from "mongoose";
 
-interface UserModel {
+export interface UserModel {
   name: string;
   email: string;
   birth: Date;

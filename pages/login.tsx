@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
@@ -7,10 +8,12 @@ import tw from "twin.macro";
 
 import BasicButton from "src/components/atom/button/BasicButton";
 import Heading from "src/components/atom/heading/Heading";
+import SEO from "src/components/head/SEOAndOG";
 import BasicInputField from "src/components/molecules/BasicInputField";
 import MaxWidthContentTemplate from "src/components/template/MaxWidthContentTemplate";
 import { OK } from "src/constatnts/networkStatus";
 import { login } from "src/controller/authController";
+import useURLQuery from "src/hooks/useURLQuery";
 
 const Container = styled(MaxWidthContentTemplate)`
   ${tw`
@@ -42,6 +45,8 @@ const Submit = styled(BasicButton)`
 `;
 
 const LoginPage = () => {
+  const router = useRouter();
+  const { redirectURL } = useURLQuery();
   const { register, handleSubmit } = useForm<LoginData>();
   const onSubmit = async (data: LoginData) => {
     // submit
@@ -56,13 +61,18 @@ const LoginPage = () => {
 
     const { status, message } = await login(data);
     if (status === OK) {
-      window.location.href = "/";
+      router.push(
+        redirectURL ? decodeURIComponent(redirectURL) : "/",
+        undefined,
+        { shallow: false },
+      );
     } else if (message) {
       toast.error(message);
     }
   };
   return (
     <Container>
+      <SEO title="로그인 - 우리동네 특별반" allowSearchIndex={false} />
       <Title>로그인</Title>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Input label="이메일 (ID)" {...register("email")} type="text" />

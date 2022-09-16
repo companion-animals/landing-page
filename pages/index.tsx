@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import TopBar from "src/components/bar/TopBar";
 import Footer from "src/components/footer/Footer";
+import Header from "src/components/header/Header";
 import DetailSection from "src/components/section/landingPage/DetailSection";
 import ExplanationSection from "src/components/section/landingPage/ExplanationSection";
 import FAQSection from "src/components/section/landingPage/FAQSection";
@@ -14,7 +14,7 @@ import SpeechBubbleSection from "src/components/section/landingPage/SpeechBubble
 
 const Home = () => (
   <Container>
-    <TopBar />
+    <Header />
     <IntroSection />
     <SecondSection />
     <SpeechBubbleSection />

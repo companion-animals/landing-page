@@ -1,7 +1,14 @@
+import { InputHTMLAttributes } from "react";
+
 import styled, { css } from "styled-components";
 import tw from "twin.macro";
 
 type ButtonType = "primary" | "outline";
+
+export interface Props extends InputHTMLAttributes<HTMLButtonElement> {
+  buttonType?: ButtonType;
+  type?: "button" | "submit" | "reset" | undefined;
+}
 
 const primaryButtonCSS = css`
   ${tw`
@@ -19,9 +26,8 @@ const outlineButtonCSS = css`
 	`}
 `;
 
-const Button = styled.button<{ buttonType?: ButtonType }>`
+const BasicButton = styled.button<{ buttonType?: ButtonType }>`
   ${tw`
-		w-full
 		p-4
 		rounded-lg
 		disabled:bg-gray-300
@@ -37,4 +43,4 @@ const Button = styled.button<{ buttonType?: ButtonType }>`
   }
 `;
 
-export default Button;
+export default BasicButton;

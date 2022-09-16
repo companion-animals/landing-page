@@ -6,7 +6,8 @@ import {
 } from "src/errors/authErrors";
 
 import { connect } from "./db";
-import User from "./models/User";
+import User, { UserModel } from "./models/User";
+import { generateObjectID } from "./utils";
 
 export async function insertNewUser(user: UserRegFormData) {
   await connect();
@@ -50,7 +51,6 @@ export async function checkLoginData({
     throw new InvalidLoginDataError();
   }
 
-  // TODO: hash password check 으로 바뀌어야함
   const isValidPassword = user.validPassword(password);
 
   if (!isValidPassword) {
@@ -63,7 +63,19 @@ export async function checkLoginData({
 export async function checkExistUser(id: string) {
   await connect();
 
-  const result = await User.findById({ _id: new mongoose.Types.ObjectId(id) });
+  const result = await getUserByID(id, { _id: 1 });
 
   return !!result;
+}
+
+export async function getUserByID(
+  id: string | mongoose.Types.ObjectId,
+  projection: mongoose.ProjectionType<UserModel> | undefined,
+) {
+  await connect();
+
+  const userID = generateObjectID(id);
+  const user = await User.findById(userID, projection).exec();
+
+  return user;
 }

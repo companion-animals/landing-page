@@ -1,6 +1,7 @@
 import Head from "next/head";
 
 interface Props {
+  title?: string;
   allowSearchIndex: boolean;
 }
 
@@ -10,9 +11,9 @@ const DESCRIPTION =
   "햄스터, 게코, 앵무새, 기니피그, 거북이 등등.. 특수동물 맡길 펫 호텔이나 시터 찾기 어려우셨죠? 이제는 우리동네 특별반에 안심하고 맡기세요!";
 const URL = "www.specialban.com";
 
-const SEO = ({ allowSearchIndex }: Props) => (
+const SEO = ({ title, allowSearchIndex }: Props) => (
   <Head>
-    <title key="title">{TITLE}</title>
+    <title key="title">{title || TITLE}</title>
     <meta key="meta:description" name="description" content={DESCRIPTION} />
     <meta key="og:title" property="og:title" content={TITLE} />
     <meta
@@ -28,7 +29,7 @@ const SEO = ({ allowSearchIndex }: Props) => (
       content="/images/specialban_og_image.png"
       key="og:image"
     />
-    <link rel="canonical" href="https://www.specialban.com" />
+    <link key="canonical" rel="canonical" href="https://www.specialban.com" />
     {!allowSearchIndex && (
       <meta name="robots" content="noindex" key="blockCrawl" />
     )}
