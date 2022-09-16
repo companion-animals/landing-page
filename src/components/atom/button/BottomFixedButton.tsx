@@ -12,6 +12,8 @@ const ButtonContainer = styled.div`
 		px-4
 		bg-transparent
 		sm:px-8
+		flex
+		justify-center
 	`}
 `;
 
