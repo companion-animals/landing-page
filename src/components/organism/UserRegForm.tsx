@@ -10,6 +10,11 @@ import BasicButton from "src/components/atom/button/BasicButton";
 import BasicInputField from "src/components/molecules/BasicInputField";
 import CheckBoxWithLabel from "src/components/molecules/CheckBoxWithLabel";
 import RadioWithLabel from "src/components/molecules/RadioWithLabel";
+import {
+  TERMS_OF_SERVICE,
+  SITTER_TERMS,
+  PRIVACY_POLICY,
+} from "src/constatnts/links";
 import { OK } from "src/constatnts/networkStatus";
 import { regUser } from "src/controller/authController";
 import { userRegSchema } from "src/utils/validate";
@@ -46,6 +51,8 @@ const Link = styled.a.attrs({ target: "_blank", rel: "noopener noreferrer" })``;
 const Check = styled(CheckBoxWithLabel)`
   ${tw`mt-2`}
 `;
+
+// todo: 회원가입할 때 시터 약관을 확인할 필요가 있는지 체크해보기
 
 const UserRegForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -122,7 +129,7 @@ const UserRegForm = () => {
       />
       <Check
         label={
-          <Link href="https://www.notion.so/57df7f12dae34ac0b193850620a9d409">
+          <Link href={TERMS_OF_SERVICE}>
             우리동네 특별반 이용약관 동의 (필수)
           </Link>
         }
@@ -138,11 +145,7 @@ const UserRegForm = () => {
         }}
       />
       <Check
-        label={
-          <Link href="https://www.notion.so/837912043a0844cfb15032a0ee345700">
-            개인정보 처리방침 동의 (필수)
-          </Link>
-        }
+        label={<Link href={PRIVACY_POLICY}>개인정보 처리방침 동의 (필수)</Link>}
         checked={termsAgrees[1]}
         onChange={() => {
           const newTermsAgree = termsAgrees.map((flag, index) => {
@@ -155,11 +158,7 @@ const UserRegForm = () => {
         }}
       />
       <Check
-        label={
-          <Link href="https://www.notion.so/e302edc5d39744b2a6c4215ed335cf3e">
-            펫시터 약관 동의 (필수)
-          </Link>
-        }
+        label={<Link href={SITTER_TERMS}>펫시터 약관 동의 (필수)</Link>}
         checked={termsAgrees[2]}
         onChange={() => {
           const newTermsAgree = termsAgrees.map((flag, index) => {
